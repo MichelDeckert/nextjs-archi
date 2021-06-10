@@ -30,11 +30,6 @@ a {
   max-width: var(--max-width);
   margin: auto;
   margin-top: var(--margin-section);
-  transition: all var(--animation-duration) ease-in-out;
-}
-
-.hidden-down {
-  opacity: 0;
 }
 
 .goto {
