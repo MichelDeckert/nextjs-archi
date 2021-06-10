@@ -1,16 +1,23 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: "Roboto", sans-serif;}
+
+:root {
+	--main-dark-grey: #333333;
+	--main-grey: #bdbdbd;
+	--main-light-grey: #f2f2f2;
+	--nav-height: 102px;
+	--max-width: 1170px;
+	--grid-temp-col: repeat(12, 70px);
+	--grid-gap: 30px;
+	--margin-section: 120px;
+	--animation-duration: 0.8s;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+	color: var(--main-dark-grey);
+	text-decoration: none;
 }
