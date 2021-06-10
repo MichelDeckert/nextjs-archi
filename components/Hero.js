@@ -26,7 +26,7 @@ export default function Hero({ addScrollEvent }) {
       <div className={styles.slider}>
         <Image
           className={styles.image}
-          src="/images/hero-img1.png"
+          src="/images/hero-img1.svg"
           alt="building"
           layout="fill"
         />
