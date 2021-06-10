@@ -39,7 +39,7 @@ export default function About() {
 				/>
 			</div>
 			<div className={styles.info} ref={info}>
-				<h2 className="secondary-title">À propos</h2>
+				<h2 className="secondary-title">À propos!</h2>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
 					pellentesque, lectus at tempus ultricies, nibh turpis tempor orci,
