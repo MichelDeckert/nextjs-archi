@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { addScrollEvent } from '../utils/addScrollEvent';
 import Image from 'next/image';
+import GoTo from '../modules/GoTo';
 import styles from '../styles/Hero.module.css';
 
 export default function Hero() {
@@ -34,10 +35,7 @@ export default function Hero() {
           alt="building"
           layout="fill"
         />
-        <div className="goto">
-          <span>VOIR</span>
-          <img src="/icons/arrow-2-right-long.svg" alt="arrow left" />
-        </div>
+        <GoTo subclass="light" />
       </div>
     </section>
   );

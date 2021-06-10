@@ -8,7 +8,7 @@ function isClose(element) {
 function showElement(element, delay) {
   setTimeout(() => {
     element.style.transform = 'translate(0, 0)';
-    element.classList.remove('hidden');
+    element.style.opacity = 1;
     window.removeEventListener('scroll', () => showElement(element));
   }, delay);
 }

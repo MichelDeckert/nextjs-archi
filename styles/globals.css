@@ -23,10 +23,6 @@ a {
   text-decoration: none;
 }
 
-.hidden {
-  opacity: 0;
-}
-
 .section {
   display: grid;
   grid-template-columns: var(--grid-temp-col);
@@ -45,15 +41,26 @@ a {
   left: 0;
   height: 71px;
   padding: 0 40px;
+  transition: background-color 0.15s ease-out;
+}
+
+.goto.dark {
+  background-color: var(--main-dark-grey);
+  color: #fff;
+}
+
+.goto.light {
   background-color: white;
   color: var(--main-dark-grey);
-  transition: background-color 0.15s ease-out;
 }
 
 .goto:hover {
   cursor: pointer;
-  background-color: var(--main-light-grey);
   transition: background-color 0.25s ease-in;
+}
+
+.goto.light:hover {
+  background-color: var(--main-light-grey);
 }
 
 .goto img {
