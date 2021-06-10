@@ -5,14 +5,16 @@ import styles from '../styles/Hero.module.css';
 
 export default function Hero() {
   const section = useRef();
+  const slider = useRef();
 
   useEffect(() => {
     addScrollEvent(section.current);
+    addScrollEvent(slider.current);
   }, []);
 
   return (
     <section className={`${styles.hero} section`}>
-      <div className={`${styles.content}`} ref={section}>
+      <div className={`${styles.content} hidden`} ref={section}>
         <div className={styles.title}>
           <h1>
             <span className={styles.title_project}>project</span>
@@ -25,7 +27,7 @@ export default function Hero() {
           <div className={styles.number} />
         </div> */}
       </div>
-      <div className={styles.slider}>
+      <div className={`${styles.slider} hidden`} ref={slider}>
         <Image
           className={styles.image}
           src="/images/hero-img1.svg"

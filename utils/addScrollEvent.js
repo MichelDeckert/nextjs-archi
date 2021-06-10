@@ -5,18 +5,17 @@ function isClose(element) {
   return windowScrollY + clientHeight - element.offsetTop >= clientHeight * 0.3;
 }
 
-function showElement(element, delay = 0) {
+function showElement(element, delay) {
   setTimeout(() => {
+    element.style.transform = 'translate(0, 0)';
     element.classList.remove('hidden');
     window.removeEventListener('scroll', () => showElement(element));
   }, delay);
 }
 
-export function addScrollEvent(element) {
+export function addScrollEvent(element, delay) {
   if (isClose(element)) {
-    element.className.includes('hero')
-      ? showElement(element, 10250)
-      : showElement(element, 10500);
+    showElement(element, delay || 500);
   } else {
     window.addEventListener('scroll', () => showElement(element));
   }

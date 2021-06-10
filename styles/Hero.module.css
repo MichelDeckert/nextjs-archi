@@ -8,6 +8,8 @@
   display: grid;
   grid-template-rows: 1fr auto 1fr;
   grid-column: 1/5;
+  transform: translateX(-150px);
+  transition: all var(--animation-duration) ease-in-out;
 }
 
 .title {
@@ -33,12 +35,8 @@
 .slider {
   position: relative;
   grid-column: 5/13;
-  transition: all var(--animation-duration) ease-in-out;
-}
-
-.hidden .slider {
-  opacity: 1;
   transform: translateY(150px);
+  transition: all var(--animation-duration) ease-in-out;
 }
 
 .image {

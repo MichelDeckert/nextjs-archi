@@ -23,6 +23,10 @@ a {
   text-decoration: none;
 }
 
+.hidden {
+  opacity: 0;
+}
+
 .section {
   display: grid;
   grid-template-columns: var(--grid-temp-col);
