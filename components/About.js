@@ -7,36 +7,38 @@ export default function About() {
   const img1 = useRef();
   const img2 = useRef();
   const img3 = useRef();
+  const info = useRef();
 
   useEffect(() => {
     addScrollEvent(img1.current);
     addScrollEvent(img2.current);
     addScrollEvent(img3.current);
+    addScrollEvent(info.current);
   }, []);
 
   return (
     <section className={`${styles.section} section`}>
       <div className={styles.images}>
         <img
-          src="./assets/section1-img1.png"
+          src="./images/section1-img1.svg"
           alt="building"
           className={styles.img1}
           ref={img1}
         />
         <img
-          src="./assets/section1-img2.png"
+          src="./images/section1-img2.svg"
           alt="building"
           className={styles.img2}
           ref={img2}
         />
         <img
-          src="./assets/section1-img3.png"
+          src="./images/section1-img3.svg"
           alt="building"
           className={styles.img3}
           ref={img3}
         />
       </div>
-      <div className={styles.info}>
+      <div className={styles.info} ref={info}>
         <h2 className="secondary-title">À propos</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
@@ -47,7 +49,7 @@ export default function About() {
           odio. Phasellus ac ex vel velit dapibus suscipit. In hac habitasse
           platea dictumst.Aenean elementum, est neciaculis egestas.
         </p>
-        <GoTo subclass="ligh" style={{ marginBottom: '30px' }} />
+        <GoTo subclass="light" style={{ marginBottom: '30px' }} />
       </div>
     </section>
   );
