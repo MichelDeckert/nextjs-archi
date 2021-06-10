@@ -7,7 +7,7 @@ export default function Hero({ addScrollEvent }) {
 
   useEffect(() => {
     addScrollEvent(section.current);
-  }, []);
+  }, [addScrollEvent]);
 
   return (
     <section ref={section} className={`${styles.hero} section hidden-down`}>
