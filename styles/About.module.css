@@ -10,6 +10,11 @@
   grid-column: 1/8;
 }
 
+.images img {
+  opacity: 0;
+  transform: translateY(150px);
+}
+
 .img1 {
   margin-top: 30px;
   grid-column: 2/5;
@@ -30,19 +35,11 @@
   transition: all var(--animation-duration) 0.6s ease-in-out;
 }
 
-.section img {
-  opacity: 0;
-  transform: translateY(150px);
-}
-
 .info {
   position: relative;
   grid-column: 8/12;
   margin-top: 30px;
   transition: all var(--animation-duration) 0.4s ease-in-out;
-}
-
-.info {
   opacity: 0;
   transform: translateX(150px);
 }

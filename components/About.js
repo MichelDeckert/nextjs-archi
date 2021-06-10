@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import styles from '../styles/About.module.css';
-import { addScrollEvent } from '../utils/addScrollEvent';
+import { addScrollEvent,  } from '../utils/addScrollEvent';
 import GoTo from '../modules/GoTo';
 
 export default function About() {
@@ -49,7 +49,7 @@ export default function About() {
           odio. Phasellus ac ex vel velit dapibus suscipit. In hac habitasse
           platea dictumst.Aenean elementum, est neciaculis egestas.
         </p>
-        <GoTo subclass="light" style={{ marginBottom: '30px' }} />
+        <GoTo style={{ marginBottom: '30px' }} />
       </div>
     </section>
   );

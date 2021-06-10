@@ -15,7 +15,7 @@ export default function Hero() {
 
   return (
     <section className={`${styles.hero} section`}>
-      <div className={`${styles.content} hidden`} ref={section}>
+      <div className={styles.content} ref={section}>
         <div className={styles.title}>
           <h1>
             <span className={styles.title_project}>project</span>
@@ -28,14 +28,14 @@ export default function Hero() {
           <div className={styles.number} />
         </div> */}
       </div>
-      <div className={`${styles.slider} hidden`} ref={slider}>
+      <div className={styles.slider} ref={slider}>
         <Image
           className={styles.image}
           src="/images/hero-img1.svg"
           alt="building"
           layout="fill"
         />
-        <GoTo subclass="light" />
+        <GoTo />
       </div>
     </section>
   );

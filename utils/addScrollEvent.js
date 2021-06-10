@@ -6,17 +6,21 @@ function isClose(element) {
 }
 
 function showElement(element, delay) {
-  setTimeout(() => {
-    element.style.transform = 'translate(0, 0)';
-    element.style.opacity = 1;
-    window.removeEventListener('scroll', () => showElement(element));
-  }, delay);
+  return () => {
+    console.log('scroll event');
+    setTimeout(() => {
+      element.style.transform = 'translate(0, 0)';
+      element.style.opacity = 1;
+    }, delay);
+  };
 }
 
 export function addScrollEvent(element, delay) {
+  const cb = showElement(element, delay);
   if (isClose(element)) {
-    showElement(element, delay || 500);
+    cb(element, delay || 500);
+    document.removeEventListener('scroll', cb);
   } else {
-    window.addEventListener('scroll', () => showElement(element));
+    document.addEventListener('scroll', cb);
   }
 }
