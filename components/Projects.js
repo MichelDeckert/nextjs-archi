@@ -94,7 +94,12 @@ export default function Projects() {
 					</div>
 				</div>
 			</div>
-			<GoTo theme="dark" subclass={styles.goto} animate={true} />
+			<GoTo
+				theme="dark"
+				subclass={styles.goto}
+				animate={true}
+				text="tous nos projets"
+			/>
 			{/* <div className="goto">
 				<span>TOUS LES PROJETS</span>
 				<img src="./icons/arrow-2-right-long-white.svg" alt="arrow left" />
