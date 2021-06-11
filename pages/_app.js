@@ -1,18 +1,18 @@
-import Head from "next/head";
-import Layout from "../components/Layout";
-import "../styles/globals.css";
+import Head from 'next/head';
+import Layout from '../components/Layout';
+import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
-	return (
-		<>
-			<Head>
-				<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-			</Head>
-			<Layout>
-				<Component {...pageProps} />
-			</Layout>
-		</>
-	);
+  return (
+    <>
+      <Head>
+        <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+      </Head>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
+  );
 }
 
 export default MyApp;

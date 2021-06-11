@@ -7,7 +7,6 @@ export default function Home() {
     <>
       <Head>
         <title>Digital Project</title>
-        <link href="./favicon.svg" type="image/svg+xml" rel="icon" />
       </Head>
       <Hero />
       <About />
