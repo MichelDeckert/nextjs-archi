@@ -1,16 +1,22 @@
-import { useEffect, useRef } from "react";
-import { addScrollEvent } from "../utils/addScrollEvent";
-import Image from "next/image";
-import GoTo from "../modules/GoTo";
-import styles from "../styles/Hero.module.css";
+import { useEffect, useRef, useState } from "react";
+import { addScrollEvent } from "../../utils/addScrollEvent";
+import styles from "../../styles/Hero.module.css";
+import Slider from "../Slider";
 
 export default function Hero() {
 	const section = useRef();
-	const slider = useRef();
+	const [projects, setProjects] = useState([]);
 
 	useEffect(() => {
+		function getProjects() {
+			fetch("/api/getProjects")
+				.then(res => res.json())
+				.then(data => setProjects(data))
+				.catch(err => console.error(err));
+		}
+		getProjects();
+
 		addScrollEvent(section.current, 500);
-		addScrollEvent(slider.current, 500);
 	}, []);
 
 	return (
@@ -28,15 +34,7 @@ export default function Hero() {
           <div className={styles.number} />
         </div> */}
 			</div>
-			<div className={styles.slider} ref={slider}>
-				<Image
-					className={styles.image}
-					src="/images/hero-img1.svg"
-					alt="building"
-					layout="fill"
-				/>
-				<GoTo text="voir" />
-			</div>
+			{/* <Slider data={data}/> */}
 		</section>
 	);
 }

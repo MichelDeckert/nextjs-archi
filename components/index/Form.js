@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
-import { addScrollEvent } from "../utils/addScrollEvent";
-import styles from "../styles/Form.module.css";
-import GoTo from "../modules/GoTo";
+import { addScrollEvent } from "../../utils/addScrollEvent";
+import styles from "../../styles/Form.module.css";
+import GoTo from "../../modules/GoTo";
 
 export default function Form() {
 	const title = useRef();

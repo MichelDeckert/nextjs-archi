@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
-import styles from "../styles/About.module.css";
-import { addScrollEvent } from "../utils/addScrollEvent";
-import GoTo from "../modules/GoTo";
+import styles from "../../styles/About.module.css";
+import { addScrollEvent } from "../../utils/addScrollEvent";
+import GoTo from "../../modules/GoTo";
 
 export default function About() {
 	const img1 = useRef();
