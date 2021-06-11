@@ -9,8 +9,8 @@ export default function Hero() {
   const slider = useRef();
 
   useEffect(() => {
-    addScrollEvent(section.current);
-    addScrollEvent(slider.current);
+    addScrollEvent(section.current, 500);
+    addScrollEvent(slider.current, 500);
   }, []);
 
   return (
