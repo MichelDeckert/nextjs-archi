@@ -7,6 +7,7 @@ import styles from "../../styles/Hero.module.css";
 export default function Hero({ projects }) {
 	const section = useRef();
 	const slider = useRef();
+	const [isLoading, setIsLoading] = useState(true);
 	const [slideToShow, setSlideToShow] = useState(0);
 
 	const handleSlideMove = () => {
@@ -18,9 +19,13 @@ export default function Hero({ projects }) {
 	};
 
 	useEffect(() => {
+		let interval = setInterval(handleSlideMove, 10000);
+
 		addScrollEvent(slider.current);
 		addScrollEvent(section.current, 500);
-	}, []);
+
+		return () => clearInterval(interval);
+	}, [handleSlideMove]);
 
 	return (
 		<section className={`${styles.hero} section`}>
@@ -52,7 +57,7 @@ export default function Hero({ projects }) {
 						}`}>
 						<Image
 							className={styles.image}
-							src={images[0]}
+							src={images[0].path}
 							alt={`${name} - ${city}`}
 							layout="fill"
 							objectFit="cover"

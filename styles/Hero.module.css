@@ -1,6 +1,5 @@
 .hero {
-	height: calc(100vh - (var(--nav-height) * 3));
-	min-height: 550px;
+	grid-template-rows: minmax(400px, calc(100vh - (var(--nav-height) * 3)));
 	margin-top: 0;
 }
 
@@ -18,25 +17,14 @@
 	position: absolute;
 	top: 50%;
 	transform: translate(0, -50%);
-	transition: all var(--animation-duration) calc(var(--animation-duration) / 2)
-		ease-in-out;
+	transition: all calc(var(--animation-duration) * 1.5)
+		calc(var(--animation-duration) / 2) ease-in-out;
 }
 
 .title.hide {
-	animation: fadeOut var(--animation-duration) ease-in-out 1;
 	opacity: 0;
-	transform: translateY(30px);
+	transform: translate(-30vw, -50%);
 	transition: all var(--animation-duration) ease-in-out;
-	/* transform: translateY(50px) scale(0.9); */
-}
-
-@keyframes fadeOut {
-	90% {
-		transform: scale(0.8);
-	}
-	100% {
-		transform: scale(1);
-	}
 }
 
 .title h1 {
@@ -80,10 +68,15 @@
 }
 
 .slide {
-	transition: all var(--animation-duration) calc(var(--animation-duration) / 2)
-		ease-in-out;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	transition: all calc(var(--animation-duration) * 1.5)
+		calc(var(--animation-duration) / 2) ease-in-out;
 }
 
 .slide.hide {
+	transform: translateX(60vw);
 	opacity: 0;
+	transition: all var(--animation-duration) ease-in-out;
 }

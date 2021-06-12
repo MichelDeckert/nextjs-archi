@@ -5,9 +5,21 @@
 			"name": "Le Louvre",
 			"city": "Abu Dhabi",
 			"images": [
-				"/images/projects/louvre_abu_dhabi/01.jpg",
-				"/images/projects/louvre_abu_dhabi/02.jpg",
-				"/images/projects/louvre_abu_dhabi/03.jpg"
+				{
+					"path": "/images/projects/louvre_abu_dhabi/01.jpg",
+					"width": 2400,
+					"height": 3602
+				},
+				{
+					"path": "/images/projects/louvre_abu_dhabi/02.jpg",
+					"width": 2400,
+					"height": 3200
+				},
+				{
+					"path": "/images/projects/louvre_abu_dhabi/03.jpg",
+					"width": 2400,
+					"height": 3200
+				}
 			]
 		},
 		{
@@ -15,9 +27,21 @@
 			"name": "Centro Botín",
 			"city": "Santander",
 			"images": [
-				"/images/projects/centro_botin_santander/01.jpg",
-				"/images/projects/centro_botin_santander/02.jpg",
-				"/images/projects/centro_botin_santander/03.jpg"
+				{
+					"path": "/images/projects/centro_botin_santander/01-med.jpg",
+					"width": 1920,
+					"height": 1280
+				},
+				{
+					"path": "/images/projects/centro_botin_santander/02.jpg",
+					"width": 2400,
+					"height": 3600
+				},
+				{
+					"path": "/images/projects/centro_botin_santander/03.jpg",
+					"width": 2400,
+					"height": 1800
+				}
 			]
 		}
 	]
