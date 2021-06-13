@@ -1,6 +1,7 @@
 .hero {
 	grid-template-rows: minmax(500px, calc(100vh - (var(--nav-height) * 3)));
 	margin-top: 0;
+	overflow: hidden;
 }
 
 .content {
@@ -16,6 +17,7 @@
 .title {
 	position: absolute;
 	top: 50%;
+	min-height: 140px;
 	transform: translate(0, -50%);
 	transition: all calc(var(--animation-duration) * 1.5)
 		calc(var(--animation-duration) / 2) ease-in-out;
@@ -23,13 +25,13 @@
 
 .title.hide {
 	opacity: 0;
-	transform: translate(-30vw, -50%);
+	transform: translate(-25vw, -50%);
 	transition: all var(--animation-duration) ease-in-out;
 }
 
 .title h1 {
-	font-size: 64px;
-	line-height: 64px;
+	font-size: clamp(52px, 6vh, 64px);
+	line-height: clamp(52px, 6vh, 64px);
 	text-transform: uppercase;
 }
 
@@ -64,15 +66,18 @@
 	width: auto;
 	padding: 20px;
 	border: 1px solid var(--main-light-grey);
+	transition: all 0.15s ease-in-out;
+}
+
+.slider_arrow:hover {
+	cursor: pointer;
+	border-color: var(--main-dark-grey);
+	transition: all 0.3s ease-in-out;
 }
 
 .arrow_previous {
 	transform: rotate(-180deg);
 	margin-right: 23px;
-}
-
-.slider_arrow:hover {
-	cursor: pointer;
 }
 
 .slider_arrow > img {
@@ -128,7 +133,7 @@
 }
 
 .slide.hide {
-	transform: translateX(60vw);
+	transform: translateX(50vw);
 	opacity: 0;
 	transition: all var(--animation-duration) ease-in-out;
 }

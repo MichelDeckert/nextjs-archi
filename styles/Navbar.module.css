@@ -1,63 +1,63 @@
 .navbar {
-  display: grid;
-  grid-template-columns: var(--grid-temp-col);
-  gap: var(--grid-gap);
-  width: 100%;
-  max-width: var(--max-width);
-  height: var(--nav-height);
-  margin: auto;
+	display: grid;
+	grid-template-columns: var(--grid-temp-col);
+	gap: var(--grid-gap);
+	width: 100%;
+	max-width: var(--max-width);
+	height: var(--nav-height);
+	margin: auto;
 }
 
 .navbar .logo {
-  grid-column: 1/5;
-  display: flex;
-  align-items: center;
+	grid-column: 1/5;
+	display: flex;
+	align-items: center;
 }
 
 .navbar .logo img:hover {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .navbar .menu {
-  grid-column: 5/13;
-  display: flex;
-  align-items: center;
+	grid-column: 5/13;
+	display: flex;
+	align-items: center;
 }
 
 .navbar ul {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
+	display: flex;
+	flex-direction: row;
+	list-style: none;
 }
 
 .navbar li {
-  position: relative;
-  margin-right: 60px;
-  font-size: 12px;
-  line-height: 12px;
-  cursor: pointer;
+	position: relative;
+	margin-right: 60px;
+	font-size: 12px;
+	line-height: 12px;
+	cursor: pointer;
 }
 
 .navbar li:last-child {
-  margin: 0;
+	margin: 0;
 }
 
 .navbar li::before,
 .navbar li::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  border-top: 1px solid var(--main-dark-grey);
-  transition: all var(--animation-duration) ease-out;
+	content: "";
+	position: absolute;
+	width: 0;
+	border-top: 1px solid var(--main-dark-grey);
+	transition: all 0.15s ease-out;
 }
 
 .navbar li::before {
-  top: -4px;
+	top: -4px;
 }
 
 .navbar li::after {
-  bottom: -4px;
-  left: 0;
+	bottom: -4px;
+	left: 0;
 }
 
 .navbar li:hover::before,
@@ -66,6 +66,6 @@
 .navbar li:active::after,
 .navbar li:focus::before,
 .navbar li:focus::after {
-  width: 100%;
-  transition: width 0.25s ease-in;
+	width: 100%;
+	transition: width 0.25s ease-in;
 }

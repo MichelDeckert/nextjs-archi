@@ -28,7 +28,7 @@
 			"city": "Santander",
 			"images": [
 				{
-					"path": "/images/projects/centro_botin_santander/01-med.jpg",
+					"path": "/images/projects/centro_botin_santander/01.jpg",
 					"width": 1920,
 					"height": 1280
 				},
@@ -41,6 +41,28 @@
 					"path": "/images/projects/centro_botin_santander/03.jpg",
 					"width": 2400,
 					"height": 1800
+				}
+			]
+		},
+		{
+			"id": 2,
+			"name": "John Cranko Schule",
+			"city": "Stuttgart",
+			"images": [
+				{
+					"path": "/images/projects/stuttgart_john_cranko_schule/01.jpg",
+					"width": 1200,
+					"height": 788
+				},
+				{
+					"path": "/images/projects/stuttgart_john_cranko_schule/02.jpg",
+					"width": 2400,
+					"height": 3200
+				},
+				{
+					"path": "/images/projects/stuttgart_john_cranko_schule/03.jpg",
+					"width": 2400,
+					"height": 3200
 				}
 			]
 		}

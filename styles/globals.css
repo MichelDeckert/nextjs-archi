@@ -19,10 +19,6 @@
 	box-sizing: border-box;
 }
 
-body {
-	overflow: hidden;
-}
-
 a {
 	color: var(--main-dark-grey);
 	text-decoration: none;

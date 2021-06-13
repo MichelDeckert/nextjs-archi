@@ -10,22 +10,21 @@ export default function Hero({ projects }) {
 	const [isLoading, setIsLoading] = useState(true);
 	const [slideToShow, setSlideToShow] = useState(0);
 
-	const handleSlideMove = () => {
-		if (slideToShow === projects.length - 1) {
-			setSlideToShow(0);
-		} else {
-			setSlideToShow(slideToShow + 1);
+	function handleSlideSwitchClick(direction) {
+		console.log(slideToShow, direction);
+		if (direction === "right") {
+			if (slideToShow === projects.length - 1) setSlideToShow(0);
+			else setSlideToShow(slideToShow + 1);
+		} else if (direction === "left") {
+			if (slideToShow === 0) setSlideToShow(projects.length - 1);
+			else setSlideToShow(slideToShow - 1);
 		}
-	};
+	}
 
 	useEffect(() => {
-		let interval = setInterval(handleSlideMove, 10000);
-
 		addScrollEvent(slider.current);
 		addScrollEvent(section.current, 500);
-
-		return () => clearInterval(interval);
-	}, [handleSlideMove]);
+	}, []);
 
 	return (
 		<section className={`${styles.hero} section`}>
@@ -45,10 +44,14 @@ export default function Hero({ projects }) {
 				))}
 				<div className={styles.slider_info}>
 					<div className={styles.slider_controls}>
-						<div className={`${styles.arrow_previous} ${styles.slider_arrow}`}>
+						<div
+							className={`${styles.arrow_previous} ${styles.slider_arrow}`}
+							onClick={handleSlideSwitchClick.bind(null, "left")}>
 							<img src="/icons/arrow-2-right-long.svg" alt="previous slide" />
 						</div>
-						<div className={`${styles.arrow_next} ${styles.slider_arrow}`}>
+						<div
+							className={`${styles.arrow_next} ${styles.slider_arrow}`}
+							onClick={handleSlideSwitchClick.bind(null, "right")}>
 							<img src="/icons/arrow-2-right-long.svg" alt="next slide" />
 						</div>
 					</div>
@@ -77,7 +80,9 @@ export default function Hero({ projects }) {
 							alt={`${name} - ${city}`}
 							layout="fill"
 							objectFit="cover"
-							priority="true"
+							objectPosition="center center"
+							quality={30}
+							priority={true}
 						/>
 						<GoTo text="voir" />
 					</div>
