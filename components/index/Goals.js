@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
-import styles from "../styles/Goals.module.css";
-import { addScrollEvent } from "../utils/addScrollEvent";
+import styles from "../../styles/Goals.module.css";
+import { addScrollEvent } from "../../utils/addScrollEvent";
 
 export default function Goals() {
 	const title = useRef();

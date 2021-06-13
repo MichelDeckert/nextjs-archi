@@ -1,50 +1,139 @@
 .hero {
-  height: calc(100vh - (var(--nav-height) * 3));
-  min-height: 550px;
-  margin-top: 0;
+	grid-template-rows: minmax(500px, calc(100vh - (var(--nav-height) * 3)));
+	margin-top: 0;
+	overflow: hidden;
 }
 
 .content {
-  display: grid;
-  grid-template-rows: 1fr auto 1fr;
-  grid-column: 1/5;
-  transform: translateX(-150px);
-  opacity: 0;
-  transition: all var(--animation-duration) ease-in-out;
+	position: relative;
+	display: grid;
+	grid-template-rows: 1fr auto 1fr;
+	grid-column: 1/5;
+	transform: translateX(-150px);
+	opacity: 0;
+	transition: all var(--animation-duration) ease-in-out;
 }
 
 .title {
-  grid-row: 2/3;
+	position: absolute;
+	top: 50%;
+	min-height: 140px;
+	transform: translate(0, -50%);
+	transition: all calc(var(--animation-duration) * 1.5)
+		calc(var(--animation-duration) / 2) ease-in-out;
+}
+
+.title.hide {
+	opacity: 0;
+	transform: translate(-25vw, -50%);
+	transition: all var(--animation-duration) ease-in-out;
 }
 
 .title h1 {
-  font-size: 64px;
-  line-height: 64px;
-  text-transform: uppercase;
+	font-size: clamp(52px, 6vh, 64px);
+	line-height: clamp(52px, 6vh, 64px);
+	text-transform: uppercase;
 }
 
-.title_project {
-  font-weight: 300;
-  color: var(--main-grey);
+.project_name {
+	font-weight: 300;
+	color: var(--main-grey);
 }
 
-.title_nurtown {
-  font-weight: 700;
-  color: var(--main-dark-grey);
+.project_city {
+	font-weight: 700;
+	color: var(--main-dark-grey);
+}
+
+.slider_info {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	grid-row: 3/4;
+}
+
+.slider_controls {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+	margin-bottom: 40px;
+}
+
+.slider_arrow {
+	display: flex;
+	align-items: center;
+	width: auto;
+	padding: 20px;
+	border: 1px solid var(--main-light-grey);
+	transition: all 0.15s ease-in-out;
+}
+
+.slider_arrow:hover {
+	cursor: pointer;
+	border-color: var(--main-dark-grey);
+	transition: all 0.3s ease-in-out;
+}
+
+.arrow_previous {
+	transform: rotate(-180deg);
+	margin-right: 23px;
+}
+
+.slider_arrow > img {
+	transition: transform 0.15s ease-out;
+}
+
+.slider_arrow:hover > img {
+	transform: translateX(6px);
+	transition: transform 0.25s ease-in;
+}
+
+.slider_counter {
+	display: flex;
+	align-items: center;
+}
+
+.slider_counter > h4 {
+	color: #bdbdbd;
+	font-size: 24px;
+	font-weight: 400;
+}
+
+.current_slide {
+	margin-right: 23px;
+}
+
+.total_slides {
+	margin-left: 23px;
 }
 
 .slider {
-  position: relative;
-  grid-column: 5/13;
-  transform: translateY(150px);
-  opacity: 0;
-  transition: all var(--animation-duration) ease-in-out;
+	position: relative;
+	grid-column: 5/13;
+	transform: translateY(150px);
+	opacity: 0;
+	transition: all var(--animation-duration) ease-in-out;
 }
 
 .image {
-  position: absolute;
-  height: 100%;
-  min-width: 100%;
-  object-fit: cover;
-  object-position: center;
+	position: absolute;
+	height: 100%;
+	min-width: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.slide {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	transition: all calc(var(--animation-duration) * 1.5)
+		calc(var(--animation-duration) / 2) ease-in-out;
+}
+
+.slide.hide {
+	transform: translateX(50vw);
+	opacity: 0;
+	transition: all var(--animation-duration) ease-in-out;
 }

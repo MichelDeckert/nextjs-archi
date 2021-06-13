@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
-import styles from "../styles/Projects.module.css";
-import GoTo from "../modules/GoTo";
-import { addScrollEvent } from "../utils/addScrollEvent";
+import styles from "../../styles/Projects.module.css";
+import GoTo from "../../modules/GoTo";
+import { addScrollEvent } from "../../utils/addScrollEvent";
 
 export default function Projects() {
 	const title = useRef();

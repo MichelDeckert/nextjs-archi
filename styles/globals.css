@@ -1,12 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
-* {
-	padding: 0;
-	margin: 0;
-	font-family: "Roboto", sans-serif;
-	box-sizing: border-box;
-}
-
 :root {
 	--main-dark-grey: #333333;
 	--main-grey: #bdbdbd;
@@ -17,6 +10,13 @@
 	--grid-gap: 30px;
 	--margin-section: 120px;
 	--animation-duration: 0.8s;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	box-sizing: border-box;
 }
 
 a {
