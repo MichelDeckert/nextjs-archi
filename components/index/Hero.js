@@ -43,8 +43,24 @@ export default function Hero({ projects }) {
 						</h1>
 					</div>
 				))}
-				<div className={styles.slider_controls}>
-					<button onClick={handleSlideMove}>+</button>
+				<div className={styles.slider_info}>
+					<div className={styles.slider_controls}>
+						<div className={`${styles.arrow_previous} ${styles.slider_arrow}`}>
+							<img src="/icons/arrow-2-right-long.svg" alt="previous slide" />
+						</div>
+						<div className={`${styles.arrow_next} ${styles.slider_arrow}`}>
+							<img src="/icons/arrow-2-right-long.svg" alt="next slide" />
+						</div>
+					</div>
+					<div className={styles.slider_counter}>
+						<h4 className={styles.current_slide}>
+							{slideToShow + 1 < 10 ? `0${slideToShow + 1}` : slideToShow + 1}
+						</h4>
+						<img src="./icons/slash.svg" alt="slash" />
+						<h4 className={styles.total_slides}>
+							{projects.length < 10 ? `0${projects.length}` : projects.length}
+						</h4>
+					</div>
 				</div>
 			</div>
 
