@@ -131,7 +131,7 @@
 					"height": 2400
 				}
 			]
-		},	
+		},
 		{
 			"id": 6,
 			"name": "Apartments",
@@ -151,6 +151,28 @@
 					"path": "/images/projects/apartments_madrid/03.jpg",
 					"width": 2400,
 					"height": 3600
+				}
+			]
+		},
+		{
+			"id": 7,
+			"name": "Oodi Central Library",
+			"city": "Helsinki",
+			"images": [
+				{
+					"path": "/images/projects/oodi_central_library_helsinki/01.jpg",
+					"width": 2400,
+					"height": 1600
+				},
+				{
+					"path": "/images/projects/oodi_central_library_helsinki/02.jpg",
+					"width": 2400,
+					"height": 3000
+				},
+				{
+					"path": "/images/projects/oodi_central_library_helsinki/03.jpg",
+					"width": 2400,
+					"height": 1628
 				}
 			]
 		}
