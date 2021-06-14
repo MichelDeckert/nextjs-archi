@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import styles from '../../styles/Projects.module.css';
 import GoTo from '../../modules/GoTo';
 import { addScrollEvent } from '../../utils/addScrollEvent';
@@ -23,11 +24,18 @@ export default function Projects({ projects }) {
         Nos projets
       </h2>
       <div ref={images} className={styles.images}>
-        {projectsToDisplay.map(({ images, name }) => {
-          console.log(images, name);
+        {projectsToDisplay.map(({ images, name }, id) => {
+          console.log(images[0].path);
           return (
-            <div className={styles.img}>
-              <img src={images[0].path} alt={name} />
+            <div className={styles.img} key={}>
+              <Image
+                src={images[0].path}
+                alt={name}
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center center"
+                quality={30}
+              />
               <div className={styles.overlay}>
                 <h3>{name}</h3>
                 <div className={styles.link}>
