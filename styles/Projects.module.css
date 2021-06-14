@@ -21,8 +21,8 @@
 .img {
 	position: relative;
 	box-sizing: border-box;
-	opacity: 0;
-	transform: translateY(150px);
+	/* opacity: 0;
+	transform: translateY(150px); */
 }
 
 .img:nth-child(1) {

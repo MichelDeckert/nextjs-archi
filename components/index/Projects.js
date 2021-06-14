@@ -20,7 +20,7 @@ export default function Projects({ projects }) {
       </h2>
       <div ref={images} className={styles.images}>
         {projects.map(({ images, name }, id) => (
-          <div  key={id}>
+          <div className={styles.img} key={id}>
             <Image
               src={images[0].path}
               alt={name}
