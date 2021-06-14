@@ -50,19 +50,41 @@
 			"city": "Stuttgart",
 			"images": [
 				{
-					"path": "/images/projects/stuttgart_john_cranko_schule/01.jpg",
+					"path": "/images/projects/john_cranko_schule_stuttgart/01.jpg",
 					"width": 1200,
 					"height": 788
 				},
 				{
-					"path": "/images/projects/stuttgart_john_cranko_schule/02.jpg",
+					"path": "/images/projects/john_cranko_schule_stuttgart/02.jpg",
 					"width": 2400,
 					"height": 3200
 				},
 				{
-					"path": "/images/projects/stuttgart_john_cranko_schule/03.jpg",
+					"path": "/images/projects/john_cranko_schule_stuttgart/03.jpg",
 					"width": 2400,
 					"height": 3200
+				}
+			]
+		},
+		{
+			"id": 3,
+			"name": "Vitra Design Museum",
+			"city": "Weil am Rhein",
+			"images": [
+				{
+					"path": "/images/projects/vitra_design_museum_weil_am_rhein/01.jpg",
+					"width": 2400,
+					"height": 3000
+				},
+				{
+					"path": "/images/projects/vitra_design_museum_weil_am_rhein/02.jpg",
+					"width": 2400,
+					"height": 1600
+				},
+				{
+					"path": "/images/projects/vitra_design_museum_weil_am_rhein/03.jpg",
+					"width": 2400,
+					"height": 3000
 				}
 			]
 		}
