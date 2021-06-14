@@ -27,7 +27,7 @@ export default function Projects({ projects }) {
           console.log(images, name);
           return (
             <div className={styles.img}>
-              <img src={images[0].} alt={name} />
+              <img src={images[0].path} alt={name} />
               <div className={styles.overlay}>
                 <h3>{name}</h3>
                 <div className={styles.link}>
