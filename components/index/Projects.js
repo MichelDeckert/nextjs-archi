@@ -24,10 +24,9 @@ export default function Projects({ projects }) {
         Nos projets
       </h2>
       <div ref={images} className={styles.images}>
-        {projectsToDisplay.map(({ images, name }, id) => {
-          console.log(images[0].path);
-          return (
-            <div className={styles.img} key={}>
+        {projectsToDisplay.map(({ images, name }, id) => 
+          (
+            <div className={styles.img} key={id}>
               <Image
                 src={images[0].path}
                 alt={name}
@@ -47,8 +46,8 @@ export default function Projects({ projects }) {
                 </div>
               </div>
             </div>
-          );
-        })}
+          )
+        )}
       </div>
       <GoTo
         theme="dark"
