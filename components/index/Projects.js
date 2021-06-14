@@ -7,11 +7,6 @@ import { addScrollEvent } from '../../utils/addScrollEvent';
 export default function Projects({ projects }) {
   const title = useRef();
   const images = useRef();
-  const [projectsToDisplay, setProjectsToDisplay] = useState([]);
-
-  useEffect(() => {
-    setProjectsToDisplay(projects.slice(0, 5));
-  }, [projects]);
 
   useEffect(() => {
     addScrollEvent(title.current);
@@ -24,30 +19,28 @@ export default function Projects({ projects }) {
         Nos projets
       </h2>
       <div ref={images} className={styles.images}>
-        {projectsToDisplay.map(({ images, name }, id) => 
-          (
-            <div className={styles.img} key={id}>
-              <Image
-                src={images[0].path}
-                alt={name}
-                layout="fill"
-                objectFit="cover"
-                objectPosition="center center"
-                quality={30}
-              />
-              <div className={styles.overlay}>
-                <h3>{name}</h3>
-                <div className={styles.link}>
-                  <span>LIRE</span>
-                  <img
-                    src="./icons/arrow-2-right-long-white.svg"
-                    alt="arrow left"
-                  />
-                </div>
+        {projects.map(({ images, name }, id) => (
+          <div  key={id}>
+            <Image
+              src={images[0].path}
+              alt={name}
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center center"
+              quality={30}
+            />
+            <div className={styles.overlay}>
+              <h3>{name}</h3>
+              <div className={styles.link}>
+                <span>LIRE</span>
+                <img
+                  src="./icons/arrow-2-right-long-white.svg"
+                  alt="arrow left"
+                />
               </div>
             </div>
-          )
-        )}
+          </div>
+        ))}
       </div>
       <GoTo
         theme="dark"

@@ -25,7 +25,7 @@ export default function Home({ projects }) {
       <Hero projects={heroProjects} />
       <About />
       <Goals />
-      <Projects projects={projectsProjects} />
+      <Projects projects={projectsProjects.slice(0, 5)} />
       <Form />
     </>
   );
