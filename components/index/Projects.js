@@ -23,7 +23,7 @@ export default function Projects({ projects }) {
         Nos projets
       </h2>
       <div ref={images} className={styles.images}>
-        {projectsToDisplay.map(({images, name} => (
+        {projectsToDisplay.map(({images, name}) => (
           <div className={styles.img}>
             <img src={images[0]} alt={name} />
             <div className={styles.overlay}>
