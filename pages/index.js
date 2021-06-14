@@ -7,12 +7,14 @@ import Projects from '../components/index/Projects';
 import Form from '../components/index/Form';
 
 export default function Home({ projects }) {
-  const [showcasedProjects, setShowcasedProjects] = useState([]);
-  const [otherProjects, setOtherProjects] = useState([]);
+  const [heroProjects, setHeroProjects] = useState([]);
+  const [projectsProjects, setProjectsProjects] = useState([]);
 
   useEffect(() => {
-    setShowcasedProjects(projects.filter(project => project.showcased));
-    setOtherProjects(projects.filter(project => !project.showcased));
+    setHeroProjects(projects.filter(project => project.showcased === 'HERO'));
+    setProjectsProjects(
+      projects.filter(project => project.showcased === 'PROJECTS')
+    );
   }, [projects]);
 
   return (
@@ -20,10 +22,10 @@ export default function Home({ projects }) {
       <Head>
         <title>Digital Project</title>
       </Head>
-      <Hero projects={showcasedProjects} />
+      <Hero projects={heroProjects} />
       <About />
       <Goals />
-      <Projects projects={otherProjects} />
+      <Projects projects={projectsProjects} />
       <Form />
     </>
   );

@@ -23,21 +23,24 @@ export default function Projects({ projects }) {
         Nos projets
       </h2>
       <div ref={images} className={styles.images}>
-        {projectsToDisplay.map(({images, name}) => (
-          <div className={styles.img}>
-            <img src={images[0]} alt={name} />
-            <div className={styles.overlay}>
-              <h3>{name}</h3>
-              <div className={styles.link}>
-                <span>LIRE</span>
-                <img
-                  src="./icons/arrow-2-right-long-white.svg"
-                  alt="arrow left"
-                />
+        {projectsToDisplay.map(({ images, name }) => {
+          console.log(images, name);
+          return (
+            <div className={styles.img}>
+              <img src={images[0].} alt={name} />
+              <div className={styles.overlay}>
+                <h3>{name}</h3>
+                <div className={styles.link}>
+                  <span>LIRE</span>
+                  <img
+                    src="./icons/arrow-2-right-long-white.svg"
+                    alt="arrow left"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
       <GoTo
         theme="dark"
