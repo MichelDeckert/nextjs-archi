@@ -4,6 +4,7 @@
 			"id": 0,
 			"name": "Le Louvre",
 			"city": "Abu Dhabi",
+			"showcased": true,
 			"images": [
 				{
 					"path": "/images/projects/louvre_abu_dhabi/01.jpg",
@@ -26,6 +27,7 @@
 			"id": 1,
 			"name": "Centro Botín",
 			"city": "Santander",
+			"showcased": false,
 			"images": [
 				{
 					"path": "/images/projects/centro_botin_santander/01.jpg",
@@ -48,6 +50,7 @@
 			"id": 2,
 			"name": "John Cranko Schule",
 			"city": "Stuttgart",
+			"showcased": false,
 			"images": [
 				{
 					"path": "/images/projects/john_cranko_schule_stuttgart/01.jpg",
@@ -70,6 +73,7 @@
 			"id": 3,
 			"name": "Vitra Design Museum",
 			"city": "Weil am Rhein",
+			"showcased": true,
 			"images": [
 				{
 					"path": "/images/projects/vitra_design_museum_weil_am_rhein/01.jpg",
@@ -92,6 +96,7 @@
 			"id": 4,
 			"name": "Isbjerg",
 			"city": "Aarhus",
+			"showcased": true,
 			"images": [
 				{
 					"path": "/images/projects/isbjerg_aarhus/01.jpg",
@@ -114,6 +119,7 @@
 			"id": 5,
 			"name": "Champalimaud Foundation",
 			"city": "Lisboa",
+			"showcased": false,
 			"images": [
 				{
 					"path": "/images/projects/champalimaud-foundation_lisboa/01.jpg",
@@ -136,6 +142,7 @@
 			"id": 6,
 			"name": "Apartments",
 			"city": "Madrid",
+			"showcased": false,
 			"images": [
 				{
 					"path": "/images/projects/apartments_madrid/01.jpg",
@@ -158,6 +165,7 @@
 			"id": 7,
 			"name": "Oodi Central Library",
 			"city": "Helsinki",
+			"showcased": true,
 			"images": [
 				{
 					"path": "/images/projects/oodi_central_library_helsinki/01.jpg",
