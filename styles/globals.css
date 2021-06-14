@@ -24,6 +24,59 @@ a {
 	text-decoration: none;
 }
 
+.loader-container {
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: rotate 8s linear infinite;
+}
+
+.loader {
+	position: relative;
+	width: 40px;
+	height: 40px;
+	margin: auto;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.loader::after {
+	content: "";
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	border: 30px solid transparent;
+	border-bottom: 30px solid steelblue;
+	animation: rotate 1.3s ease infinite;
+}
+
+.mask {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	z-index: 10;
+	background-color: white;
+}
+
+.back {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	z-index: -10;
+	background-color: var(--main-light-grey);
+}
+
+@keyframes rotate {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
 .section {
 	display: grid;
 	grid-template-columns: var(--grid-temp-col);

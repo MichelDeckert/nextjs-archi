@@ -5,6 +5,7 @@ import About from "../components/index/About";
 import Goals from "../components/index/Goals";
 import Projects from "../components/index/Projects";
 import Form from "../components/index/Form";
+import Loader from "../components/Loader";
 
 export default function Home({ projects }) {
 	const [isLoading, setIsLoading] = useState(true);
@@ -13,6 +14,7 @@ export default function Home({ projects }) {
 			<Head>
 				<title>Digital Project</title>
 			</Head>
+			{isLoading && <Loader />}
 			<Hero
 				isLoading={isLoading}
 				setIsLoading={setIsLoading}
