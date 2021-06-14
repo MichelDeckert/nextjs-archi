@@ -15,14 +15,14 @@
 .images {
 	display: grid;
 	grid-template-columns: var(--grid-temp-col);
+	grid-template-rows: repeat(2, 250px);
 	gap: var(--grid-gap);
 }
 
 .img {
 	position: relative;
 	box-sizing: border-box;
-	/* opacity: 0;
-	transform: translateY(150px); */
+	background-color: var(--main-light-grey);
 }
 
 .img:nth-child(1) {
@@ -50,13 +50,6 @@
 	transition: all var(--animation-duration) calc(0.15s * 5) ease-in-out;
 }
 
-.img > img {
-	height: 100%;
-	width: 100%;
-	object-fit: cover;
-	object-position: center;
-}
-
 .overlay {
 	display: flex;
 	flex-direction: column;
@@ -68,14 +61,19 @@
 	bottom: 0;
 	left: 0;
 	opacity: 0;
-	padding-left: 80px;
+	padding-left: 20px;
 	margin: auto;
 	background-color: var(--main-dark-grey);
-	color: #fff;
-	font-weight: bold;
-	font-size: 56px;
 	transition: all 0.25s ease-in-out;
 	user-select: none;
+}
+
+.overlay h3 {
+	max-width: 100%;
+	color: #fff;
+	font-weight: bold;
+	font-size: 54px;
+	overflow: hidden;
 }
 
 .img:hover .overlay {
