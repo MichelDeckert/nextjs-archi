@@ -1,13 +1,22 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, Fragment } from "react";
 import { addScrollEvent } from "../../utils/addScrollEvent";
 import Image from "next/image";
 import GoTo from "../../modules/GoTo";
 import styles from "../../styles/Hero.module.css";
 
-export default function Hero({ projects }) {
+export default function Hero({ projects, isLoading, setIsLoading }) {
 	const section = useRef();
 	const slider = useRef();
 	const [slideToShow, setSlideToShow] = useState(0);
+	const [imagesLoaded, setImagesLoaded] = useState(
+		new Array(projects.length).fill(false)
+	);
+
+	function handleImageLoad(e) {
+		const newImagesLoaded = [...imagesLoaded];
+		newImagesLoaded[e.target.id] = true;
+		setImagesLoaded(newImagesLoaded);
+	}
 
 	function handleSlideSwitchClick(direction) {
 		if (direction === "right") {
@@ -19,10 +28,34 @@ export default function Hero({ projects }) {
 		}
 	}
 
+	function checkComplete() {
+		return [...slider.current.children]
+			.filter(child => child.firstChild.className.includes("slide"))
+			.map(child => child.firstChild)
+			.every(img => img.complete === true);
+	}
+
 	useEffect(() => {
-		addScrollEvent(slider.current, 500);
-		addScrollEvent(section.current, 500);
+		if (
+			imagesLoaded.length === projects.length &&
+			imagesLoaded.every(loaded => loaded === true)
+		) {
+			setIsLoading(false);
+		}
+	}, [imagesLoaded]);
+
+	useEffect(() => {
+		if (checkComplete()) {
+			setIsLoading(false);
+		}
 	}, []);
+
+	useEffect(() => {
+		if (!isLoading) {
+			addScrollEvent(slider.current, 500);
+			addScrollEvent(section.current, 500);
+		}
+	}, [isLoading]);
 
 	return (
 		<section className={`${styles.hero} section`}>
@@ -64,16 +97,14 @@ export default function Hero({ projects }) {
 					</div>
 				</div>
 			</div>
-
 			<div className={styles.slider} ref={slider}>
 				{projects.map(({ id, name, images, city }, idx) => (
-					<div
-						key={id}
-						className={`${styles.slide} ${
-							idx === slideToShow ? "" : styles.hide
-						}`}>
+					<Fragment key={id}>
 						<Image
-							className={styles.image}
+							className={`${styles.slide} ${
+								idx === slideToShow ? "" : styles.hide
+							}`}
+							id={idx}
 							src={images[0].path}
 							alt={`${name} - ${city}`}
 							layout="fill"
@@ -81,9 +112,10 @@ export default function Hero({ projects }) {
 							objectPosition="center center"
 							quality={30}
 							priority={true}
+							onLoad={handleImageLoad}
 						/>
 						<GoTo text="voir" />
-					</div>
+					</Fragment>
 				))}
 			</div>
 		</section>

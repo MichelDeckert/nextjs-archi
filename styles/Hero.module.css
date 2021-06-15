@@ -25,7 +25,7 @@
 
 .title.hide {
 	opacity: 0;
-	transform: translate(-25vw, 0);
+	transform: translate(-25vw, -50%);
 	transition: all var(--animation-duration) ease-in-out;
 }
 
@@ -114,14 +114,6 @@
 	/* transform: translateX(150px); */
 	opacity: 0;
 	transition: all var(--animation-duration) ease-in-out;
-}
-
-.image {
-	position: absolute;
-	height: 100%;
-	min-width: 100%;
-	object-fit: cover;
-	object-position: center;
 }
 
 .slide {
