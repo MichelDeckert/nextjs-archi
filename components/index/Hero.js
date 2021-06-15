@@ -7,6 +7,7 @@ import styles from "../../styles/Hero.module.css";
 export default function Hero({ projects, isLoading, setIsLoading }) {
 	const section = useRef();
 	const slider = useRef();
+	const [areImagesInCache, setAreImagesInCache] = useState(false);
 	const [slideToShow, setSlideToShow] = useState(0);
 	const [imagesLoaded, setImagesLoaded] = useState(
 		new Array(projects.length).fill(false)
@@ -29,20 +30,25 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 	}
 
 	function checkComplete() {
-		return [...slider.current.children]
+		const completed = [...slider.current.children]
 			.filter(child => child.firstChild.className.includes("slide"))
 			.map(child => child.firstChild)
 			.every(img => img.complete === true);
+		console.log(completed);
+		setAreImagesInCache(completed);
+		return completed;
 	}
 
 	useEffect(() => {
 		if (
 			imagesLoaded.length === projects.length &&
-			imagesLoaded.every(loaded => loaded === true)
+			imagesLoaded.every(loaded => loaded === true) &&
+			!areImagesInCache
 		) {
+			console.log("wait loading");
 			setIsLoading(false);
 		}
-	}, [imagesLoaded]);
+	}, [imagesLoaded, areImagesInCache]);
 
 	useEffect(() => {
 		if (checkComplete()) {
