@@ -20,7 +20,7 @@ export default function Hero({ projects }) {
 	}
 
 	useEffect(() => {
-		addScrollEvent(slider.current);
+		addScrollEvent(slider.current, 500);
 		addScrollEvent(section.current, 500);
 	}, []);
 
