@@ -13,8 +13,8 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 
 	function handleImageLoad(e) {
 		console.log("loading", e.target.id);
-		const newImagesLoaded = [...imagesLoaded];
-		newImagesLoaded[e.target.id] = true;
+		let newImagesLoaded = [...imagesLoaded];
+		newImagesLoaded.push(e.target.id);
 		setImagesLoaded(newImagesLoaded);
 	}
 
@@ -40,11 +40,7 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 
 	useEffect(() => {
 		console.log(imagesLoaded);
-		if (
-			imagesLoaded.length === projects.length &&
-			imagesLoaded.every(loaded => loaded === true) &&
-			!areImagesInCache
-		) {
+		if (imagesLoaded.length === projects.length && !areImagesInCache) {
 			console.log("wait loading");
 			setIsLoading(false);
 		}
@@ -59,7 +55,6 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 	}, [isLoading]);
 
 	useEffect(() => {
-		setImagesLoaded(new Array(projects.length).fill(false));
 		if (checkComplete()) {
 			setIsLoading(false);
 		}
