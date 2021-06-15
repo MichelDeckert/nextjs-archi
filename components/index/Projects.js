@@ -19,8 +19,9 @@ export default function Projects({ projects }) {
 				Nos projets
 			</h2>
 			<div ref={images} className={styles.images}>
-				{projects.map(({ images, name }, id) => {
-					return (
+				{projects
+					.sort((a, b) => b.name.length - a.name.length)
+					.map(({ images, name, city }, id) => (
 						<div className={styles.img} key={id}>
 							<Image
 								className={styles.project_image}
@@ -29,9 +30,11 @@ export default function Projects({ projects }) {
 								layout="fill"
 								objectFit="cover"
 								objectPosition="center 35%"
-								quality={30}
+								quality={15}
+								priority={true}
 							/>
 							<div className={styles.overlay}>
+								<h4>{city}</h4>
 								<h3>{name}</h3>
 								<div className={styles.link}>
 									<span>LIRE</span>
@@ -42,8 +45,7 @@ export default function Projects({ projects }) {
 								</div>
 							</div>
 						</div>
-					);
-				})}
+					))}
 			</div>
 			<GoTo
 				theme="dark"
@@ -51,10 +53,6 @@ export default function Projects({ projects }) {
 				animate={true}
 				text="tous nos projets"
 			/>
-			{/* <div className="goto">
-				<span>TOUS LES PROJETS</span>
-				<img src="./icons/arrow-2-right-long-white.svg" alt="arrow left" />
-			</div> */}
 		</section>
 	);
 }
