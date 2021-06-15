@@ -129,3 +129,14 @@
 	opacity: 0;
 	transition: all var(--animation-duration) ease-in-out;
 }
+
+.goto {
+	position: absolute;
+	transition: all calc(var(--animation-duration) * 1.5)
+		calc(var(--animation-duration) / 2) ease-in-out;
+}
+
+.goto.hide {
+	transform: translateX(50vw);
+	transition: all var(--animation-duration) ease-in-out;
+}

@@ -114,7 +114,12 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 							priority={true}
 							onLoad={handleImageLoad}
 						/>
-						<GoTo text="voir" />
+						<GoTo
+							text="voir"
+							subclass={`${styles.goto} ${
+								idx === slideToShow ? "" : styles.hide
+							}`}
+						/>
 					</Fragment>
 				))}
 			</div>
