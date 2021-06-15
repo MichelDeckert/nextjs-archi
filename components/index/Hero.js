@@ -39,6 +39,7 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 	}
 
 	useEffect(() => {
+		console.log(imagesLoaded);
 		if (
 			imagesLoaded.length === projects.length &&
 			imagesLoaded.every(loaded => loaded === true) &&
