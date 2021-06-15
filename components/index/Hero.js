@@ -7,16 +7,7 @@ import styles from "../../styles/Hero.module.css";
 export default function Hero({ projects, isLoading, setIsLoading }) {
 	const section = useRef();
 	const slider = useRef();
-	const [areImagesInCache, setAreImagesInCache] = useState(false);
 	const [slideToShow, setSlideToShow] = useState(0);
-	const [imagesLoaded, setImagesLoaded] = useState([]);
-
-	function handleImageLoad(e) {
-		console.log("loading", e.target.id);
-		let newImagesLoaded = [...imagesLoaded];
-		newImagesLoaded.push(e.target.id);
-		setImagesLoaded(newImagesLoaded);
-	}
 
 	function handleSlideSwitchClick(direction) {
 		if (direction === "right") {
@@ -34,17 +25,22 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 			.map(child => child.firstChild)
 			.every(img => img.complete === true);
 		console.log("checkCompleted", completed);
-		setAreImagesInCache(completed);
 		return completed;
 	}
 
-	useEffect(() => {
+	function handleImageLoad() {
+		if (checkComplete()) {
+			setIsLoading(false);
+		}
+	}
+
+	/* useEffect(() => {
 		console.log(imagesLoaded);
 		if (imagesLoaded.length === projects.length && !areImagesInCache) {
 			console.log("wait loading");
 			setIsLoading(false);
 		}
-	}, [imagesLoaded, areImagesInCache]);
+	}, [imagesLoaded, areImagesInCache]); */
 
 	useEffect(() => {
 		console.log("isLoading", isLoading);
