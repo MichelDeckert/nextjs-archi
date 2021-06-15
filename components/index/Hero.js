@@ -20,30 +20,19 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 	}
 
 	function checkComplete() {
-		const completed = [...slider.current.children]
+		return [...slider.current.children]
 			.filter(child => child.firstChild.className.includes("slide"))
 			.map(child => child.firstChild)
 			.every(img => img.complete === true);
-		console.log("checkCompleted", completed);
-		return completed;
 	}
 
 	function handleImageLoad() {
-		if (checkComplete()) {
+		if (checkComplete() && isLoading) {
 			setIsLoading(false);
 		}
 	}
 
-	/* useEffect(() => {
-		console.log(imagesLoaded);
-		if (imagesLoaded.length === projects.length && !areImagesInCache) {
-			console.log("wait loading");
-			setIsLoading(false);
-		}
-	}, [imagesLoaded, areImagesInCache]); */
-
 	useEffect(() => {
-		console.log("isLoading", isLoading);
 		if (!isLoading) {
 			addScrollEvent(slider.current, 500);
 			addScrollEvent(section.current, 500);
