@@ -4,21 +4,10 @@ import Image from "next/image";
 import GoTo from "../../modules/GoTo";
 import styles from "../../styles/Hero.module.css";
 
-export default function Hero({ projects, isLoading, setIsLoading }) {
+export default function Hero({ projects }) {
 	const section = useRef();
 	const slider = useRef();
-	const [imagesLoaded, setImagesLoaded] = useState([
-		new Array(projects.length).fill(false),
-	]);
 	const [slideToShow, setSlideToShow] = useState(0);
-
-	function handleImagesLoaded(id) {
-		if (imagesLoaded.length) {
-			let newImagesLoaded = [...imagesLoaded];
-			newImagesLoaded[id] = true;
-			setImagesLoaded(newImagesLoaded);
-		}
-	}
 
 	function handleSlideSwitchClick(direction) {
 		if (direction === "right") {
@@ -31,14 +20,9 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 	}
 
 	useEffect(() => {
-		if (imagesLoaded.length && imagesLoaded.every(loaded => loaded === true)) {
-			setIsLoading(false);
-		}
-		if (!isLoading) {
-			addScrollEvent(slider.current);
-			addScrollEvent(section.current, 500);
-		}
-	}, [isLoading, imagesLoaded]);
+		addScrollEvent(slider.current);
+		addScrollEvent(section.current, 500);
+	}, []);
 
 	return (
 		<section className={`${styles.hero} section`}>
@@ -97,7 +81,6 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 							objectPosition="center center"
 							quality={30}
 							priority={true}
-							onLoad={handleImagesLoaded.bind(null, idx)}
 						/>
 						<GoTo text="voir" />
 					</div>
