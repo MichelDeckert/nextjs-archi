@@ -12,6 +12,7 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 	const [imagesLoaded, setImagesLoaded] = useState([]);
 
 	function handleImageLoad(e) {
+		console.log("loading", e.target.id);
 		const newImagesLoaded = [...imagesLoaded];
 		newImagesLoaded[e.target.id] = true;
 		setImagesLoaded(newImagesLoaded);
