@@ -9,9 +9,7 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 	const slider = useRef();
 	const [areImagesInCache, setAreImagesInCache] = useState(false);
 	const [slideToShow, setSlideToShow] = useState(0);
-	const [imagesLoaded, setImagesLoaded] = useState(
-		new Array(projects.length).fill(false)
-	);
+	const [imagesLoaded, setImagesLoaded] = useState([]);
 
 	function handleImageLoad(e) {
 		const newImagesLoaded = [...imagesLoaded];
@@ -34,7 +32,7 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 			.filter(child => child.firstChild.className.includes("slide"))
 			.map(child => child.firstChild)
 			.every(img => img.complete === true);
-		console.log(completed);
+		console.log("checkCompleted", completed);
 		setAreImagesInCache(completed);
 		return completed;
 	}
@@ -51,18 +49,19 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 	}, [imagesLoaded, areImagesInCache]);
 
 	useEffect(() => {
-		if (checkComplete()) {
-			setIsLoading(false);
-		}
-	}, []);
-
-	useEffect(() => {
-		console.log(isLoading);
+		console.log("isLoading", isLoading);
 		if (!isLoading) {
 			addScrollEvent(slider.current, 500);
 			addScrollEvent(section.current, 500);
 		}
 	}, [isLoading]);
+
+	useEffect(() => {
+		setImagesLoaded(new Array(projects.length).fill(false));
+		if (checkComplete()) {
+			setIsLoading(false);
+		}
+	}, []);
 
 	return (
 		<section className={`${styles.hero} section`}>
