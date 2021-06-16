@@ -17,21 +17,42 @@
 .title {
   position: absolute;
   top: 50%;
+
+  transform: translateY(-50%);
   min-height: 140px;
   opacity: 0;
 }
 
 .title.hidden {
-  opacity: 0;
-  transform: translate(-25vw, -50%);
-  transition: all var(--animation-duration) ease-in-out;
+  animation: titleFadeOut calc(var(--animation-duration) * 1.5) ease-in-out
+    forwards;
 }
 
 .title.shown {
-  opacity: 1;
-  transform: translate(0, -50%);
-  transition: all calc(var(--animation-duration) * 1.5)
-    calc(var(--animation-duration) / 2) ease-in-out;
+  animation: titleFadeIn calc(var(--animation-duration) * 1.5) ease-in-out
+    calc(var(--animation-duration) / 2) forwards;
+}
+
+@keyframes titleFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-25vw, -50%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+}
+
+@keyframes titleFadeOut {
+  from {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-25vw, -50%);
+  }
 }
 
 .title h1 {

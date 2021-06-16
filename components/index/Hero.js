@@ -33,7 +33,7 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 
   useEffect(() => {
     if (!isLoading) {
-      addScrollEvent(slider.current, 1500);
+      addScrollEvent(slider.current, 500);
       addScrollEvent(section.current, 500);
       handleSlideSwitchClick('init');
     }
