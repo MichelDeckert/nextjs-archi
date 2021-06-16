@@ -31,18 +31,11 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
     if (completed) setIsLoading(false);
   }
 
-  function removePreload() {
-    [...document.getElementsByClassName('preload')].forEach(el =>
-      el.classList.remove('preload')
-    );
-  }
-
   useEffect(() => {
     if (!isLoading) {
       addScrollEvent(slider.current, 500);
       addScrollEvent(section.current, 500);
       handleSlideSwitchClick('init');
-      removePreload();
     }
   }, [isLoading]);
 
@@ -58,7 +51,7 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
             key={id}
             className={`${styles.title} ${
               idx === slideToShow ? styles.shown : styles.hidden
-            } preload`}
+            } ${isLoading ? 'preload' : ''}`}
           >
             <span className={styles.project_name}>{name}</span>
             <br />
@@ -93,11 +86,14 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
       </div>
       <div className={styles.slider} ref={slider}>
         {projects.map(({ id, name, images, city }, idx) => (
-          <Fragment key={id}>
+          <div
+            key={id}
+            className={`${styles.slide} ${
+              idx === slideToShow ? styles.shown : styles.hidden
+            }  ${isLoading ? 'preload' : ''}`}
+          >
             <Image
-              className={`${styles.slide} ${
-                idx === slideToShow ? styles.shown : styles.hidden
-              } preload`}
+              className={styles.slide_image}
               id={idx}
               src={images[0].path}
               alt={`${name} - ${city}`}
@@ -108,13 +104,8 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
               priority={true}
               onLoad={checkComplete}
             />
-            <GoTo
-              text="voir"
-              subclass={`${styles.goto} ${
-                idx === slideToShow ? styles.shown : styles.hidden
-              }`}
-            />
-          </Fragment>
+            <GoTo text="voir" subclass={styles.goto} />
+          </div>
         ))}
       </div>
     </section>
