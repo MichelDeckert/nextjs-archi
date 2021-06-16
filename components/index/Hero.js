@@ -27,7 +27,7 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 
   useEffect(() => {
     if (!isLoading) {
-      setTimout(() => setSlideToShow(0), 2000);
+      setTimeout(() => setSlideToShow(0), 2000);
     }
   }, [isLoading]);
 
