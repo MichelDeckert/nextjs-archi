@@ -15,7 +15,7 @@ export default function Home({ projects }) {
       <Head>
         <title>Digital Project</title>
       </Head>
-      {isLoading && <Loader />}
+      <Loader />
       <Hero
         projects={projects.filter(project => project.showcased === 'HERO')}
         isLoading={isLoading}
