@@ -44,7 +44,10 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
   }, []);
 
   return (
-    <section className={`${styles.hero} ${isLoading ? ""} section`} ref={section}>
+    <section
+      className={`${styles.hero} ${isLoading ? 'preload' : ''} section`}
+      ref={section}
+    >
       <div className={styles.content}>
         {projects.map(({ id, name, city }, idx) => (
           <h1
