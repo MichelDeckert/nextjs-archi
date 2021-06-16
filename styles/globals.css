@@ -1,132 +1,132 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 :root {
-  --main-dark-grey: #333333;
-  --main-grey: #bdbdbd;
-  --main-light-grey: #f2f2f2;
-  --nav-height: 102px;
-  --max-width: 1170px;
-  --grid-temp-col: repeat(12, 70px);
-  --grid-gap: 30px;
-  --margin-section: 120px;
-  --animation-duration: 0.8s;
+	--main-dark-grey: #333333;
+	--main-grey: #bdbdbd;
+	--main-light-grey: #f2f2f2;
+	--nav-height: 102px;
+	--max-width: 1170px;
+	--grid-temp-col: repeat(12, 70px);
+	--grid-gap: 30px;
+	--margin-section: 120px;
+	--animation-duration: 0.8s;
 }
 
 * {
-  padding: 0;
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: "Roboto", sans-serif;
+	box-sizing: border-box;
 }
 
 a {
-  color: var(--main-dark-grey);
-  text-decoration: none;
+	color: var(--main-dark-grey);
+	text-decoration: none;
 }
 
 .app {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  min-height: 100vh;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	min-height: 100vh;
 }
 
 .content {
-  position: relative;
-  padding-bottom: 120px;
+	position: relative;
+	padding-bottom: 120px;
 }
 
 .loader-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #;
-  z-index: 999;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: red;
+	z-index: 999;
 }
 
 .loader-container {
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  animation: rotate 8s linear infinite;
+	position: absolute;
+	top: 25%;
+	left: 50%;
+	animation: rotate 8s linear infinite;
 }
 
 .loader {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 6px solid var(--main-light-grey);
-  border-top-color: steelblue;
-  animation: rotate 1.3s ease-in-out infinite;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 6px solid var(--main-light-grey);
+	border-top-color: steelblue;
+	animation: rotate 1.3s ease-in-out infinite;
 }
 
 @keyframes rotate {
-  to {
-    transform: rotate(360deg);
-  }
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 .section {
-  display: grid;
-  grid-template-columns: var(--grid-temp-col);
-  gap: var(--grid-gap);
-  max-width: var(--max-width);
-  margin: auto;
-  margin-top: var(--margin-section);
+	display: grid;
+	grid-template-columns: var(--grid-temp-col);
+	gap: var(--grid-gap);
+	max-width: var(--max-width);
+	margin: auto;
+	margin-top: var(--margin-section);
 }
 
 .goto {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  margin: auto;
-  align-items: center;
-  justify-content: center;
-  height: 70px;
-  padding: 0 40px;
-  transition: background-color 0.15s ease-out;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	margin: auto;
+	align-items: center;
+	justify-content: center;
+	height: 70px;
+	padding: 0 40px;
+	transition: background-color 0.15s ease-out;
 }
 
 .goto.dark {
-  background-color: var(--main-dark-grey);
-  color: #fff;
+	background-color: var(--main-dark-grey);
+	color: #fff;
 }
 
 .goto.light {
-  background-color: white;
-  color: var(--main-dark-grey);
+	background-color: white;
+	color: var(--main-dark-grey);
 }
 
 .goto:hover {
-  cursor: pointer;
-  transition: background-color 0.25s ease-in;
+	cursor: pointer;
+	transition: background-color 0.25s ease-in;
 }
 
 .goto.light:hover {
-  background-color: var(--main-light-grey);
+	background-color: var(--main-light-grey);
 }
 
 .goto img {
-  margin-left: 5px;
-  transition: transform 0.15s ease-out;
+	margin-left: 5px;
+	transition: transform 0.15s ease-out;
 }
 
 .goto:hover img {
-  transform: translateX(6px);
-  transition: transform 0.25s ease-in;
+	transform: translateX(6px);
+	transition: transform 0.25s ease-in;
 }
 
 .goto span {
-  font-size: 12px;
-  font-weight: 400;
-  text-transform: uppercase;
+	font-size: 12px;
+	font-weight: 400;
+	text-transform: uppercase;
 }
 
 .secondary-title {
-  color: var(--main-grey);
-  font-size: 64px;
-  font-weight: 300;
+	color: var(--main-grey);
+	font-size: 64px;
+	font-weight: 300;
 }
