@@ -30,8 +30,7 @@ export default function Hero({ projects, setIsLoading }) {
     if (areImagesLoaded) {
       setIsLoading(false);
       setTimeout(() => {
-        setSlideToShow(0);
-      }, 8000);
+      }, 800);
     }
   }, [areImagesLoaded]);
 
