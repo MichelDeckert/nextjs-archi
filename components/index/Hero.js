@@ -44,14 +44,14 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
   }, []);
 
   return (
-    <section className={`${styles.hero} section`} ref={section}>
+    <section className={`${styles.hero} ${isLoading ? ""} section`} ref={section}>
       <div className={styles.content}>
         {projects.map(({ id, name, city }, idx) => (
           <h1
             key={id}
             className={`${styles.title} ${
               idx === slideToShow ? styles.shown : styles.hidden
-            } ${isLoading ? 'preload' : ''}`}
+            }`}
           >
             <span className={styles.project_name}>{name}</span>
             <br />
@@ -90,7 +90,7 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
             key={id}
             className={`${styles.slide} ${
               idx === slideToShow ? styles.shown : styles.hidden
-            }  ${isLoading ? 'preload' : ''}`}
+            }`}
           >
             <Image
               className={styles.slide_image}
