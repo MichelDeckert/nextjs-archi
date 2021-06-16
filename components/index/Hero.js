@@ -1,11 +1,12 @@
-import { useEffect, useRef, useState, Fragment } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import GoTo from '../../modules/GoTo';
 import styles from '../../styles/Hero.module.css';
 
-export default function Hero({ projects, isLoading, setIsLoading }) {
+export default function Hero({ projects, setIsLoading }) {
   const slider = useRef();
   const [slideToShow, setSlideToShow] = useState(null);
+  const [areImagesLoaded, setAreImagesLoaded] = useState(false);
 
   function handleSlideSwitchClick(direction) {
     if (direction === 'right') {
@@ -22,14 +23,17 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
       .filter(child => child.firstChild.className.includes('slide'))
       .map(child => child.firstChild)
       .every(img => img.complete === true);
-    if (completed) setIsLoading(false);
+    if (completed) setAreImagesLoaded(true);
   }
 
   useEffect(() => {
-    if (!isLoading) {
-      setTimeout(() => setSlideToShow(0), 2000);
+    if (areImagesLoaded) {
+      setIsLoading(false);
+      setTimeout(() => {
+        setSlideToShow(0);
+      }, 8000);
     }
-  }, [isLoading]);
+  }, [areImagesLoaded]);
 
   useEffect(() => {
     checkComplete();
