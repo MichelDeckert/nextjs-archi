@@ -48,7 +48,6 @@ a {
 .loader {
   width: 40px;
   height: 40px;
-  margin: auto;
   border-radius: 50%;
   overflow: hidden;
   border: 6px solid var(--main-light-grey);
