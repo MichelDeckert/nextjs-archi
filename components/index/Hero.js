@@ -27,6 +27,7 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
   }
 
   useEffect(() => {
+    console.log(areImagesLoaded);
     if (areImagesLoaded) {
       setTimeout(() => {
         setSlideToShow(0);
