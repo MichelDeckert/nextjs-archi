@@ -11,11 +11,15 @@
   grid-column: 1/5;
 }
 
-.title {
+.title_container {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  min-height: 140px;
+  width: 100%;
+}
+
+.title {
+  position: absolute;
   font-size: clamp(52px, 6vh, 64px);
   line-height: clamp(52px, 6vh, 64px);
   text-transform: uppercase;
@@ -118,6 +122,7 @@
   height: 100%;
   width: 100%;
   opacity: 0;
+  background-color: var(--main-light-grey);
 }
 
 .slide.hidden {
