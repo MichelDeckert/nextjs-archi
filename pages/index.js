@@ -29,7 +29,6 @@ export default function Home({ projects }) {
 			/>
 			<Form /></>}
 		</>
-			)
 		/*<>
 			<Head>
 				<title>Digital Project</title>
