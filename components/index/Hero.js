@@ -3,7 +3,7 @@ import Image from 'next/image';
 import GoTo from '../../modules/GoTo';
 import styles from '../../styles/Hero.module.css';
 
-export default function Hero({ projects, setIsLoading }) {
+export default function Hero({ projects, isLoading, setIsLoading }) {
   const slider = useRef();
   const [slideToShow, setSlideToShow] = useState(null);
   const [areImagesLoaded, setAreImagesLoaded] = useState(false);
@@ -28,9 +28,10 @@ export default function Hero({ projects, setIsLoading }) {
 
   useEffect(() => {
     if (areImagesLoaded) {
-      setIsLoading(false);
+      setSlideToShow(0);
       setTimeout(() => {
-      }, 800);
+        setIsLoading(false);
+      }, 00);
     }
   }, [areImagesLoaded]);
 
@@ -39,7 +40,10 @@ export default function Hero({ projects, setIsLoading }) {
   }, []);
 
   return (
-    <section className={`${styles.hero} section`}>
+    <section
+      className={`${styles.hero} section`}
+      style={{ visibility: `${!isLoading ? 'visible' : 'hidden'}` }}
+    >
       <div className={styles.content}>
         {projects.map(({ id, name, city }, idx) => (
           <h2
