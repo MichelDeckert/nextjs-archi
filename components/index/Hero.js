@@ -28,10 +28,10 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 
   useEffect(() => {
     if (areImagesLoaded) {
-      setSlideToShow(0);
-      setIsLoading(false);
-      // setTimeout(() => {
-      // }, 1000);
+      setTimeout(() => {
+        setSlideToShow(0);
+        setIsLoading(false);
+      }, 1000);
     }
   }, [areImagesLoaded]);
 
@@ -40,12 +40,12 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
   }, []);
 
   return (
-    <section
-      className={`${styles.hero} section`}
-      style={{ visibility: `${!isLoading ? 'visible' : 'hidden'}` }}
-    >
+    <section className={`${styles.hero} section`}>
       <div className={styles.content}>
-        <div className={styles.title_container}>
+        <div
+          className={styles.title_container}
+          style={{ visibility: `${areImagesLoaded ? 'visible' : 'hidden'}` }}
+        >
           {projects.map(({ id, name, city }, idx) => (
             <h2
               key={id}
