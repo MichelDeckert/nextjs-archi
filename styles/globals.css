@@ -50,7 +50,7 @@ a {
 }
 
 .preload {
-  transition: none ;
+  transition: none !important;
 }
 
 .section {

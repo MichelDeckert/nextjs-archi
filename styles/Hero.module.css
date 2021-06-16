@@ -24,12 +24,14 @@
 
 .title.hidden {
   opacity: 0;
+	visibility: 0;
   transform: translate(-25vw, -50%);
   transition: calc(var(--animation-duration) * 1.5) ease-in-out;
 }
 
 .title.shown {
   opacity: 1;
+	visibility: 1;
   transform: translate(0, -50%);
   transition: calc(var(--animation-duration) * 1.5)
     calc(var(--animation-duration) / 2) ease-in-out;
