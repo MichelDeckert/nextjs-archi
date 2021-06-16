@@ -97,7 +97,7 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
             <Image
               className={`${styles.slide} ${
                 idx === slideToShow ? styles.shown : styles.hidden
-              } `}
+              } preload`}
               id={idx}
               src={images[0].path}
               alt={`${name} - ${city}`}
