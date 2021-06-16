@@ -9,15 +9,15 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 	const [areImagesLoaded, setAreImagesLoaded] = useState(false);
 	const imagesElRef = useRef([]);
 
-	function handleSlideSwitchClick(direction) {
-		if (direction === "right") {
-			if (slideToShow === projects.length - 1) setSlideToShow(0);
-			else setSlideToShow(slideToShow + 1);
-		} else if (direction === "left") {
-			if (slideToShow === 0) setSlideToShow(projects.length - 1);
-			else setSlideToShow(slideToShow - 1);
-		}
-	}
+  function handleSlideSwitchClick(direction) {
+    if (direction === 'right') {
+      if (slideToShow === projects.length - 1) setSlideToShow(0);
+      else setSlideToShow(slideToShow + 1);
+    } else if (direction === 'left') {
+      if (slideToShow === 0) setSlideToShow(projects.length - 1);
+      else setSlideToShow(slideToShow - 1);
+    }
+  }
 
 	function checkComplete() {
 		const completed = [...slider.current.children]
