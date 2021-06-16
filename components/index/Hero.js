@@ -45,10 +45,10 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
       className={`${styles.hero} section`}
       style={{ visibility: `${!isLoading ? 'visible' : 'hidden'}` }}
     >
-      <div className={styles.content}>
+      <div className={styles.content} 
+          style={{ visibility: `${areImagesLoaded ? 'visible' : 'hidden'}` }}>
         <div
           className={styles.title_container}
-          style={{ visibility: `${areImagesLoaded ? 'visible' : 'hidden'}` }}
         >
           {projects.map(({ id, name, city }, idx) => (
             <h2
