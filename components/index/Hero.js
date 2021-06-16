@@ -31,11 +31,18 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
     if (completed) setIsLoading(false);
   }
 
+  function removePreload() {
+    [...document.getElementsByClassName('preload')].forEach(el =>
+      el.classList.remove('preload')
+    );
+  }
+
   useEffect(() => {
     if (!isLoading) {
       addScrollEvent(slider.current, 500);
       addScrollEvent(section.current, 500);
       handleSlideSwitchClick('init');
+      removePreload();
     }
   }, [isLoading]);
 
@@ -44,21 +51,19 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
   }, []);
 
   return (
-    <section className={`${styles.hero} section`}>
-      <div className={styles.content} ref={section}>
+    <section className={`${styles.hero} section`} ref={section}>
+      <div className={styles.content}>
         {projects.map(({ id, name, city }, idx) => (
-          <div
+          <h1
             key={id}
             className={`${styles.title} ${
               idx === slideToShow ? styles.shown : styles.hidden
-            }`}
+            } preload`}
           >
-            <h1>
-              <span className={styles.project_name}>{name}</span>
-              <br />
-              <span className={styles.project_city}>{city}</span>
-            </h1>
-          </div>
+            <span className={styles.project_name}>{name}</span>
+            <br />
+            <span className={styles.project_city}>{city}</span>
+          </h1>
         ))}
         <div className={styles.slider_info}>
           <div className={styles.slider_controls}>
@@ -92,7 +97,7 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
             <Image
               className={`${styles.slide} ${
                 idx === slideToShow ? styles.shown : styles.hidden
-              }`}
+              } `}
               id={idx}
               src={images[0].path}
               alt={`${name} - ${city}`}
