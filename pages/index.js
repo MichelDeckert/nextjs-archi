@@ -10,8 +10,27 @@ import Loader from "../components/Loader";
 export default function Home({ projects }) {
 	const [isLoading, setIsLoading] = useState(true);
 
-	return (
-		<>
+	return (<>
+			<Head>
+				<title>Digital Project</title>
+			</Head>
+			{isLoading ? <Loader /> :
+			<Hero
+				projects={projects.filter(project => project.showcased === "HERO")}
+				isLoading={isLoading}
+				setIsLoading={setIsLoading}
+			/>
+			<About />
+			<Goals />
+			<Projects
+				projects={projects
+					.filter(project => project.showcased === "PROJECTS")
+					.slice(0, 5)}
+			/>
+			<Form />
+			)}
+		</>
+		/*<>
 			<Head>
 				<title>Digital Project</title>
 			</Head>
@@ -33,7 +52,7 @@ export default function Home({ projects }) {
 					<Form />
 				</>
 			)}
-		</>
+		</>*/
 	);
 }
 
