@@ -18,15 +18,16 @@
 	position: absolute;
 	top: 50%;
 	min-height: 140px;
-	transform: translate(0, -50%);
-	transition: all calc(var(--animation-duration) * 1.5)
-		calc(var(--animation-duration) / 2) ease-in-out;
-}
-
-.title.hide {
 	opacity: 0;
 	transform: translate(-25vw, -50%);
 	transition: all var(--animation-duration) ease-in-out;
+	transform: translate(0, -50%);
+}
+
+.title.shown {
+	opacity: 1;
+	transition: all calc(var(--animation-duration) * 1.5)
+		calc(var(--animation-duration) / 2) ease-in-out;
 }
 
 .title h1 {
@@ -120,24 +121,27 @@
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	transition: all calc(var(--animation-duration) * 1.5)
-		calc(var(--animation-duration) / 2) ease-in-out;
-}
-
-.slide.hide {
 	transform: translateX(50vw);
 	opacity: 0;
 	transition: all var(--animation-duration) ease-in-out;
+}
+
+.slide.shown {
+	opacity: 1;
+	transform: translateX(0);
+	transition: all calc(var(--animation-duration) * 1.5)
+		calc(var(--animation-duration) / 2) ease-in-out;
 }
 
 .goto {
 	position: absolute;
-	transition: all calc(var(--animation-duration) * 1.5)
-		calc(var(--animation-duration) / 2) ease-in-out;
-}
-
-.goto.hide {
 	transform: translateX(50vw);
 	opacity: 0;
 	transition: all var(--animation-duration) ease-in-out;
+}
+
+.goto.shown {
+	opacity: 1;
+	transition: all calc(var(--animation-duration) * 1.5)
+		calc(var(--animation-duration) / 2) ease-in-out;
 }

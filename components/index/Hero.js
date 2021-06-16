@@ -52,7 +52,7 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 					<div
 						key={id}
 						className={`${styles.title} ${
-							idx === slideToShow ? "" : styles.hide
+							idx === slideToShow ? styles.shown : ""
 						}`}>
 						<h1>
 							<span className={styles.project_name}>{name}</span>
@@ -90,7 +90,7 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 					<Fragment key={id}>
 						<Image
 							className={`${styles.slide} ${
-								idx === slideToShow ? "" : styles.hide
+								idx === slideToShow ? styles.shown : ""
 							}`}
 							id={idx}
 							src={images[0].path}
@@ -105,7 +105,7 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 						<GoTo
 							text="voir"
 							subclass={`${styles.goto} ${
-								idx === slideToShow ? "" : styles.hide
+								idx === slideToShow ? styles.shown : ""
 							}`}
 						/>
 					</Fragment>
