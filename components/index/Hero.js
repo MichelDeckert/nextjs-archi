@@ -1,12 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-import GoTo from '../../modules/GoTo';
-import styles from '../../styles/Hero.module.css';
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import GoTo from "../../modules/GoTo";
+import styles from "../../styles/Hero.module.css";
 
 export default function Hero({ projects, isLoading, setIsLoading }) {
-  const slider = useRef();
-  const [slideToShow, setSlideToShow] = useState(null);
-  const [areImagesLoaded, setAreImagesLoaded] = useState(false);
+	const slider = useRef();
+	const [slideToShow, setSlideToShow] = useState(null);
+	const [areImagesLoaded, setAreImagesLoaded] = useState(false);
+	const imagesElRef = useRef([]);
 
   function handleSlideSwitchClick(direction) {
     if (direction === 'right') {
@@ -18,101 +19,106 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
     }
   }
 
-  function checkComplete() {
-    const completed = [...slider.current.children]
-      .filter(child => child.firstChild.className.includes('slide'))
-      .map(child => child.firstChild)
-      .every(img => img.complete === true);
-    if (completed) setAreImagesLoaded(true);
-  }
+	function checkComplete() {
+		const completed = [...slider.current.children]
+			.filter(el => el.children)
+			.map(el =>
+				[...el.children]
+					.filter(child => child.firstChild.className.includes("slide_image"))
+					.map(el => el.firstChild)
+			)
+			.every(el => el[0].complete === true);
 
-  useEffect(() => {
-    console.log(areImagesLoaded);
-    if (areImagesLoaded) {
-      setTimeout(() => {
-        setSlideToShow(0);
-        setIsLoading(false);
-      }, 1000);
-    }
-  }, [areImagesLoaded]);
+		if (completed) setAreImagesLoaded(true);
+	}
 
-  useEffect(() => {
-    checkComplete();
-  }, []);
+	useEffect(() => {
+		if (areImagesLoaded) {
+			console.log("image are loaded");
+			setTimeout(() => {
+				console.log("time out");
+				setSlideToShow(0);
+				setIsLoading(false);
+			}, 400);
+		}
+	}, [areImagesLoaded]);
 
-  return (
-    <section
-      className={`${styles.hero} section`}
-      style={{ visibility: `${!isLoading ? 'visible' : 'hidden'}` }}
-    >
-      <div className={styles.content} 
-          style={{ visibility: `${areImagesLoaded ? 'visible' : 'hidden'}` }}>
-        <div
-          className={styles.title_container}
-        >
-          {projects.map(({ id, name, city }, idx) => (
-            <h2
-              key={id}
-              className={`${styles.title} ${
-                idx === slideToShow ? styles.shown : styles.hidden
-              }`}
-            >
-              <span className={styles.project_name}>{name}</span>
-              <br />
-              <span className={styles.project_city}>{city}</span>
-            </h2>
-          ))}
-        </div>
-        <div className={styles.slider_info}>
-          <div className={styles.slider_controls}>
-            <div
-              className={`${styles.arrow_previous} ${styles.slider_arrow}`}
-              onClick={handleSlideSwitchClick.bind(null, 'left')}
-            >
-              <img src="/icons/arrow-2-right-long.svg" alt="previous slide" />
-            </div>
-            <div
-              className={`${styles.arrow_next} ${styles.slider_arrow}`}
-              onClick={handleSlideSwitchClick.bind(null, 'right')}
-            >
-              <img src="/icons/arrow-2-right-long.svg" alt="next slide" />
-            </div>
-          </div>
-          <div className={styles.slider_counter}>
-            <h4 className={styles.current_slide}>
-              {slideToShow + 1 < 10 ? `0${slideToShow + 1}` : slideToShow + 1}
-            </h4>
-            <img src="./icons/slash.svg" alt="slash" />
-            <h4 className={styles.total_slides}>
-              {projects.length < 10 ? `0${projects.length}` : projects.length}
-            </h4>
-          </div>
-        </div>
-      </div>
-      <div className={styles.slider} ref={slider}>
-        {projects.map(({ id, name, images, city }, idx) => (
-          <div
-            key={id}
-            className={`${styles.slide} ${
-              idx === slideToShow ? styles.shown : styles.hidden
-            }`}
-          >
-            <Image
-              className={styles.slide_image}
-              id={idx}
-              src={images[0].path}
-              alt={`${name} - ${city}`}
-              layout="fill"
-              objectFit="cover"
-              objectPosition="center center"
-              quality={30}
-              priority={true}
-              onLoad={checkComplete}
-            />
-            <GoTo text="voir" subclass={styles.goto} />
-          </div>
-        ))}
-      </div>
-    </section>
-  );
+	useEffect(() => {
+		if (imagesElRef.current.length !== projects.length) {
+			imagesElRef.current = new Array(projects.length);
+		}
+		console.log("first completed check");
+		checkComplete();
+	}, []);
+
+	return (
+		<section className={`${styles.hero} section`}>
+			<div
+				className={`${styles.content} ${
+					isLoading ? styles.hidden : styles.shown
+				}`}>
+				<div className={styles.title_container}>
+					{projects.map(({ id, name, city }, idx) => (
+						<h2
+							key={id}
+							className={`${styles.title} ${
+								idx === slideToShow ? styles.shown : styles.hidden
+							}`}>
+							<span className={styles.project_name}>{name}</span>
+							<br />
+							<span className={styles.project_city}>{city}</span>
+						</h2>
+					))}
+				</div>
+				<div className={styles.slider_info}>
+					<div className={styles.slider_controls}>
+						<div
+							className={`${styles.arrow_previous} ${styles.slider_arrow}`}
+							onClick={handleSlideSwitchClick.bind(null, "left")}>
+							<img src="/icons/arrow-2-right-long.svg" alt="previous slide" />
+						</div>
+						<div
+							className={`${styles.arrow_next} ${styles.slider_arrow}`}
+							onClick={handleSlideSwitchClick.bind(null, "right")}>
+							<img src="/icons/arrow-2-right-long.svg" alt="next slide" />
+						</div>
+					</div>
+					<div className={styles.slider_counter}>
+						<h4 className={styles.current_slide}>
+							{slideToShow + 1 < 10 ? `0${slideToShow + 1}` : slideToShow + 1}
+						</h4>
+						<img src="./icons/slash.svg" alt="slash" />
+						<h4 className={styles.total_slides}>
+							{projects.length < 10 ? `0${projects.length}` : projects.length}
+						</h4>
+					</div>
+				</div>
+			</div>
+			<div className={styles.slider} ref={slider}>
+				{projects.map(({ id, name, images, city }, idx) => (
+					<div
+						key={id}
+						className={`${styles.slide} ${
+							idx === slideToShow ? styles.shown : styles.hidden
+						}`}>
+						<Image
+							className="slide_image"
+							src={images[0].path}
+							alt={`${name} - ${city}`}
+							layout="fill"
+							objectFit="cover"
+							objectPosition="center center"
+							quality={30}
+							priority={true}
+							onLoad={() => {
+								console.log(idx, "loaded");
+								checkComplete();
+							}}
+						/>
+						<GoTo text="voir" subclass={styles.goto} />
+					</div>
+				))}
+			</div>
+		</section>
+	);
 }

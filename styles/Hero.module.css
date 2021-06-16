@@ -9,31 +9,43 @@
 	display: grid;
 	grid-template-rows: 1fr auto 1fr;
 	grid-column: 1/5;
-	transform: translateX(-150px);
-	opacity: 0;
-	transition: all var(--animation-duration) ease-in-out;
+}
+
+.content.hidden {
+	transform: translateX(-25vw);
+}
+
+.content.shown {
+	transform: translateX(0);
+	transition: calc(var(--animation-duration) * 1.5)
+		calc(var(--animation-duration) / 2) ease-in-out;
+}
+
+.title_container {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 100%;
 }
 
 .title {
 	position: absolute;
-	top: 50%;
-	min-height: 140px;
-	opacity: 0;
-	transform: translate(-25vw, -50%);
-	transition: all var(--animation-duration) ease-in-out;
-	transform: translate(0, -50%);
+	font-size: clamp(52px, 6vh, 64px);
+	line-height: clamp(52px, 6vh, 64px);
+	text-transform: uppercase;
 }
 
 .title.shown {
 	opacity: 1;
-	transition: all calc(var(--animation-duration) * 1.5)
-		calc(var(--animation-duration) / 2) ease-in-out;
+	transform: translate(0, -50%);
+	transition: calc(var(--animation-duration) * 1.2)
+		calc(var(--animation-duration) * 0.6) ease-in-out;
 }
 
-.title h1 {
-	font-size: clamp(52px, 6vh, 64px);
-	line-height: clamp(52px, 6vh, 64px);
-	text-transform: uppercase;
+.title.hidden {
+	opacity: 0;
+	transform: translate(-25vw, -50%);
+	transition: var(--animation-duration) ease-in-out;
 }
 
 .project_name {
@@ -112,29 +124,35 @@
 .slider {
 	position: relative;
 	grid-column: 5/13;
-	transform: translateX(150px);
-	opacity: 0;
-	transition: all var(--animation-duration) ease-in-out;
 }
 
 .slide {
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	transform: translateX(50vw);
 	opacity: 0;
-	transition: all var(--animation-duration) ease-in-out;
+	background-color: var(--main-light-grey);
 }
 
 .slide.shown {
 	opacity: 1;
 	transform: translateX(0);
-	transition: all calc(var(--animation-duration) * 1.5)
-		calc(var(--animation-duration) / 2) ease-in-out;
+	transition: calc(var(--animation-duration) * 1.2)
+		calc(var(--animation-duration) * 0.6) ease-in-out;
+}
+
+.slide.hidden {
+	transform: translateX(50vw);
+	opacity: 0;
+	transition: var(--animation-duration) ease-in-out;
 }
 
 .goto {
 	position: absolute;
+	opacity: 0;
+}
+
+.goto.hidden {
 	transform: translateX(50vw);
 	opacity: 0;
 	transition: all var(--animation-duration) ease-in-out;
