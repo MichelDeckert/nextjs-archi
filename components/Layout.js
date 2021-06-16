@@ -3,9 +3,9 @@ import Footer from './Footer';
 
 export default function Layout({ children }) {
   return (
-    <div className="content">
+    <div className="app">
       <Navbar />
-      {children}
+      <div className="content">{children}</div>
       <Footer />
     </div>
   );
