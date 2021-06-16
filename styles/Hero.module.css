@@ -11,6 +11,16 @@
 	grid-column: 1/5;
 }
 
+.content.hidden {
+	transform: translateX(-25vw);
+}
+
+.content.shown {
+	transform: translateX(0);
+	transition: calc(var(--animation-duration) * 1.5)
+		calc(var(--animation-duration) / 2) ease-in-out;
+}
+
 .title_container {
 	position: absolute;
 	top: 50%;
@@ -25,17 +35,17 @@
 	text-transform: uppercase;
 }
 
-.title.hidden {
-	opacity: 0;
-	transform: translate(-25vw, -50%);
-	transition: calc(var(--animation-duration) * 1.5) ease-in-out;
-}
-
 .title.shown {
 	opacity: 1;
 	transform: translate(0, -50%);
-	transition: calc(var(--animation-duration) * 1.5)
-		calc(var(--animation-duration) / 2) ease-in-out;
+	transition: calc(var(--animation-duration) * 1.2)
+		calc(var(--animation-duration) * 0.6) ease-in-out;
+}
+
+.title.hidden {
+	opacity: 0;
+	transform: translate(-25vw, -50%);
+	transition: var(--animation-duration) ease-in-out;
 }
 
 .project_name {
@@ -124,17 +134,17 @@
 	background-color: var(--main-light-grey);
 }
 
-.slide.hidden {
-	transform: translateX(50vw);
-	opacity: 0;
-	transition: all var(--animation-duration) ease-in-out;
-}
-
 .slide.shown {
 	opacity: 1;
 	transform: translateX(0);
-	transition: all calc(var(--animation-duration) * 1.5)
-		calc(var(--animation-duration) / 2) ease-in-out;
+	transition: calc(var(--animation-duration) * 1.2)
+		calc(var(--animation-duration) * 0.6) ease-in-out;
+}
+
+.slide.hidden {
+	transform: translateX(50vw);
+	opacity: 0;
+	transition: var(--animation-duration) ease-in-out;
 }
 
 .goto {

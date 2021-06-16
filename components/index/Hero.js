@@ -39,7 +39,7 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 				console.log("time out");
 				setSlideToShow(0);
 				setIsLoading(false);
-			}, 800);
+			}, 400);
 		}
 	}, [areImagesLoaded]);
 
@@ -53,7 +53,10 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 
 	return (
 		<section className={`${styles.hero} section`}>
-			<div className={styles.content}>
+			<div
+				className={`${styles.content} ${
+					isLoading ? styles.hidden : styles.shown
+				}`}>
 				<div className={styles.title_container}>
 					{projects.map(({ id, name, city }, idx) => (
 						<h2
