@@ -17,8 +17,7 @@
 
 .content.shown {
 	transform: translateX(0);
-	transition: calc(var(--animation-duration) * 1.5)
-		calc(var(--animation-duration) / 2) ease-in-out;
+	transition: calc(var(--animation-duration) * 1.5) ease-in-out;
 }
 
 .title_container {
