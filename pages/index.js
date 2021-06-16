@@ -14,7 +14,7 @@ export default function Home({ projects }) {
 			<Head>
 				<title>Digital Project</title>
 			</Head>
-			{isLoading ? <Loader /> :
+			{isLoading ? <Loader /> : <>
 			<Hero
 				projects={projects.filter(project => project.showcased === "HERO")}
 				isLoading={isLoading}
@@ -27,7 +27,7 @@ export default function Home({ projects }) {
 					.filter(project => project.showcased === "PROJECTS")
 					.slice(0, 5)}
 			/>
-			<Form />
+			<Form /></>
 			)}
 		</>
 		/*<>
