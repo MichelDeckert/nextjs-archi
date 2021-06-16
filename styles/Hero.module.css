@@ -9,9 +9,6 @@
   display: grid;
   grid-template-rows: 1fr auto 1fr;
   grid-column: 1/5;
-  transform: translateX(-150px);
-  opacity: 0;
-  transition: all var(--animation-duration) ease-in-out;
 }
 
 .title {
