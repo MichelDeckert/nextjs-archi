@@ -113,9 +113,6 @@
 .slider {
   position: relative;
   grid-column: 5/13;
-  transform: translateX(150px);
-  opacity: 0;
-  transition: all var(--animation-duration) ease-in-out;
 }
 
 .slide {
