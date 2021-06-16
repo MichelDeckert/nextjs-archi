@@ -27,9 +27,9 @@ export default function Home({ projects }) {
 					.filter(project => project.showcased === "PROJECTS")
 					.slice(0, 5)}
 			/>
-			<Form /></>
-			)}
+			<Form /></>}
 		</>
+			)
 		/*<>
 			<Head>
 				<title>Digital Project</title>
