@@ -24,26 +24,10 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 			.filter(child => child.firstChild.className.includes("slide"))
 			.map(child => child.firstChild)
 			.every(img => img.complete === true);
-		console.log("checkCompleted", completed);
-		return completed;
+		if (completed) setIsLoading(false);
 	}
-
-	function handleImageLoad() {
-		if (checkComplete()) {
-			setIsLoading(false);
-		}
-	}
-
-	/* useEffect(() => {
-		console.log(imagesLoaded);
-		if (imagesLoaded.length === projects.length && !areImagesInCache) {
-			console.log("wait loading");
-			setIsLoading(false);
-		}
-	}, [imagesLoaded, areImagesInCache]); */
 
 	useEffect(() => {
-		console.log("isLoading", isLoading);
 		if (!isLoading) {
 			addScrollEvent(slider.current, 500);
 			addScrollEvent(section.current, 500);
@@ -51,9 +35,7 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 	}, [isLoading]);
 
 	useEffect(() => {
-		if (checkComplete()) {
-			setIsLoading(false);
-		}
+		checkComplete();
 	}, []);
 
 	return (
@@ -111,7 +93,7 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 							objectPosition="center center"
 							quality={30}
 							priority={true}
-							onLoad={handleImageLoad}
+							onLoad={checkComplete}
 						/>
 						<GoTo
 							text="voir"
