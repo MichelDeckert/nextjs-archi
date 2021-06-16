@@ -9,15 +9,15 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 	const [areImagesLoaded, setAreImagesLoaded] = useState(false);
 	const imagesElRef = useRef([]);
 
-  function handleSlideSwitchClick(direction) {
-    if (direction === 'right') {
-      if (slideToShow === projects.length - 1) setSlideToShow(0);
-      else setSlideToShow(slideToShow + 1);
-    } else if (direction === 'left') {
-      if (slideToShow === 0) setSlideToShow(projects.length - 1);
-      else setSlideToShow(slideToShow - 1);
-    }
-  }
+	function handleSlideSwitchClick(direction) {
+		if (direction === "right") {
+			if (slideToShow === projects.length - 1) setSlideToShow(0);
+			else setSlideToShow(slideToShow + 1);
+		} else if (direction === "left") {
+			if (slideToShow === 0) setSlideToShow(projects.length - 1);
+			else setSlideToShow(slideToShow - 1);
+		}
+	}
 
 	function checkComplete() {
 		const completed = [...slider.current.children]
@@ -34,12 +34,10 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 
 	useEffect(() => {
 		if (areImagesLoaded) {
-			console.log("image are loaded");
 			setTimeout(() => {
-				console.log("time out");
 				setSlideToShow(0);
 				setIsLoading(false);
-			}, 400);
+			}, 100);
 		}
 	}, [areImagesLoaded]);
 
@@ -47,12 +45,13 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 		if (imagesElRef.current.length !== projects.length) {
 			imagesElRef.current = new Array(projects.length);
 		}
-		console.log("first completed check");
 		checkComplete();
 	}, []);
 
 	return (
-		<section className={`${styles.hero} section`}>
+		<section
+			className={`${styles.hero} section`}
+			style={isLoading ? { height: "0px" } : {}}>
 			<div
 				className={`${styles.content} ${
 					isLoading ? styles.hidden : styles.shown

@@ -4,41 +4,32 @@ import { addScrollEvent } from "../../utils/addScrollEvent";
 import GoTo from "../../modules/GoTo";
 
 export default function About() {
-	const img1 = useRef();
-	const img2 = useRef();
-	const img3 = useRef();
-	const info = useRef();
+	const section = useRef();
 
 	useEffect(() => {
-		addScrollEvent(img1.current);
-		addScrollEvent(img2.current);
-		addScrollEvent(img3.current);
-		addScrollEvent(info.current);
+		addScrollEvent(section.current);
 	}, []);
 
 	return (
-		<section className={`${styles.section} section`}>
+		<section className={`${styles.section} section`} ref={section}>
 			<div className={styles.images}>
 				<img
 					src="./images/section1-img1.svg"
 					alt="building"
 					className={styles.img1}
-					ref={img1}
 				/>
 				<img
 					src="./images/section1-img2.svg"
 					alt="building"
 					className={styles.img2}
-					ref={img2}
 				/>
 				<img
 					src="./images/section1-img3.svg"
 					alt="building"
 					className={styles.img3}
-					ref={img3}
 				/>
 			</div>
-			<div className={styles.info} ref={info}>
+			<div className={styles.info}>
 				<h2 className="secondary-title">À propos!</h2>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed

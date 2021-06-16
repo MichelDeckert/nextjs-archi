@@ -5,20 +5,16 @@ import GoTo from "../../modules/GoTo";
 import { addScrollEvent } from "../../utils/addScrollEvent";
 
 export default function Projects({ projects }) {
-	const title = useRef();
-	const images = useRef();
+	const section = useRef();
 
 	useEffect(() => {
-		addScrollEvent(title.current);
-		addScrollEvent(images.current);
+		addScrollEvent(section.current);
 	}, []);
 
 	return (
-		<section className={`${styles.section} section`}>
-			<h2 ref={title} className={`${styles.title} secondary-title`}>
-				Nos projets
-			</h2>
-			<div ref={images} className={styles.images}>
+		<section className={`${styles.section} section`} ref={section}>
+			<h2 className={`${styles.title} secondary-title`}>Nos projets</h2>
+			<div className={styles.images}>
 				{projects
 					.sort((a, b) => b.name.length - a.name.length)
 					.map(({ images, name, city }, id) => (
