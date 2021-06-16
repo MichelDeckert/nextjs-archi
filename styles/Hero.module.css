@@ -121,7 +121,7 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: var(--main-light-grey);
+  /background-color: var(--main-light-grey);
   transform: translateX(50vw);
   opacity: 0;
   transition: all var(--animation-duration) ease-in-out;
