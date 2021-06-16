@@ -1,23 +1,17 @@
 import { useEffect, useRef, useState, Fragment } from 'react';
-import { addScrollEvent } from '../../utils/addScrollEvent';
 import Image from 'next/image';
 import GoTo from '../../modules/GoTo';
 import styles from '../../styles/Hero.module.css';
 
 export default function Hero({ projects, isLoading, setIsLoading }) {
-  const section = useRef();
   const slider = useRef();
   const [slideToShow, setSlideToShow] = useState(null);
 
   function handleSlideSwitchClick(direction) {
-    if (direction === 'init') setSlideToShow(0);
-
     if (direction === 'right') {
       if (slideToShow === projects.length - 1) setSlideToShow(0);
       else setSlideToShow(slideToShow + 1);
-    }
-
-    if (direction === 'left') {
+    } else if (direction === 'left') {
       if (slideToShow === 0) setSlideToShow(projects.length - 1);
       else setSlideToShow(slideToShow - 1);
     }
@@ -33,9 +27,7 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 
   useEffect(() => {
     if (!isLoading) {
-      // addScrollEvent(slider.current, 500);
-      // addScrollEvent(section.current, 500);
-      handleSlideSwitchClick('init');
+      setTimout(() => setSlideToShow(0), 2000);
     }
   }, [isLoading]);
 
@@ -44,13 +36,10 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
   }, []);
 
   return (
-    <section
-      className={`${styles.hero} ${isLoading ? 'preload' : ''} section`}
-      ref={section}
-    >
+    <section className={`${styles.hero} section`}>
       <div className={styles.content}>
         {projects.map(({ id, name, city }, idx) => (
-          <h1
+          <h2
             key={id}
             className={`${styles.title} ${
               idx === slideToShow ? styles.shown : styles.hidden
@@ -59,7 +48,7 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
             <span className={styles.project_name}>{name}</span>
             <br />
             <span className={styles.project_city}>{city}</span>
-          </h1>
+          </h2>
         ))}
         <div className={styles.slider_info}>
           <div className={styles.slider_controls}>
