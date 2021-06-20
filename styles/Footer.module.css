@@ -61,3 +61,7 @@
 	margin: 0;
 	margin-right: 40px;
 }
+
+.content a {
+	color: #fff;
+}

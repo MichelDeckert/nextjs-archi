@@ -1,0 +1,35 @@
+.slider_controls {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+}
+
+.slider_arrow {
+	display: flex;
+	align-items: center;
+	width: auto;
+	padding: 20px;
+	border: 1px solid var(--main-light-grey);
+	transition: all 0.15s ease-in-out;
+}
+
+.slider_arrow:hover {
+	cursor: pointer;
+	border-color: var(--main-dark-grey);
+	transition: all 0.3s ease-in-out;
+}
+
+.arrow_previous {
+	transform: rotate(-180deg);
+	margin-right: 23px;
+}
+
+.slider_arrow > img {
+	transition: transform 0.15s ease-out;
+}
+
+.slider_arrow:hover > img {
+	transform: translateX(6px);
+	transition: transform 0.25s ease-in;
+}
