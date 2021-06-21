@@ -4,7 +4,7 @@ import styles from "../styles/Gallery.module.css";
 import Control from "../modules/Control";
 import Counter from "../modules/Counter";
 
-function cropSentences(sentence, length) {
+function cropSentence(sentence, length) {
 	if (sentence.length <= length) return sentence;
 
 	return `${sentence
@@ -14,29 +14,8 @@ function cropSentences(sentence, length) {
 		.trim()} [...]`;
 }
 
-export default function Gallery({ images }) {
-	const [currentPage, setCurrentPage] = useState(null);
-	const [totalNumPages, setTotalNumPages] = useState(null);
-	const [imagesArr, setImatesArr] = useState([]);
-
-	useEffect(() => {
-		const totalPages = Math.ceil(images.length / 10);
-
-		let newImagesArr = [];
-		for (let i = 0; i < totalPages; i++) {
-			const step = i * 10;
-			if (step + 10 >= images.length) newImagesArr.push(images.slice(step));
-			else newImagesArr.push(images.slice(step, step + 10));
-		}
-
-		setImatesArr(newImagesArr);
-		setCurrentPage(1);
-		setTotalNumPages(totalPages);
-	}, [images]);
-
-	useEffect(() => {
-		console.log(imagesArr);
-	}, [imagesArr]);
+export default function Gallery({ images, totalPages }) {
+	const [currentPage, setCurrentPage] = useState(1);
 
 	function handleArrowClick(direction) {
 		if (direction === "right") {
@@ -52,7 +31,7 @@ export default function Gallery({ images }) {
 		<section className={styles.gallery}>
 			<h1 className={`${styles.title} secondary-title`}>Galerie</h1>
 			<div className={styles.main_galery}>
-				{imagesArr.map((arr, arrId) => (
+				{images.map((arr, arrId) => (
 					<div
 						className={`${styles.gallery_container} ${
 							currentPage - 1 === arrId
@@ -76,7 +55,7 @@ export default function Gallery({ images }) {
 									<h2
 										className={styles.overlay_title}>{`${name} - ${city}`}</h2>
 									<h2 className={styles.overlay_description}>
-										{cropSentences(imageDescription, 50)}
+										{cropSentence(imageDescription, 50)}
 									</h2>
 								</div>
 							</div>
@@ -85,7 +64,7 @@ export default function Gallery({ images }) {
 				))}
 			</div>
 			<div className={styles.controllers}>
-				<Counter current={currentPage} total={totalNumPages} />
+				<Counter current={currentPage} total={totalPages} />
 				<Control handleClick={handleArrowClick} />
 			</div>
 		</section>
@@ -112,10 +91,21 @@ export async function getStaticProps() {
 			}
 		)
 	);
+	
+	const totalPages = Math.ceil(imagesList.length / 10);
+
+	let imagesArr = [];
+	for (let i = 0; i < totalPages; i++) {
+		const step = i * 10;
+		if (step + 10 >= imagesList.length) imagesArr.push(imagesList.slice(step));
+		else imagesArr.push(imagesList.slice(step, step + 10));
+	}
+		
 
 	return {
 		props: {
-			images: imagesList,
+			images: imagesArr,
+			totalPages,
 		},
 	};
 }
