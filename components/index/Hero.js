@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import GoTo from "../../modules/GoTo";
+import Control from "../../modules/Control";
+import Counter from "../../modules/Counter";
 import styles from "../../styles/Hero.module.css";
 
 export default function Hero({ projects, isLoading, setIsLoading }) {
@@ -70,27 +72,8 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 					))}
 				</div>
 				<div className={styles.slider_info}>
-					<div className={styles.slider_controls}>
-						<div
-							className={`${styles.arrow_previous} ${styles.slider_arrow}`}
-							onClick={handleSlideSwitchClick.bind(null, "left")}>
-							<img src="/icons/arrow-2-right-long.svg" alt="previous slide" />
-						</div>
-						<div
-							className={`${styles.arrow_next} ${styles.slider_arrow}`}
-							onClick={handleSlideSwitchClick.bind(null, "right")}>
-							<img src="/icons/arrow-2-right-long.svg" alt="next slide" />
-						</div>
-					</div>
-					<div className={styles.slider_counter}>
-						<h4 className={styles.current_slide}>
-							{slideToShow + 1 < 10 ? `0${slideToShow + 1}` : slideToShow + 1}
-						</h4>
-						<img src="./icons/slash.svg" alt="slash" />
-						<h4 className={styles.total_slides}>
-							{projects.length < 10 ? `0${projects.length}` : projects.length}
-						</h4>
-					</div>
+					<Control handleClick={handleSlideSwitchClick} />
+					<Counter current={slideToShow + 1} total={projects.length} />
 				</div>
 			</div>
 			<div className={styles.slider} ref={slider}>
@@ -109,12 +92,9 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 							objectPosition="center center"
 							quality={30}
 							priority={true}
-							onLoad={() => {
-								console.log(idx, "loaded");
-								checkComplete();
-							}}
+							onLoad={checkComplete}
 						/>
-						<GoTo text="voir" subclass={styles.goto} />
+						<GoTo text="voir" />
 					</div>
 				))}
 			</div>

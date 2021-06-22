@@ -1,0 +1,20 @@
+.slider_counter {
+	display: flex;
+	align-items: center;
+}
+
+.current_slide,
+.total_slides {
+	font-size: 24px;
+	font-weight: 400;
+}
+
+.current_slide {
+	margin-right: 23px;
+	color: var(--main-dark-grey);
+}
+
+.total_slides {
+	color: #bdbdbd;
+	margin-left: 23px;
+}

@@ -8,16 +8,19 @@
 			"images": [
 				{
 					"path": "/images/projects/louvre_abu_dhabi/01.jpg",
+					"description": "Nostrud occaecat aute consectetur sint nostrud.",
 					"width": 2400,
 					"height": 3602
 				},
 				{
 					"path": "/images/projects/louvre_abu_dhabi/02.jpg",
+					"description": "Culpa nulla anim esse commodo sit aute sint id aliquip occaecat.",
 					"width": 2400,
 					"height": 3200
 				},
 				{
 					"path": "/images/projects/louvre_abu_dhabi/03.jpg",
+					"description": "Voluptate eu non nostrud consectetur nisi minim.",
 					"width": 2400,
 					"height": 3200
 				}
@@ -31,16 +34,19 @@
 			"images": [
 				{
 					"path": "/images/projects/centro_botin_santander/01.jpg",
+					"description": "Cillum laboris velit ullamco voluptate magna consectetur eu irure magna.",
 					"width": 1920,
 					"height": 1280
 				},
 				{
 					"path": "/images/projects/centro_botin_santander/02.jpg",
+					"description": "Occaecat qui ipsum ullamco officia sunt consectetur nostrud commodo quis sunt officia duis duis.",
 					"width": 2400,
 					"height": 3600
 				},
 				{
 					"path": "/images/projects/centro_botin_santander/03.jpg",
+					"description": "Non nisi aliquip do nostrud laborum ea.",
 					"width": 2400,
 					"height": 1800
 				}
@@ -54,16 +60,19 @@
 			"images": [
 				{
 					"path": "/images/projects/john_cranko_schule_stuttgart/01.jpg",
+					"description": "Anim enim aute officia do amet.",
 					"width": 1200,
 					"height": 788
 				},
 				{
 					"path": "/images/projects/john_cranko_schule_stuttgart/02.jpg",
+					"description": "Deserunt proident enim pariatur incididunt fugiat labore laborum eiusmod ullamco.",
 					"width": 2400,
 					"height": 3200
 				},
 				{
 					"path": "/images/projects/john_cranko_schule_stuttgart/03.jpg",
+					"description": "Irure culpa sint et qui nulla duis ex.",
 					"width": 2400,
 					"height": 3200
 				}
@@ -77,16 +86,19 @@
 			"images": [
 				{
 					"path": "/images/projects/vitra_design_museum_weil_am_rhein/01.jpg",
+					"description": "Fugiat mollit consectetur cupidatat cillum ad.",
 					"width": 2400,
 					"height": 3000
 				},
 				{
 					"path": "/images/projects/vitra_design_museum_weil_am_rhein/02.jpg",
+					"description": "Aliquip aliquip officia veniam in minim esse nulla ea sit elit excepteur non anim laborum.",
 					"width": 2400,
 					"height": 1600
 				},
 				{
 					"path": "/images/projects/vitra_design_museum_weil_am_rhein/03.jpg",
+					"description": "Amet dolor dolor nostrud laboris laborum in eu cupidatat.",
 					"width": 2400,
 					"height": 3000
 				}
@@ -100,21 +112,24 @@
 			"images": [
 				{
 					"path": "/images/projects/isbjerg_aarhus/01.jpg",
+					"description": "Mollit Lorem laboris culpa fugiat laborum nisi duis.",
 					"width": 1600,
 					"height": 700
 				},
 				{
 					"path": "/images/projects/isbjerg_aarhus/02.jpg",
+					"description": "Deserunt cillum mollit deserunt anim exercitation irure commodo do voluptate proident id enim sint.",
 					"width": 2400,
 					"height": 3600
 				},
 				{
 					"path": "/images/projects/isbjerg_aarhus/03.jpg",
+					"description": "Adipisicing ex amet consequat sint duis laboris irure eiusmod sunt ullamco proident.",
 					"width": 2400,
 					"height": 1919
 				}
 			]
-		},	
+		},
 		{
 			"id": 5,
 			"name": "Champalimaud Foundation",
@@ -123,16 +138,19 @@
 			"images": [
 				{
 					"path": "/images/projects/champalimaud-foundation_lisboa/01.jpg",
+					"description": "Mollit labore nostrud tempor sit reprehenderit Lorem.",
 					"width": 1875,
 					"height": 2500
 				},
 				{
 					"path": "/images/projects/champalimaud-foundation_lisboa/02.jpg",
+					"description": "Adipisicing in cupidatat qui excepteur in irure nulla tempor.",
 					"width": 2400,
 					"height": 3055
 				},
 				{
 					"path": "/images/projects/champalimaud-foundation_lisboa/03.jpg",
+					"description": "Lorem elit ad consequat laboris id laboris sint consectetur do aute do.",
 					"width": 2400,
 					"height": 2400
 				}
@@ -146,16 +164,19 @@
 			"images": [
 				{
 					"path": "/images/projects/apartments_madrid/01.jpg",
+					"description": "Sint commodo ex amet aliqua excepteur laborum sint magna ea nulla velit irure in cupidatat.",
 					"width": 2400,
 					"height": 3397
 				},
 				{
 					"path": "/images/projects/apartments_madrid/02.jpg",
+					"description": "Non exercitation amet excepteur nulla id.",
 					"width": 2400,
 					"height": 1600
 				},
 				{
 					"path": "/images/projects/apartments_madrid/03.jpg",
+					"description": "Fugiat fugiat aliqua magna magna cillum officia.",
 					"width": 2400,
 					"height": 3600
 				}
@@ -169,16 +190,19 @@
 			"images": [
 				{
 					"path": "/images/projects/oodi_central_library_helsinki/01.jpg",
+					"description": "Aliqua nostrud ea enim velit excepteur exercitation ullamco.",
 					"width": 2400,
 					"height": 1600
 				},
 				{
 					"path": "/images/projects/oodi_central_library_helsinki/02.jpg",
+					"description": "Est duis occaecat exercitation deserunt ad esse nisi ipsum esse Lorem.",
 					"width": 2400,
 					"height": 3000
 				},
 				{
 					"path": "/images/projects/oodi_central_library_helsinki/03.jpg",
+					"description": "Ullamco ex ea ea et cupidatat deserunt.",
 					"width": 2400,
 					"height": 1628
 				}
