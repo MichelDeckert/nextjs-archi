@@ -5,6 +5,7 @@
 			"name": "Le Louvre",
 			"city": "Abu Dhabi",
 			"showcased": "PROJECTS",
+			"description": "Ea officia nostrud mollit magna consectetur dolore nulla. Aliqua magna enim adipisicing deserunt elit duis aliquip Lorem et aliquip sint ad reprehenderit. Quis officia velit proident consectetur occaecat ipsum duis occaecat.",
 			"images": [
 				{
 					"path": "/images/projects/louvre_abu_dhabi/01.jpg",
@@ -31,6 +32,7 @@
 			"name": "Centro Botín",
 			"city": "Santander",
 			"showcased": "PROJECTS",
+			"description": "Nisi sint velit elit eiusmod adipisicing ullamco quis est labore non nulla. Pariatur culpa ea anim excepteur reprehenderit sunt nisi dolor incididunt do. Anim voluptate nulla Lorem adipisicing exercitation officia ea ipsum exercitation nostrud. Tempor enim consectetur excepteur veniam eu. Aute eiusmod esse aliquip laborum magna mollit voluptate deserunt Lorem pariatur cillum excepteur sunt.",
 			"images": [
 				{
 					"path": "/images/projects/centro_botin_santander/01.jpg",
@@ -57,6 +59,7 @@
 			"name": "John Cranko Schule",
 			"city": "Stuttgart",
 			"showcased": "PROJECTS",
+			"description": "Aliquip pariatur dolor eu nulla et fugiat officia nulla pariatur anim officia ullamco dolore. Aute aliqua ullamco officia mollit. Eiusmod quis non consectetur excepteur laborum pariatur. Incididunt id in magna nulla labore cupidatat nisi. Anim officia proident dolor voluptate officia. Incididunt laboris est consequat ad sint ut anim cillum. Velit id aliquip sint excepteur labore officia pariatur ut labore quis anim id.",
 			"images": [
 				{
 					"path": "/images/projects/john_cranko_schule_stuttgart/01.jpg",
@@ -83,6 +86,7 @@
 			"name": "Vitra Design Museum",
 			"city": "Weil am Rhein",
 			"showcased": "HERO",
+			"description": "Non ipsum consequat sunt commodo ullamco cupidatat commodo esse sit fugiat sint adipisicing mollit non. Dolore incididunt enim elit ut excepteur. Irure sint quis veniam dolore incididunt esse. Exercitation consequat aliqua sit cupidatat elit deserunt amet velit irure aute excepteur do veniam. Laborum sit id fugiat aute sunt ea veniam consequat magna id tempor qui consectetur sit.",
 			"images": [
 				{
 					"path": "/images/projects/vitra_design_museum_weil_am_rhein/01.jpg",
@@ -109,6 +113,7 @@
 			"name": "Isbjerg",
 			"city": "Aarhus",
 			"showcased": "HERO",
+			"description": "Occaecat esse in eiusmod commodo eiusmod culpa occaecat cupidatat cillum officia. Occaecat aute incididunt adipisicing veniam culpa irure labore id in nulla. Nulla reprehenderit exercitation occaecat fugiat magna labore nostrud. Fugiat incididunt adipisicing mollit deserunt nostrud mollit irure occaecat. Pariatur reprehenderit et et minim duis proident anim ea adipisicing non eiusmod est. Tempor labore duis consequat dolor. Reprehenderit mollit dolor consequat dolore veniam laboris.",
 			"images": [
 				{
 					"path": "/images/projects/isbjerg_aarhus/01.jpg",
@@ -135,6 +140,7 @@
 			"name": "Champalimaud Foundation",
 			"city": "Lisboa",
 			"showcased": "PROJECTS",
+			"description": "Culpa sit esse ad tempor non enim exercitation ut incididunt cillum id. Commodo minim ea reprehenderit tempor ex ex nulla cillum eu mollit ipsum laboris excepteur enim. Eiusmod pariatur enim ullamco quis officia ullamco ullamco reprehenderit non eu.",
 			"images": [
 				{
 					"path": "/images/projects/champalimaud-foundation_lisboa/01.jpg",
@@ -161,6 +167,7 @@
 			"name": "Apartments",
 			"city": "Madrid",
 			"showcased": "PROJECTS",
+			"description": "Enim quis laboris dolor eu reprehenderit irure incididunt eiusmod. Minim consectetur consequat cillum laborum velit nulla reprehenderit irure dolore amet velit. Commodo do veniam irure laborum anim consequat laborum nisi magna. Eiusmod do quis et consectetur laboris sunt cillum excepteur ea. Ut anim velit nulla aute exercitation culpa aute eiusmod irure dolor irure pariatur.",
 			"images": [
 				{
 					"path": "/images/projects/apartments_madrid/01.jpg",
@@ -187,6 +194,7 @@
 			"name": "Oodi Central Library",
 			"city": "Helsinki",
 			"showcased": "HERO",
+			"description": "Eu non in cillum dolor exercitation enim sint commodo ex dolor aliqua. In fugiat consectetur sunt minim reprehenderit commodo aliquip eiusmod amet do nulla. Ad officia ut elit dolore consequat minim.",
 			"images": [
 				{
 					"path": "/images/projects/oodi_central_library_helsinki/01.jpg",
