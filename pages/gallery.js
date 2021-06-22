@@ -1,6 +1,5 @@
 import { useState } from "react";
-import cropSentence from "../utils/cropSentence";
-import Image from "next/image";
+import GalleryContainer from "../modules/GalleryContainer";
 import styles from "../styles/Gallery.module.css";
 import Control from "../modules/Control";
 import Counter from "../modules/Counter";
@@ -23,34 +22,12 @@ export default function Gallery({ images, totalPages }) {
 			<h1 className={`${styles.title} secondary-title`}>Galerie</h1>
 			<div className={styles.main_galery}>
 				{images.map((arr, arrId) => (
-					<div
-						className={`${styles.gallery_container} ${
-							currentPage - 1 === arrId ? "" : styles.hidden
-						}`}
-						style={{
-							transform: `translateX(${(1 - currentPage + arrId) * 120}%)`,
-						}}>
-						{arr.map(({ path, id, name, city, imageDescription }, idx) => (
-							<div className={styles.gallery_image} key={idx}>
-								<Image
-									src={path}
-									alt={`${name} - ${id}`}
-									layout="fill"
-									objectFit="cover"
-									objectPosition="center center"
-									priority={currentPage - 1 === arrId}
-									quality={10}
-								/>
-								<div className={styles.overlay}>
-									<h2
-										className={styles.overlay_title}>{`${name} - ${city}`}</h2>
-									<h2 className={styles.overlay_description}>
-										{cropSentence(imageDescription, 50)}
-									</h2>
-								</div>
-							</div>
-						))}
-					</div>
+					<GalleryContainer
+						images={arr}
+						currentPage={currentPage}
+						imagesId={arrId}
+						key={arrId}
+					/>
 				))}
 			</div>
 			<div className={styles.controllers}>
