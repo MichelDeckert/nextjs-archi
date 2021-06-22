@@ -38,7 +38,7 @@ export default function Gallery({ images, totalPages }) {
 								? ""
 								: styles.hidden
 						}`}
-						style={{transform: `translateX(${(1 - currentPage + arrId) * 100}vw)`}}
+						style={{transform: `translateX(${(1 - currentPage + arrId) * 100}%)`}}
 						>
 						{arr.map(({ path, id, name, city, imageDescription }, idx) => (
 							<div className={styles.gallery_image} key={idx}>
