@@ -28,19 +28,9 @@
 	transition: all 1s ease-in-out;
 }
 
-.hidden_left,
-.hidden_right {
+.hidden {
 	position: absolute;
-	opacity: 0;
 	transition: all 1s ease-in;
-}
-
-.hidden_left {
-	transform: translate(-100vw);
-}
-
-.hidden_right {
-	transform: translate(100vw);
 }
 
 .gallery_image {
