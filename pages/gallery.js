@@ -19,10 +19,10 @@ export default function Gallery({ images, totalPages }) {
 
 	function handleArrowClick(direction) {
 		if (direction === "right") {
-			if (currentPage === totalNumPages) setCurrentPage(1);
+			if (currentPage === totalPages) setCurrentPage(1);
 			else setCurrentPage(currentPage + 1);
 		} else if (direction === "left") {
-			if (currentPage === 1) setCurrentPage(totalNumPages);
+			if (currentPage === 1) setCurrentPage(totalPages);
 			else setCurrentPage(currentPage - 1);
 		}
 	}
