@@ -16,7 +16,7 @@ export default function Footer() {
 							<Link href="/gallery">Galerie</Link>
 						</li>
 						<li>
-							<Link href="/projects">Projets</Link>
+							<Link href="/projects/1">Projets</Link>
 						</li>
 						<li>
 							<Link href="/certificats">Certificats</Link>

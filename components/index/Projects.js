@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
-import styles from "../../styles/Projects.module.css";
+import styles from "../../styles/ProjectsHome.module.css";
 import GoTo from "../../modules/GoTo";
 import { addScrollEvent } from "../../utils/addScrollEvent";
 

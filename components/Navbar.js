@@ -16,7 +16,7 @@ export default function Navbar() {
 						<Link href="/gallery">GALERIE</Link>
 					</li>
 					<li>
-						<Link href="/projects">PROJETS</Link>
+						<Link href="/projects/1">PROJETS</Link>
 					</li>
 					<li>
 						<Link href="/certificats">CERTIFICATS</Link>

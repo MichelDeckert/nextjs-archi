@@ -1,18 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import cropSentence from "../utils/cropSentence";
 import Image from "next/image";
 import styles from "../styles/Gallery.module.css";
 import Control from "../modules/Control";
 import Counter from "../modules/Counter";
-
-function cropSentence(sentence, length) {
-	if (sentence.length <= length) return sentence;
-
-	return `${sentence
-		.split("")
-		.slice(0, length + 1)
-		.join("")
-		.trim()} [...]`;
-}
 
 export default function Gallery({ images, totalPages }) {
 	const [currentPage, setCurrentPage] = useState(1);
@@ -33,9 +24,12 @@ export default function Gallery({ images, totalPages }) {
 			<div className={styles.main_galery}>
 				{images.map((arr, arrId) => (
 					<div
-						className={`${styles.gallery_container} ${currentPage - 1 === arrId ? "" : styles.hidden}`}
-						style={{transform: `translateX(${(1 - currentPage + arrId) * 120}%)`}}
-						>
+						className={`${styles.gallery_container} ${
+							currentPage - 1 === arrId ? "" : styles.hidden
+						}`}
+						style={{
+							transform: `translateX(${(1 - currentPage + arrId) * 120}%)`,
+						}}>
 						{arr.map(({ path, id, name, city, imageDescription }, idx) => (
 							<div className={styles.gallery_image} key={idx}>
 								<Image
@@ -87,7 +81,7 @@ export async function getStaticProps() {
 			}
 		)
 	);
-	
+
 	const totalPages = Math.ceil(imagesList.length / 10);
 
 	let imagesArr = [];
@@ -96,7 +90,6 @@ export async function getStaticProps() {
 		if (step + 10 >= imagesList.length) imagesArr.push(imagesList.slice(step));
 		else imagesArr.push(imagesList.slice(step, step + 10));
 	}
-		
 
 	return {
 		props: {
