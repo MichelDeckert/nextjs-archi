@@ -30,7 +30,7 @@
 
 .hidden {
 	position: absolute;
-	transition: all 1s ease-in;
+	transition: all 1s ease-in-out;
 }
 
 .gallery_image {
