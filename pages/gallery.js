@@ -36,10 +36,10 @@ export default function Gallery({ images, totalPages }) {
 						className={`${styles.gallery_container} ${
 							currentPage - 1 === arrId
 								? ""
-								: currentPage - 1 > arrId
-								? styles.hidden_left
-								: styles.hidden_right
-						}`}>
+								: styles.hidden
+						}`}
+						style={{transform: `translateX(${(1 - currentPage + arrId) * 120}%)`}}
+						>
 						{arr.map(({ path, id, name, city, imageDescription }, idx) => (
 							<div className={styles.gallery_image} key={idx}>
 								<Image
