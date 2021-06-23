@@ -1,0 +1,37 @@
+.project {
+	display: flex;
+	flex-direction: column;
+	max-width: var(--max-width);
+	margin: auto;
+}
+
+.titles {
+	margin: 60px 0;
+}
+
+.project_name {
+	color: var(--main-dark-grey);
+	font-weight: bold;
+}
+
+.content {
+	display: grid;
+	grid-template-rows: 400px auto 400px;
+	gap: var(--grid-gap);
+}
+
+.main_image {
+	position: relative;
+	grid-column: 1/2;
+}
+
+.text {
+	grid-column: 2/3;
+	text-align: justify;
+}
+
+.main_content {
+	display: grid;
+	grid-template-columns: minmax(auto, 450px) 1fr;
+	gap: var(--grid-gap);
+}

@@ -36,6 +36,7 @@
 	color: var(--main-grey);
 	margin-bottom: 30px;
 	font-weight: 600;
+	text-transform: uppercase;
 }
 
 .description {
