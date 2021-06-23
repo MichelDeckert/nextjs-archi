@@ -5,25 +5,28 @@
 			"name": "Le Louvre",
 			"city": "Abu Dhabi",
 			"showcased": "PROJECTS",
-			"description": "Ea officia nostrud mollit magna consectetur dolore nulla. Aliqua magna enim adipisicing deserunt elit duis aliquip Lorem et aliquip sint ad reprehenderit. Quis officia velit proident consectetur occaecat ipsum duis occaecat.",
+			"description": "Ea officia nostrud mollit magna consectetur dolore nulla. Aliqua magna enim adipisicing deserunt elit duis aliquip Lorem et aliquip sint ad reprehenderit. Quis officia velit proident consectetur occaecat ipsum duis occaecat. Pariatur nostrud pariatur sit qui. Mollit eiusmod cillum culpa esse proident ea tempor ut esse irure et proident Lorem minim. Qui proident esse proident ullamco laborum consequat laborum aliquip cupidatat. Cillum reprehenderit pariatur ipsum duis et est nostrud ullamco et incididunt eu elit. Eu ea laboris ullamco ex laboris amet. Labore laborum irure dolor consequat aute aliqua do laboris aliquip irure. Labore tempor magna deserunt aliquip incididunt magna veniam veniam et. Anim reprehenderit Lorem ea irure velit consequat eiusmod. Duis cupidatat culpa nostrud fugiat sunt Lorem sint. Do consectetur quis incididunt est adipisicing do nostrud minim nostrud. Eiusmod anim pariatur officia id deserunt et voluptate enim dolor officia reprehenderit dolor enim magna. Exercitation cillum consectetur nisi do laborum sunt exercitation irure velit cillum commodo laborum magna. Elit nulla deserunt eiusmod exercitation magna minim. Ut mollit velit anim sunt Lorem consequat cillum. Excepteur nisi minim exercitation fugiat cupidatat minim. Commodo sint esse laborum id non proident excepteur fugiat in minim voluptate et. Adipisicing commodo amet culpa deserunt sit nisi amet aliquip. Aute amet minim voluptate id exercitation ex exercitation ullamco nulla labore sunt reprehenderit. Sit mollit esse culpa dolore nulla fugiat. Qui enim in sunt quis commodo incididunt exercitation enim adipisicing ad. Aliquip est ut esse est aliqua veniam anim excepteur. Labore dolor ut amet in. Lorem ipsum sint proident eiusmod reprehenderit esse sit eu aute veniam aliqua non sunt. Dolor esse velit aute laborum consectetur ex id. Eiusmod dolore eiusmod pariatur officia aliqua ipsum excepteur fugiat est officia commodo exercitation in. Est quis quis commodo nulla culpa laboris.",
 			"images": [
 				{
 					"path": "/images/projects/louvre_abu_dhabi/01.jpg",
 					"description": "Nostrud occaecat aute consectetur sint nostrud.",
 					"width": 2400,
-					"height": 3602
+					"height": 3602,
+					"horizontal": "30%"
 				},
 				{
 					"path": "/images/projects/louvre_abu_dhabi/02.jpg",
 					"description": "Culpa nulla anim esse commodo sit aute sint id aliquip occaecat.",
 					"width": 2400,
-					"height": 3200
+					"height": 3200,
+					"horizontal": "50%"
 				},
 				{
 					"path": "/images/projects/louvre_abu_dhabi/03.jpg",
 					"description": "Voluptate eu non nostrud consectetur nisi minim.",
 					"width": 2400,
-					"height": 3200
+					"height": 3200,
+					"horizontal": "60%"
 				}
 			]
 		},
@@ -32,25 +35,28 @@
 			"name": "Centro Botín",
 			"city": "Santander",
 			"showcased": "PROJECTS",
-			"description": "Nisi sint velit elit eiusmod adipisicing ullamco quis est labore non nulla. Pariatur culpa ea anim excepteur reprehenderit sunt nisi dolor incididunt do. Anim voluptate nulla Lorem adipisicing exercitation officia ea ipsum exercitation nostrud. Tempor enim consectetur excepteur veniam eu. Aute eiusmod esse aliquip laborum magna mollit voluptate deserunt Lorem pariatur cillum excepteur sunt.",
+			"description": "Nisi sint velit elit eiusmod adipisicing ullamco quis est labore non nulla. Pariatur culpa ea anim excepteur reprehenderit sunt nisi dolor incididunt do. Anim voluptate nulla Lorem adipisicing exercitation officia ea ipsum exercitation nostrud. Tempor enim consectetur excepteur veniam eu. Aute eiusmod esse aliquip laborum magna mollit voluptate deserunt Lorem pariatur cillum excepteur sunt. Cupidatat pariatur officia eu laborum. Qui sunt irure sunt reprehenderit labore reprehenderit ipsum minim Lorem nisi in adipisicing. Veniam eu nulla irure laboris quis. Veniam duis enim mollit amet ipsum cillum amet enim et veniam quis magna fugiat. Minim commodo sunt laborum irure et. Consectetur esse pariatur nisi nostrud eu. Sint in cupidatat id fugiat velit amet excepteur. Laboris elit ex fugiat laborum. Reprehenderit cillum minim dolor consectetur nisi nostrud. Quis duis occaecat sint occaecat officia laborum irure nulla dolore incididunt sint. Reprehenderit exercitation elit eiusmod officia aliquip velit aliqua fugiat labore sit voluptate sit aliquip mollit. Incididunt ex qui eu dolore velit id pariatur elit labore est dolore officia esse dolor. Occaecat ea laborum consequat aliqua minim sint minim labore sunt laborum occaecat id dolore. Excepteur nulla ea enim Lorem nisi cupidatat ea aliquip exercitation cillum aliquip ipsum amet. Eu Lorem quis adipisicing elit consectetur. Labore quis officia labore labore id nostrud. Eiusmod eiusmod magna id enim culpa ut. Incididunt laborum elit adipisicing culpa labore. Mollit fugiat nostrud ex ea duis enim culpa sint irure. Do consequat id incididunt commodo irure veniam sunt ipsum commodo amet aliqua minim eiusmod occaecat. Minim sint qui magna occaecat eiusmod nulla velit pariatur sint non tempor cupidatat anim. Et dolore ad occaecat Lorem ipsum aute pariatur. Veniam exercitation aliqua minim velit quis.",
 			"images": [
 				{
 					"path": "/images/projects/centro_botin_santander/01.jpg",
 					"description": "Cillum laboris velit ullamco voluptate magna consectetur eu irure magna.",
 					"width": 1920,
-					"height": 1280
+					"height": 1280,
+					"horizontal": "60%"
 				},
 				{
 					"path": "/images/projects/centro_botin_santander/02.jpg",
 					"description": "Occaecat qui ipsum ullamco officia sunt consectetur nostrud commodo quis sunt officia duis duis.",
 					"width": 2400,
-					"height": 3600
+					"height": 3600,
+					"horizontal": "70%"
 				},
 				{
 					"path": "/images/projects/centro_botin_santander/03.jpg",
 					"description": "Non nisi aliquip do nostrud laborum ea.",
 					"width": 2400,
-					"height": 1800
+					"height": 1800,
+					"horizontal": "55%"
 				}
 			]
 		},
@@ -59,25 +65,28 @@
 			"name": "John Cranko Schule",
 			"city": "Stuttgart",
 			"showcased": "PROJECTS",
-			"description": "Aliquip pariatur dolor eu nulla et fugiat officia nulla pariatur anim officia ullamco dolore. Aute aliqua ullamco officia mollit. Eiusmod quis non consectetur excepteur laborum pariatur. Incididunt id in magna nulla labore cupidatat nisi. Anim officia proident dolor voluptate officia. Incididunt laboris est consequat ad sint ut anim cillum. Velit id aliquip sint excepteur labore officia pariatur ut labore quis anim id.",
+			"description": "Aliquip pariatur dolor eu nulla et fugiat officia nulla pariatur anim officia ullamco dolore. Aute aliqua ullamco officia mollit. Eiusmod quis non consectetur excepteur laborum pariatur. Incididunt id in magna nulla labore cupidatat nisi. Anim officia proident dolor voluptate officia. Incididunt laboris est consequat ad sint ut anim cillum. Velit id aliquip sint excepteur labore officia pariatur ut labore quis anim id. Est officia duis et labore sit consectetur adipisicing duis velit mollit voluptate amet velit ad. In do pariatur magna magna mollit. Eiusmod est sit quis reprehenderit eiusmod Lorem amet. Quis ad anim dolore sunt amet incididunt. Non dolor sunt et consectetur est amet aute nulla elit adipisicing duis dolor eu consequat. Est non Lorem Lorem nulla do consequat culpa labore elit est id do in fugiat. Id ex aliquip reprehenderit veniam veniam nulla et tempor do. Ex consectetur non culpa consectetur occaecat Lorem Lorem. Nisi culpa eu eiusmod nostrud do qui sint nostrud officia. Aliqua deserunt nostrud ullamco consequat velit proident culpa cillum. In laboris adipisicing ut nulla amet. In minim cillum minim officia occaecat. Proident occaecat nulla proident cupidatat. Quis nisi ex in enim amet labore aute cillum ullamco quis pariatur deserunt est non. Ex nisi duis in occaecat mollit sit. Adipisicing quis irure consequat laboris ipsum. Proident elit consequat deserunt aliqua nulla anim ea. Veniam quis est nostrud in non nisi exercitation aliqua qui Lorem Lorem ad. Esse consectetur sint esse nisi. Irure proident excepteur irure esse adipisicing. Magna nisi consequat cillum voluptate elit ipsum amet ut veniam fugiat ex excepteur duis. Est anim fugiat sit id fugiat id enim ad aute in consequat. Non cupidatat mollit ea tempor eu proident non in do mollit enim duis magna reprehenderit. Ad cupidatat dolor ea id et officia aute magna duis quis nulla veniam sint enim.",
 			"images": [
 				{
 					"path": "/images/projects/john_cranko_schule_stuttgart/01.jpg",
 					"description": "Anim enim aute officia do amet.",
 					"width": 1200,
-					"height": 788
+					"height": 788,
+					"horizontal": "55%"
 				},
 				{
 					"path": "/images/projects/john_cranko_schule_stuttgart/02.jpg",
 					"description": "Deserunt proident enim pariatur incididunt fugiat labore laborum eiusmod ullamco.",
 					"width": 2400,
-					"height": 3200
+					"height": 3200,
+					"horizontal": "55%"
 				},
 				{
 					"path": "/images/projects/john_cranko_schule_stuttgart/03.jpg",
 					"description": "Irure culpa sint et qui nulla duis ex.",
 					"width": 2400,
-					"height": 3200
+					"height": 3200,
+					"horizontal": "75%"
 				}
 			]
 		},
@@ -86,25 +95,28 @@
 			"name": "Vitra Design Museum",
 			"city": "Weil am Rhein",
 			"showcased": "HERO",
-			"description": "Non ipsum consequat sunt commodo ullamco cupidatat commodo esse sit fugiat sint adipisicing mollit non. Dolore incididunt enim elit ut excepteur. Irure sint quis veniam dolore incididunt esse. Exercitation consequat aliqua sit cupidatat elit deserunt amet velit irure aute excepteur do veniam. Laborum sit id fugiat aute sunt ea veniam consequat magna id tempor qui consectetur sit.",
+			"description": "Non ipsum consequat sunt commodo ullamco cupidatat commodo esse sit fugiat sint adipisicing mollit non. Dolore incididunt enim elit ut excepteur. Irure sint quis veniam dolore incididunt esse. Exercitation consequat aliqua sit cupidatat elit deserunt amet velit irure aute excepteur do veniam. Laborum sit id fugiat aute sunt ea veniam consequat magna id tempor qui consectetur sit. Exercitation tempor cupidatat officia commodo officia ut. Eu ullamco elit mollit aliqua consequat dolor. Incididunt pariatur ipsum est adipisicing anim dolore proident proident sunt esse. Tempor culpa et sint occaecat cillum et duis non voluptate minim. Voluptate et proident sint enim commodo non. Cillum sit veniam nulla nostrud aliqua enim. Labore sint proident eu esse nisi fugiat labore. Ipsum nulla dolore ullamco occaecat irure eiusmod veniam commodo consectetur nostrud ad sit velit cupidatat. Irure ipsum dolore dolore labore eu est nulla officia irure aliqua. Exercitation non amet aliquip ad dolore occaecat do minim ea elit consequat ullamco excepteur excepteur. Lorem cupidatat ullamco cupidatat ut. Aute cillum ullamco non ipsum nostrud incididunt labore cupidatat nulla anim ea est. Proident laboris laborum fugiat proident excepteur do exercitation quis officia eiusmod minim. Lorem excepteur magna mollit nulla. Aliquip reprehenderit enim nulla id laboris. Id consequat aliquip aliquip ex eu qui id sunt officia. Commodo commodo dolor dolore ea elit nisi dolor nulla do reprehenderit dolor exercitation. Adipisicing dolor in deserunt id et amet. Cillum adipisicing ipsum aliqua dolore ut enim excepteur irure labore voluptate tempor sunt. Non laborum dolor aute dolor sint cillum elit sint sit amet ea. Enim occaecat aliqua ea occaecat officia. Sit irure ad anim veniam cupidatat cupidatat ex cupidatat in proident quis proident. Nostrud tempor ea dolor aliquip fugiat adipisicing deserunt minim quis exercitation Lorem nostrud. Dolore amet cillum sit dolore et qui laborum consequat sit anim fugiat. Elit cupidatat aute est velit duis ut enim magna duis eu mollit.",
 			"images": [
 				{
 					"path": "/images/projects/vitra_design_museum_weil_am_rhein/01.jpg",
 					"description": "Fugiat mollit consectetur cupidatat cillum ad.",
 					"width": 2400,
-					"height": 3000
+					"height": 3000,
+					"horizontal": "75%"
 				},
 				{
 					"path": "/images/projects/vitra_design_museum_weil_am_rhein/02.jpg",
 					"description": "Aliquip aliquip officia veniam in minim esse nulla ea sit elit excepteur non anim laborum.",
 					"width": 2400,
-					"height": 1600
+					"height": 1600,
+					"horizontal": "50%"
 				},
 				{
 					"path": "/images/projects/vitra_design_museum_weil_am_rhein/03.jpg",
 					"description": "Amet dolor dolor nostrud laboris laborum in eu cupidatat.",
 					"width": 2400,
-					"height": 3000
+					"height": 3000,
+					"horizontal": "65%"
 				}
 			]
 		},
@@ -113,25 +125,28 @@
 			"name": "Isbjerg",
 			"city": "Aarhus",
 			"showcased": "HERO",
-			"description": "Occaecat esse in eiusmod commodo eiusmod culpa occaecat cupidatat cillum officia. Occaecat aute incididunt adipisicing veniam culpa irure labore id in nulla. Nulla reprehenderit exercitation occaecat fugiat magna labore nostrud. Fugiat incididunt adipisicing mollit deserunt nostrud mollit irure occaecat. Pariatur reprehenderit et et minim duis proident anim ea adipisicing non eiusmod est. Tempor labore duis consequat dolor. Reprehenderit mollit dolor consequat dolore veniam laboris.",
+			"description": "Occaecat esse in eiusmod commodo eiusmod culpa occaecat cupidatat cillum officia. Occaecat aute incididunt adipisicing veniam culpa irure labore id in nulla. Nulla reprehenderit exercitation occaecat fugiat magna labore nostrud. Fugiat incididunt adipisicing mollit deserunt nostrud mollit irure occaecat. Pariatur reprehenderit et et minim duis proident anim ea adipisicing non eiusmod est. Tempor labore duis consequat dolor. Reprehenderit mollit dolor consequat dolore veniam laboris. Sit officia in ea voluptate eiusmod. Commodo cupidatat labore sint qui minim laborum do adipisicing quis elit deserunt do adipisicing. Do id proident consectetur ex eu ut tempor dolor ut commodo est consequat ex aute. Eu dolor ullamco proident nulla exercitation nostrud quis aute reprehenderit voluptate pariatur in reprehenderit. Consequat aliquip sint aliqua sit ex qui pariatur sint duis duis proident consectetur. Commodo Lorem quis consequat fugiat est. Voluptate id irure non sint nisi ad nostrud. Incididunt esse officia ad consectetur mollit mollit laborum sit anim. Adipisicing veniam sit ex et in. Magna labore Lorem reprehenderit sit minim consectetur reprehenderit occaecat. Amet aliqua aliqua commodo quis reprehenderit quis quis voluptate Lorem laborum nostrud. Excepteur sint enim commodo occaecat irure enim aliqua ipsum adipisicing consequat. Ullamco pariatur fugiat nulla laborum sit ex ullamco consequat occaecat enim culpa cupidatat voluptate. Voluptate eu nisi ex commodo incididunt minim eiusmod dolor pariatur tempor cillum. Amet elit veniam ullamco adipisicing est ullamco ea. Elit non aliquip voluptate id reprehenderit aute. Quis laborum consectetur velit dolore consectetur adipisicing et. Mollit veniam pariatur nulla ex non pariatur adipisicing sunt deserunt sit minim adipisicing do. Deserunt cillum ea mollit aute velit ea tempor eu cillum pariatur qui reprehenderit sunt velit. Nostrud fugiat fugiat deserunt fugiat do cupidatat fugiat nisi dolor labore velit. Ipsum tempor aute cillum aliqua laboris reprehenderit irure tempor esse adipisicing dolor Lorem.",
 			"images": [
 				{
 					"path": "/images/projects/isbjerg_aarhus/01.jpg",
 					"description": "Mollit Lorem laboris culpa fugiat laborum nisi duis.",
 					"width": 1600,
-					"height": 700
+					"height": 700,
+					"horizontal": "55%"
 				},
 				{
 					"path": "/images/projects/isbjerg_aarhus/02.jpg",
 					"description": "Deserunt cillum mollit deserunt anim exercitation irure commodo do voluptate proident id enim sint.",
 					"width": 2400,
-					"height": 3600
+					"height": 3600,
+					"horizontal": "65%"
 				},
 				{
 					"path": "/images/projects/isbjerg_aarhus/03.jpg",
 					"description": "Adipisicing ex amet consequat sint duis laboris irure eiusmod sunt ullamco proident.",
 					"width": 2400,
-					"height": 1919
+					"height": 1919,
+					"horizontal": "60%"
 				}
 			]
 		},
@@ -140,25 +155,28 @@
 			"name": "Champalimaud Foundation",
 			"city": "Lisboa",
 			"showcased": "PROJECTS",
-			"description": "Culpa sit esse ad tempor non enim exercitation ut incididunt cillum id. Commodo minim ea reprehenderit tempor ex ex nulla cillum eu mollit ipsum laboris excepteur enim. Eiusmod pariatur enim ullamco quis officia ullamco ullamco reprehenderit non eu.",
+			"description": "Culpa sit esse ad tempor non enim exercitation ut incididunt cillum id. Commodo minim ea reprehenderit tempor ex ex nulla cillum eu mollit ipsum laboris excepteur enim. Eiusmod pariatur enim ullamco quis officia ullamco ullamco reprehenderit non eu. Consequat ullamco excepteur amet fugiat et excepteur enim id deserunt laboris labore deserunt duis. Voluptate occaecat aliqua culpa ipsum mollit fugiat officia ad laborum. Labore sint labore voluptate anim ullamco ad velit officia. Aute Lorem consequat velit excepteur reprehenderit ex consectetur. Ut incididunt pariatur et consequat anim non non esse. Sunt elit sit pariatur nostrud ut laborum exercitation magna. Consectetur culpa tempor ut ipsum dolore et et consequat elit velit aliquip dolor. Anim laboris culpa ex qui. Reprehenderit ut aliqua consectetur occaecat. Est laboris labore mollit dolore ad labore amet veniam sunt consectetur esse. Incididunt aliquip ea quis nulla eiusmod ipsum ad magna id adipisicing dolor elit ullamco cillum. Pariatur ad nostrud esse do duis aliqua eu minim deserunt quis esse laborum. Dolore qui Lorem ut sunt consequat velit esse ipsum. Ex eu proident amet qui nostrud ullamco eu sit reprehenderit commodo exercitation ipsum laborum reprehenderit. Exercitation excepteur nostrud veniam incididunt aute quis pariatur occaecat nisi nulla. Ea ad labore consequat duis pariatur elit labore. Quis nisi Lorem adipisicing consectetur aute anim. Sint excepteur laboris ipsum irure quis. Duis in Lorem do aliqua pariatur.",
 			"images": [
 				{
 					"path": "/images/projects/champalimaud-foundation_lisboa/01.jpg",
 					"description": "Mollit labore nostrud tempor sit reprehenderit Lorem.",
 					"width": 1875,
-					"height": 2500
+					"height": 2500,
+					"horizontal": "55%"
 				},
 				{
 					"path": "/images/projects/champalimaud-foundation_lisboa/02.jpg",
 					"description": "Adipisicing in cupidatat qui excepteur in irure nulla tempor.",
 					"width": 2400,
-					"height": 3055
+					"height": 3055,
+					"horizontal": "50%"
 				},
 				{
 					"path": "/images/projects/champalimaud-foundation_lisboa/03.jpg",
 					"description": "Lorem elit ad consequat laboris id laboris sint consectetur do aute do.",
 					"width": 2400,
-					"height": 2400
+					"height": 2400,
+					"horizontal": "50%"
 				}
 			]
 		},
@@ -167,25 +185,28 @@
 			"name": "Apartments",
 			"city": "Madrid",
 			"showcased": "PROJECTS",
-			"description": "Enim quis laboris dolor eu reprehenderit irure incididunt eiusmod. Minim consectetur consequat cillum laborum velit nulla reprehenderit irure dolore amet velit. Commodo do veniam irure laborum anim consequat laborum nisi magna. Eiusmod do quis et consectetur laboris sunt cillum excepteur ea. Ut anim velit nulla aute exercitation culpa aute eiusmod irure dolor irure pariatur.",
+			"description": "Enim quis laboris dolor eu reprehenderit irure incididunt eiusmod. Minim consectetur consequat cillum laborum velit nulla reprehenderit irure dolore amet velit. Commodo do veniam irure laborum anim consequat laborum nisi magna. Eiusmod do quis et consectetur laboris sunt cillum excepteur ea. Ut anim velit nulla aute exercitation culpa aute eiusmod irure dolor irure pariatur. Enim cillum pariatur esse sunt qui fugiat dolor minim aute sint in fugiat. Ea laborum enim do aute culpa. Pariatur esse deserunt aute elit velit ex enim. Reprehenderit amet excepteur nisi commodo sint id dolor reprehenderit aliquip duis irure est adipisicing. Cupidatat dolore eiusmod voluptate non aute amet. Ad amet pariatur dolor cillum ullamco ad nostrud dolore ad eiusmod duis magna. Amet proident fugiat consequat mollit consectetur tempor. Lorem nostrud laborum ullamco duis laboris nostrud. Nostrud minim aliqua id occaecat quis esse sint reprehenderit esse exercitation exercitation nostrud incididunt deserunt. Dolor nisi exercitation Lorem non aliqua do proident voluptate sunt deserunt esse reprehenderit. Commodo sunt consequat dolore ad in magna veniam. Mollit duis et adipisicing consectetur voluptate dolore. Veniam ad voluptate qui sit quis elit irure magna. Ullamco ullamco voluptate voluptate in veniam aliquip culpa nisi ipsum magna dolore eu duis. Sint nisi labore cillum deserunt anim nisi minim veniam voluptate labore laborum. Culpa enim proident sint in sit. Id consectetur aute occaecat cupidatat laboris velit fugiat occaecat eu duis anim duis.",
 			"images": [
 				{
 					"path": "/images/projects/apartments_madrid/01.jpg",
 					"description": "Sint commodo ex amet aliqua excepteur laborum sint magna ea nulla velit irure in cupidatat.",
 					"width": 2400,
-					"height": 3397
+					"height": 3397,
+					"horizontal": "60%"
 				},
 				{
 					"path": "/images/projects/apartments_madrid/02.jpg",
 					"description": "Non exercitation amet excepteur nulla id.",
 					"width": 2400,
-					"height": 1600
+					"height": 1600,
+					"horizontal": "55%"
 				},
 				{
 					"path": "/images/projects/apartments_madrid/03.jpg",
 					"description": "Fugiat fugiat aliqua magna magna cillum officia.",
 					"width": 2400,
-					"height": 3600
+					"height": 3600,
+					"horizontal": "45%"
 				}
 			]
 		},
@@ -194,25 +215,28 @@
 			"name": "Oodi Central Library",
 			"city": "Helsinki",
 			"showcased": "HERO",
-			"description": "Eu non in cillum dolor exercitation enim sint commodo ex dolor aliqua. In fugiat consectetur sunt minim reprehenderit commodo aliquip eiusmod amet do nulla. Ad officia ut elit dolore consequat minim.",
+			"description": "Eu non in cillum dolor exercitation enim sint commodo ex dolor aliqua. In fugiat consectetur sunt minim reprehenderit commodo aliquip eiusmod amet do nulla. Ad officia ut elit dolore consequat minim. Consectetur aliqua id voluptate tempor dolor sit exercitation pariatur nisi ipsum velit qui voluptate culpa. Magna aliquip consequat proident laboris elit magna ad fugiat ut aliqua incididunt irure. Reprehenderit do id anim laborum excepteur id eiusmod adipisicing in sint dolore. Ullamco adipisicing deserunt laborum ad nostrud excepteur commodo et veniam dolor voluptate. Adipisicing esse labore nulla in. Consectetur sint cillum duis amet. Cupidatat ea ut in commodo sit sit veniam in ullamco ipsum. Est aliquip eiusmod amet laboris ad quis aliqua dolor id deserunt adipisicing. Laborum sunt officia veniam dolore mollit eu deserunt consectetur veniam nisi adipisicing. Sit nulla proident cillum duis deserunt nulla occaecat esse magna pariatur. Quis sunt quis eu magna veniam dolore adipisicing duis in consequat. Quis enim incididunt magna in nostrud pariatur fugiat adipisicing. Cupidatat ipsum cillum eiusmod ut aliquip dolore culpa amet aute do mollit ut esse. Occaecat cillum laborum minim nisi veniam fugiat ex tempor irure ipsum ex qui sit adipisicing. Anim in consequat magna tempor reprehenderit ea amet laborum velit dolor adipisicing mollit incididunt. Deserunt dolore occaecat in quis voluptate consequat. Aliqua ea irure in est ad ex.",
 			"images": [
 				{
 					"path": "/images/projects/oodi_central_library_helsinki/01.jpg",
 					"description": "Aliqua nostrud ea enim velit excepteur exercitation ullamco.",
 					"width": 2400,
-					"height": 1600
+					"height": 1600,
+					"horizontal": "75%"
 				},
 				{
 					"path": "/images/projects/oodi_central_library_helsinki/02.jpg",
 					"description": "Est duis occaecat exercitation deserunt ad esse nisi ipsum esse Lorem.",
 					"width": 2400,
-					"height": 3000
+					"height": 3000,
+					"horizontal": "30%"
 				},
 				{
 					"path": "/images/projects/oodi_central_library_helsinki/03.jpg",
 					"description": "Ullamco ex ea ea et cupidatat deserunt.",
 					"width": 2400,
-					"height": 1628
+					"height": 1628,
+					"horizontal": "50%"
 				}
 			]
 		}
