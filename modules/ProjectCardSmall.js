@@ -1,12 +1,21 @@
+import { useRouter } from "next/router";
+import slugify from "../utils/slugify";
 import cropSentence from "../utils/cropSentence";
 import Image from "next/image";
 import styles from "../styles/ProjectCardSmall.module.css";
 
 export default function ProjectCardSmall({ project, imagesId, currentPage }) {
-	const { path, id, name, city, imageDescription } = project;
+	const router = useRouter();
+	const { path, id, projectId, name, city, imageDescription } = project;
+
+	function handleClick(slug) {
+		router.push(`/project/${slug}`);
+	}
 
 	return (
-		<div className={styles.gallery_image}>
+		<div
+			className={styles.gallery_image}
+			onClick={handleClick.bind(null, slugify(projectId, name, city))}>
 			<Image
 				src={path}
 				alt={`${name} - ${id}`}

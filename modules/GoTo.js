@@ -1,20 +1,28 @@
 import { useEffect, useRef } from "react";
 import { addScrollEvent } from "../utils/addScrollEvent";
 
-export default function GoTo({ subclass, theme, style, animate, text }) {
-	const gotoEl = useRef();
+export default function GoTo({
+	subclass,
+	theme,
+	style,
+	animate,
+	text,
+	handleClick,
+}) {
+	const goTo = useRef();
 
 	useEffect(() => {
 		if (animate) {
-			addScrollEvent(gotoEl.current);
+			addScrollEvent(goTo.current);
 		}
 	}, [animate]);
 
 	return (
 		<div
-			ref={gotoEl}
+			ref={goTo}
 			className={`${subclass || ""} ${theme || "light"} goto`}
-			style={style || {}}>
+			style={style || {}}
+			onClick={handleClick}>
 			<span>{text ? text : ""}</span>
 			<img
 				src={`/icons/arrow-2-right-long${theme === "dark" ? "-white" : ""}.svg`}

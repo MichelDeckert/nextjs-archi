@@ -1,15 +1,22 @@
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import GoTo from "../../modules/GoTo";
 import Control from "../../modules/Control";
 import Counter from "../../modules/Counter";
 import styles from "../../styles/Hero.module.css";
+import slugify from "../../utils/slugify";
 
 export default function Hero({ projects, isLoading, setIsLoading }) {
 	const slider = useRef();
 	const [slideToShow, setSlideToShow] = useState(null);
 	const [areImagesLoaded, setAreImagesLoaded] = useState(false);
 	const imagesElRef = useRef([]);
+	const router = useRouter();
+
+	function handleGoToClick(slug) {
+		router.push(`/project/${slug}`);
+	}
 
 	function handleSlideSwitchClick(direction) {
 		if (direction === "right") {
@@ -94,7 +101,10 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 							priority={true}
 							onLoad={checkComplete}
 						/>
-						<GoTo text="voir" />
+						<GoTo
+							text="voir"
+							handleClick={handleGoToClick.bind(null, slugify(id, name, city))}
+						/>
 					</div>
 				))}
 			</div>

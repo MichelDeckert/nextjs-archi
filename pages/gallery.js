@@ -43,7 +43,7 @@ export async function getStaticProps() {
 
 	let imagesList = [];
 
-	projects.forEach(({ name, city, images }) =>
+	projects.forEach(({ name, city, images, id: projectId }) =>
 		images.forEach(
 			({ path, width, height, description: imageDescription }, id) => {
 				imagesList.push({
@@ -53,6 +53,7 @@ export async function getStaticProps() {
 					name,
 					city,
 					id,
+					projectId,
 					imageDescription,
 				});
 			}
