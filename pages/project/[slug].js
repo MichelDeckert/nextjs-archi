@@ -7,7 +7,7 @@ export default function Project({ project, id }) {
 	const { name, city, images, description } = project;
 	
 	async function importImg(path) {
-		cont img = await import(path)
+		const img = await import(path)
 		return img
 	}
 
