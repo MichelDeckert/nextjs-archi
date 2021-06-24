@@ -35,3 +35,8 @@
 	grid-template-columns: minmax(auto, 450px) 1fr;
 	gap: var(--grid-gap);
 }
+
+.bottom_images {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
