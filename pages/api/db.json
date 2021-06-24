@@ -27,6 +27,13 @@
 					"width": 2400,
 					"height": 3200,
 					"horizontal": "60%"
+				},
+				{
+					"path": "/images/projects/louvre_abu_dhabi/04.jpg",
+					"description": "Cras eu auctor ex. Nam ac finibus nunc. Suspendisse potenti. Vestibulum et lorem erat.",
+					"width": 2400,
+					"height": 1717,
+					"horizontal": "65%"
 				}
 			]
 		},
@@ -57,6 +64,13 @@
 					"width": 2400,
 					"height": 1800,
 					"horizontal": "55%"
+				},
+				{
+					"path": "/images/projects/centro_botin_santander/04.jpg",
+					"description": "Sed imperdiet tincidunt magna, quis venenatis eros feugiat at.",
+					"width": 1474,
+					"height": 893,
+					"horizontal": "50%"
 				}
 			]
 		},
@@ -87,6 +101,13 @@
 					"width": 2400,
 					"height": 3200,
 					"horizontal": "75%"
+				},
+				{
+					"path": "/images/projects/john_cranko_schule_stuttgart/04.jpg",
+					"description": "Nulla eget turpis luctus, tempor felis sit amet, tempor neque. Suspendisse tristique arcu orci, nec pretium risus ultricies id.",
+					"width": 1620,
+					"height": 936,
+					"horizontal": "70%"
 				}
 			]
 		},
@@ -117,6 +138,13 @@
 					"width": 2400,
 					"height": 3000,
 					"horizontal": "65%"
+				},
+				{
+					"path": "/images/projects/vitra_design_museum_weil_am_rhein/04.jpg",
+					"description": "Suspendisse varius hendrerit mi ut scelerisque. Morbi non erat eu augue bibendum dapibus in nec ligula.",
+					"width": 1261,
+					"height": 1000,
+					"horizontal": "50%"
 				}
 			]
 		},
@@ -146,6 +174,13 @@
 					"description": "Adipisicing ex amet consequat sint duis laboris irure eiusmod sunt ullamco proident.",
 					"width": 2400,
 					"height": 1919,
+					"horizontal": "60%"
+				},
+				{
+					"path": "/images/projects/isbjerg_aarhus/04.jpg",
+					"description": "Curabitur nec ante pellentesque arcu vulputate rhoncus sed eget est. Duis nec risus tellus.",
+					"width": 2048,
+					"height": 1228,
 					"horizontal": "60%"
 				}
 			]
@@ -177,6 +212,13 @@
 					"width": 2400,
 					"height": 2400,
 					"horizontal": "50%"
+				},
+				{
+					"path": "/images/projects/champalimaud-foundation_lisboa/04.jpg",
+					"description": "Cras nibh metus, posuere ac consectetur convallis, fringilla ac nisl. Cras non ornare ipsum.",
+					"width": 2400,
+					"height": 1350,
+					"horizontal": "50%"
 				}
 			]
 		},
@@ -207,6 +249,13 @@
 					"width": 2400,
 					"height": 3600,
 					"horizontal": "45%"
+				},
+				{
+					"path": "/images/projects/apartments_madrid/04.jpg",
+					"description": "Nulla facilisi. Vivamus tortor nibh, elementum vitae ante eu, aliquet rhoncus odio.",
+					"width": 2400,
+					"height": 3600,
+					"horizontal": "50%"
 				}
 			]
 		},
