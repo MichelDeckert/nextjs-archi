@@ -5,6 +5,11 @@ import slugify from "../../utils/slugify";
 
 export default function Project({ project, id }) {
 	const { name, city, images, description } = project;
+	
+	async function importImg(path) {
+		cont img = await import(path)
+		return img
+	}
 
 	return (
 		<div className={styles.project}>
@@ -15,11 +20,10 @@ export default function Project({ project, id }) {
 			<div className={styles.content}>
 				<Image
 					alt={`${images[1].name}-${images[1].city}-1`}
-					src={images[1].path}
+					src={importImg(images[1].path)}
 					width={images[1].width}
 					height={images[1].height}
 					placeholder="blur"
-					blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+gAAABkCAYAAAAVORraAAACH0lEQVR42u3XQQ0AAAgEoDO50bWEmx9oQWXSAQAAAF6VoAMAAICgAwAAAIIOAAAAgg4AAAAIOgAAAAg6AAAAIOgAAAAg6AAAAICgAwAAgKADAAAAgg4AAACCDgAAAAg6AAAACDoAAAAg6AAAACDoAAAAgKADAACAoAMAAACCDgAAAIIOAAAACDoAAAAIOgAAACDoAAAAIOgAAACAoAMAAICgAwAAAIIOAAAAgg4AAAAIOgAAAAg6AAAAIOgAAAAg6AAAAICgAwAAgKADAAAAgg4AAACCDgAAAAg6AAAACDoAAAAg6AAAACDoAAAAgKADAACAoAMAAACCDgAAAIIOAAAACDoAAAAIOgAAACDoAAAAIOgAAACAoAMAAICgAwAAAIIOAAAAgg4AAAAIOgAAAAg6AAAAIOgAAAAg6AAAAICgAwAAgKADAAAAgg4AAACCDgAAAAg6AAAACDoAAAAg6AAAACDogg4AAACCDgAAAAg6AAAACDoAAAAg6AAAACDoAAAAgKADAACAoAMAAACCDgAAAIIOAAAACDoAAAAIOgAAACDoAAAAIOgAAACAoAMAAICgAwAAAIIOAAAAgg4AAAAIOgAAAAg6AAAAIOgAAAAg6AAAAICgAwAAgKADAAAAgg4AAACCDgAAAAg6AAAACDoAAAAg6AAAACDoAAAAgKADAACAoAMAAACCDgAAAIIOAAAACDoAAAAIOgAAAHBhAT7ilZ23MB9tAAAAAElFTkSuQmCC"
 					objectFit="cover"
 					objectPosition={`center ${images[1].horizontal}`}
 					quality={50}
