@@ -29,6 +29,8 @@ export default function Project({ project, id }) {
 						<Image
 							alt={`${images[0].name}-${images[0].city}-0`}
 							src={images[0].path}
+					placeholder="blur"
+					blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(images[0].width, images[0].height))}`}
 							layout="fill"
 							objectFit="cover"
 							quality={50}
@@ -42,6 +44,8 @@ export default function Project({ project, id }) {
 						src={images[2].path}
 						width={images[2].width}
 						height={images[2].height}
+					placeholder="blur"
+					blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(images[2].width, images[2].height))}`}
 						objectFit="cover"
 						objectPosition={`center ${images[2].horizontal}`}
 						quality={50}
@@ -51,6 +55,8 @@ export default function Project({ project, id }) {
 						src={images[3].path}
 						width={images[3].width}
 						height={images[3].height}
+					placeholder="blur"
+					blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(images[3].width, images[3].height))}`}
 						objectFit="cover"
 						objectPosition={`center ${images[3].horizontal}`}
 						quality={50}
