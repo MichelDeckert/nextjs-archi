@@ -1,4 +1,5 @@
 import Image from "next/image";
+import shimmer from "../../utils/shimmer";
 import styles from "../../styles/Project.module.css";
 import slugify from "../../utils/slugify";
 
@@ -17,6 +18,8 @@ export default function Project({ project, id }) {
 					src={images[1].path}
 					width={images[1].width}
 					height={images[1].height}
+					placeholder="blur"
+					blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(images[1].width, images[1].height))}`}
 					objectFit="cover"
 					objectPosition={`center ${images[1].horizontal}`}
 					quality={50}
