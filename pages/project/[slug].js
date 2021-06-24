@@ -14,11 +14,13 @@ export default function Project({ project, id }) {
 			<div className={styles.content}>
 				<Image
 					alt={`${images[1].name}-${images[1].city}-1`}
-					src={images[1].path}
+					src={async () => {
+						const img = await import(`${__dirname}/public${images[1].path}`);
+						return img;
+					}}
 					width={images[1].width}
 					height={images[1].height}
 					placeholder="blur"
-					blurDataURL="/images/placeholder.png"
 					objectFit="cover"
 					objectPosition={`center ${images[1].horizontal}`}
 					quality={50}
