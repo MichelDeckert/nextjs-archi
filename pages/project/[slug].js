@@ -3,7 +3,7 @@ import placeholder from "../../public/images/placeholder.png";
 import styles from "../../styles/Project.module.css";
 import slugify from "../../utils/slugify";
 
-export default function Project({ project, image, id }) {
+export default function Project({ project, id }) {
 	const { name, city, images, description } = project;
 
 	return (
@@ -15,10 +15,9 @@ export default function Project({ project, image, id }) {
 			<div className={styles.content}>
 				<Image
 					alt={`${images[1].name}-${images[1].city}-1`}
-					src={image}
+					src={async () => await import(`../../public${images[1].path}`)}
 					width={images[1].width}
 					height={images[1].height}
-					placeholder="blur"
 					objectFit="cover"
 					objectPosition={`center ${images[1].horizontal}`}
 					quality={50}
@@ -79,12 +78,10 @@ export async function getStaticProps(ctx) {
 	const idx = Number(ctx.params.slug.split("-")[0]);
 
 	const project = projects.find(({ id }) => idx === id);
-	const image = await import(`../../public${project.images[1].path}`)
 	
 	return {
 		props: {
 			project,
-			image
 		},
 	};
 }
