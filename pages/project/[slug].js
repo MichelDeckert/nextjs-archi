@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { getPlaiceholder } from "plaiceholder";
 import { useEffect } from "react";
 import styles from "../../styles/Project.module.css";
+import getBluredPlaceholder from "../../utils/getBluredPlaceholder";
 import slugify from "../../utils/slugify";
 
 export default function Project({ project }) {
@@ -23,6 +23,7 @@ export default function Project({ project }) {
 					placeholder="blur"
 					objectFit="cover"
 					objectPosition={`center ${images[1].horizontal}`}
+					priority={true}
 					quality={50}
 				/>
 				<div className={styles.main_content}>
@@ -35,6 +36,7 @@ export default function Project({ project }) {
 							layout="fill"
 							objectFit="cover"
 							objectPosition={`center ${images[0].horizontal}`}
+							priority={true}
 							quality={50}
 						/>
 					</div>
@@ -46,6 +48,7 @@ export default function Project({ project }) {
 						placeholder="blur"
 						objectFit="cover"
 						objectPosition={`center ${images[2].horizontal}`}
+						priority={true}
 						quality={50}
 					/>
 					<Image
@@ -53,6 +56,7 @@ export default function Project({ project }) {
 						placeholder="blur"
 						objectFit="cover"
 						objectPosition={`center ${images[3].horizontal}`}
+						priority={true}
 						quality={50}
 					/>
 				</div>
@@ -78,20 +82,9 @@ export async function getStaticProps(ctx) {
 	const { projects } = await import("../api/db.json");
 
 	const idx = Number(ctx.params.slug.split("-")[0]);
-
 	const project = projects.find(({ id }) => idx === id);
 
-	const images = await Promise.all(
-		project.images.map(async ({ path, horizontal }, id) => {
-			const { base64, img } = await getPlaiceholder(path, { size: 24 });
-			return {
-				imageProps: { ...img, blurDataURL: base64 },
-				horizontal,
-				path,
-				alt: `${project.name}-${project.city}-${id + 1}`,
-			};
-		})
-	);
+	const images = await getBluredPlaceholder(project);
 
 	return {
 		props: {

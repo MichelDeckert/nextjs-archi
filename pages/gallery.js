@@ -3,6 +3,7 @@ import GalleryContainer from "../modules/GalleryContainer";
 import styles from "../styles/Gallery.module.css";
 import Control from "../modules/Control";
 import Counter from "../modules/Counter";
+import getBluredPlaceholder from "../utils/getBluredPlaceholder";
 
 export default function Gallery({ images, totalPages }) {
 	const [currentPage, setCurrentPage] = useState(1);
@@ -39,25 +40,30 @@ export default function Gallery({ images, totalPages }) {
 }
 
 export async function getStaticProps() {
-	const { projects } = await import("./api/db.json");
+	const { projects: p } = await import("./api/db.json");
+
+	const projects = await Promise.all(
+		p.map(async project => {
+			const images = await getBluredPlaceholder(project);
+			return {
+				...project,
+				images,
+			};
+		})
+	);
 
 	let imagesList = [];
 
 	projects.forEach(({ name, city, images, id: projectId }) =>
-		images.forEach(
-			({ path, width, height, description: imageDescription }, id) => {
-				imagesList.push({
-					height,
-					width,
-					path,
-					name,
-					city,
-					id,
-					projectId,
-					imageDescription,
-				});
-			}
-		)
+		images.forEach((image, imageId) => {
+			imagesList.push({
+				image,
+				name,
+				city,
+				imageId,
+				projectId,
+			});
+		})
 	);
 
 	const totalPages = Math.ceil(imagesList.length / 10);

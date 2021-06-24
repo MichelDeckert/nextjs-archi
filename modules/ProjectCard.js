@@ -6,7 +6,7 @@ import styles from "../styles/ProjectCard.module.css";
 import cropSentence from "../utils/cropSentence";
 
 export default function ProjectCard({ project, last }) {
-	const { id, name, city, description, imagePath } = project;
+	const { id, name, city, description, images } = project;
 	const router = useRouter();
 
 	function handleClick() {
@@ -17,12 +17,15 @@ export default function ProjectCard({ project, last }) {
 		<div className={`${styles.project_card} ${!last ? styles.notlast : ""}`}>
 			<div className={styles.image_container}>
 				<Image
-					src={imagePath}
-					alt={`${name} - ${city}`}
+					src={images[0].imageProps.src}
+					alt={images[0].imageProps.alt}
 					layout="fill"
+					placeholder="blur"
+					blurDataURL={images[0].imageProps.blurDataURL}
 					objectFit="cover"
 					objectPosition="center center"
 					quality={25}
+					priority={true}
 				/>
 			</div>
 			<div className={styles.info_container}>
