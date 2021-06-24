@@ -14,7 +14,7 @@ export default function Project({ project, id }) {
 			<div className={styles.content}>
 				<Image
 					alt={`${images[1].name}-${images[1].city}-1`}
-					src={importImg(images[1].path)}
+					src={images[1].path}
 					width={images[1].width}
 					height={images[1].height}
 					objectFit="cover"
