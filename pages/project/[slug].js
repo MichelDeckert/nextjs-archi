@@ -1,4 +1,5 @@
 import Image from "next/image";
+import placeholder from "../../public/images/placeholder.png";
 import styles from "../../styles/Project.module.css";
 import slugify from "../../utils/slugify";
 
@@ -14,13 +15,11 @@ export default function Project({ project, id }) {
 			<div className={styles.content}>
 				<Image
 					alt={`${images[1].name}-${images[1].city}-1`}
-					src={async () => {
-						const img = await import(`${__dirname}/public${images[1].path}`);
-						return img;
-					}}
+					src={images[1].path}
 					width={images[1].width}
 					height={images[1].height}
 					placeholder="blur"
+					blurDataURL={placeholder}
 					objectFit="cover"
 					objectPosition={`center ${images[1].horizontal}`}
 					quality={50}
