@@ -33,15 +33,26 @@ export default function Project({ project, id }) {
 					</div>
 					<p className={styles.text}>{description}</p>
 				</div>
-				<Image
-					alt={`${images[2].name}-${images[2].city}-2`}
-					src={images[2].path}
-					width={images[2].width}
-					height={images[2].height}
-					objectFit="cover"
-					objectPosition={`center ${images[2].horizontal}`}
-					quality={50}
-				/>
+				<div className={styles.bottom_images}>
+					<Image
+						alt={`${images[2].name}-${images[2].city}-2`}
+						src={images[2].path}
+						width={images[2].width}
+						height={images[2].height}
+						objectFit="cover"
+						objectPosition={`center ${images[2].horizontal}`}
+						quality={50}
+					/>
+					<Image
+						alt={`${images[3].name}-${images[3].city}-3`}
+						src={images[3].path}
+						width={images[3].width}
+						height={images[3].height}
+						objectFit="cover"
+						objectPosition={`center ${images[3].horizontal}`}
+						quality={50}
+					/>
+				</div>
 			</div>
 		</div>
 	);
