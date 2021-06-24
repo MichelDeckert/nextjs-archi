@@ -1,5 +1,5 @@
 import Image from "next/image";
-import shimmer from "../../utils/shimmer";
+import {toBase64, shimmer} from "../../utils/blurData";
 import styles from "../../styles/Project.module.css";
 import slugify from "../../utils/slugify";
 
