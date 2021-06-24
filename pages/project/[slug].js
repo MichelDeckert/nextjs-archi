@@ -19,7 +19,7 @@ export default function Project({ project, id }) {
 					width={images[1].width}
 					height={images[1].height}
 					placeholder="blur"
-					blurDataURL="data:image/svg+xml;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOMCw2tBwADqgGJSIhRrwAAAABJRU5ErkJggg=="
+					blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOMCw2tBwADqgGJSIhRrwAAAABJRU5ErkJggg=="
 					objectFit="cover"
 					objectPosition={`center ${images[1].horizontal}`}
 					quality={50}
@@ -30,7 +30,7 @@ export default function Project({ project, id }) {
 							alt={`${images[0].name}-${images[0].city}-0`}
 							src={images[0].path}
 							placeholder="blur"
-							blurDataURL="data:image/svg+xml;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOMCw2tBwADqgGJSIhRrwAAAABJRU5ErkJggg=="
+							blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOMCw2tBwADqgGJSIhRrwAAAABJRU5ErkJggg=="
 							layout="fill"
 							objectFit="cover"
 							quality={50}
@@ -45,7 +45,7 @@ export default function Project({ project, id }) {
 						width={images[2].width}
 						height={images[2].height}
 						placeholder="blur"
-						blurDataURL="data:image/svg+xml;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOMCw2tBwADqgGJSIhRrwAAAABJRU5ErkJggg=="
+						blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOMCw2tBwADqgGJSIhRrwAAAABJRU5ErkJggg=="
 						objectFit="cover"
 						objectPosition={`center ${images[2].horizontal}`}
 						quality={50}
@@ -56,7 +56,7 @@ export default function Project({ project, id }) {
 						width={images[3].width}
 						height={images[3].height}
 						placeholder="blur"
-						blurDataURL="data:image/svg+xml;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOMCw2tBwADqgGJSIhRrwAAAABJRU5ErkJggg=="
+						blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mOMCw2tBwADqgGJSIhRrwAAAABJRU5ErkJggg=="
 						objectFit="cover"
 						objectPosition={`center ${images[3].horizontal}`}
 						quality={50}
