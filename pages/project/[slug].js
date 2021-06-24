@@ -1,10 +1,15 @@
 import Image from "next/image";
-import placeholder from "../../public/images/placeholder.png";
+import { getPlaiceholder } from "plaiceholder";
+import { useEffect } from "react";
 import styles from "../../styles/Project.module.css";
 import slugify from "../../utils/slugify";
 
-export default function Project({ project, id }) {
+export default function Project({ project }) {
 	const { name, city, images, description } = project;
+
+	useEffect(() => {
+		console.log(images[0].path);
+	}, [images]);
 
 	return (
 		<div className={styles.project}>
@@ -14,10 +19,8 @@ export default function Project({ project, id }) {
 			</div>
 			<div className={styles.content}>
 				<Image
-					alt={`${images[1].name}-${images[1].city}-1`}
-					src={images[1].path}
-					width={images[1].width}
-					height={images[1].height}
+					{...images[1].imageProps}
+					placeholder="blur"
 					objectFit="cover"
 					objectPosition={`center ${images[1].horizontal}`}
 					quality={50}
@@ -25,10 +28,13 @@ export default function Project({ project, id }) {
 				<div className={styles.main_content}>
 					<div className={styles.main_image}>
 						<Image
-							alt={`${images[0].name}-${images[0].city}-0`}
-							src={images[0].path}
+							alt={images[0].imageProps.alt}
+							src={images[0].imageProps.src}
+							placeholder="blur"
+							blurDataURL={images[0].imageProps.blurDataURL}
 							layout="fill"
 							objectFit="cover"
+							objectPosition={`center ${images[0].horizontal}`}
 							quality={50}
 						/>
 					</div>
@@ -36,19 +42,15 @@ export default function Project({ project, id }) {
 				</div>
 				<div className={styles.bottom_images}>
 					<Image
-						alt={`${images[2].name}-${images[2].city}-2`}
-						src={images[2].path}
-						width={images[2].width}
-						height={images[2].height}
+						{...images[2].imageProps}
+						placeholder="blur"
 						objectFit="cover"
 						objectPosition={`center ${images[2].horizontal}`}
 						quality={50}
 					/>
 					<Image
-						alt={`${images[3].name}-${images[3].city}-3`}
-						src={images[3].path}
-						width={images[3].width}
-						height={images[3].height}
+						{...images[3].imageProps}
+						placeholder="blur"
 						objectFit="cover"
 						objectPosition={`center ${images[3].horizontal}`}
 						quality={50}
@@ -74,14 +76,26 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(ctx) {
 	const { projects } = await import("../api/db.json");
-	
+
 	const idx = Number(ctx.params.slug.split("-")[0]);
 
 	const project = projects.find(({ id }) => idx === id);
-	
+
+	const images = await Promise.all(
+		project.images.map(async ({ path, horizontal }, id) => {
+			const { base64, img } = await getPlaiceholder(path);
+			return {
+				imageProps: { ...img, blurDataURL: base64 },
+				horizontal,
+				path,
+				alt: `${project.name}-${project.city}-${id + 1}`,
+			};
+		})
+	);
+
 	return {
 		props: {
-			project,
+			project: { ...project, images },
 		},
 	};
 }
