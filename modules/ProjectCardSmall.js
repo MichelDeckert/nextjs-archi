@@ -3,15 +3,10 @@ import slugify from "../utils/slugify";
 import cropSentence from "../utils/cropSentence";
 import Image from "next/image";
 import styles from "../styles/ProjectCardSmall.module.css";
-import { useEffect } from "react";
 
-export default function ProjectCardSmall({ project, imagesId, currentPage }) {
+export default function ProjectCardSmall({ project }) {
 	const router = useRouter();
-	const { image, imageId, projectId, name, city } = project;
-
-	useEffect(() => {
-		console.log(project);
-	}, [project]);
+	const { image, projectId, name, city } = project;
 
 	function handleClick(slug) {
 		router.push(`/project/${slug}`);

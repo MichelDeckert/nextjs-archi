@@ -11,12 +11,7 @@ export default function GalleryContainer({ images, currentPage, imagesId }) {
 				transform: `translateX(${(1 - currentPage + imagesId) * 120}%)`,
 			}}>
 			{images.map((project, idx) => (
-				<ProjectCardSmall
-					project={project}
-					imagesId={imagesId}
-					currentPage={currentPage}
-					key={idx}
-				/>
+				<ProjectCardSmall project={project} key={idx} />
 			))}
 		</div>
 	);
