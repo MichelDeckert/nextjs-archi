@@ -286,6 +286,13 @@
 					"width": 2400,
 					"height": 1628,
 					"horizontal": "50%"
+				},
+				{
+					"path": "/images/projects/oodi_central_library_helsinki/04.jpg",
+					"description": "Sed posuere, dolor et ullamcorper euismod, arcu metus pulvinar dui, ut viverra ligula diam sed justo.",
+					"width": 1920,
+					"height": 1280,
+					"horizontal": "60%"
 				}
 			]
 		}
