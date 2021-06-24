@@ -17,6 +17,8 @@ export default function Project({ project, id }) {
 					src={images[1].path}
 					width={images[1].width}
 					height={images[1].height}
+					placeholder="blur"
+					blurDataUrl="/images/placeholder.png"
 					objectFit="cover"
 					objectPosition={`center ${images[1].horizontal}`}
 					quality={50}
