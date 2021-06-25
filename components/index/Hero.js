@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import GoTo from "../../modules/GoTo";
@@ -7,12 +7,10 @@ import Counter from "../../modules/Counter";
 import styles from "../../styles/Hero.module.css";
 import slugify from "../../utils/slugify";
 
-export default function Hero({ projects, isLoading, setIsLoading }) {
-	const slider = useRef();
-	const [slideToShow, setSlideToShow] = useState(null);
-	const [areImagesLoaded, setAreImagesLoaded] = useState(false);
-	const imagesElRef = useRef([]);
+export default function Hero({ projects }) {
+	const [slideToShow, setSlideToShow] = useState(0);
 	const router = useRouter();
+	const slider = useRef();
 
 	function handleGoToClick(slug) {
 		router.push(`/project/${slug}`);
@@ -28,43 +26,9 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 		}
 	}
 
-	function checkComplete() {
-		const completed = [...slider.current.children]
-			.filter(el => el.children)
-			.map(el =>
-				[...el.children]
-					.filter(child => child.firstChild.className.includes("slide_image"))
-					.map(el => el.firstChild)
-			)
-			.every(el => el[0].complete === true);
-
-		if (completed) setAreImagesLoaded(true);
-	}
-
-	useEffect(() => {
-		if (areImagesLoaded) {
-			setTimeout(() => {
-				setSlideToShow(0);
-				setIsLoading(false);
-			}, 100);
-		}
-	}, [areImagesLoaded]);
-
-	useEffect(() => {
-		if (imagesElRef.current.length !== projects.length) {
-			imagesElRef.current = new Array(projects.length);
-		}
-		checkComplete();
-	}, []);
-
 	return (
-		<section
-			className={`${styles.hero} section`}
-			style={isLoading ? { height: "0px" } : {}}>
-			<div
-				className={`${styles.content} ${
-					isLoading ? styles.hidden : styles.shown
-				}`}>
+		<section className={`${styles.hero} section`}>
+			<div className={styles.content}>
 				<div className={styles.title_container}>
 					{projects.map(({ id, name, city }, idx) => (
 						<h2
@@ -91,15 +55,15 @@ export default function Hero({ projects, isLoading, setIsLoading }) {
 							idx === slideToShow ? styles.shown : styles.hidden
 						}`}>
 						<Image
-							className="slide_image"
-							src={images[0].path}
-							alt={`${name} - ${city}`}
+							src={images[0].imageProps.src}
+							alt={images[0].imageProps.alt}
 							layout="fill"
+							placeholder="blur"
+							blurDataURL={images[0].imageProps.blurDataURL}
 							objectFit="cover"
-							objectPosition="center center"
-							quality={30}
+							objectPosition={`center ${images[0].horizontal}`}
+							quality={50}
 							priority={true}
-							onLoad={checkComplete}
 						/>
 						<GoTo
 							text="voir"

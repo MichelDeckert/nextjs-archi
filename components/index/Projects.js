@@ -28,13 +28,14 @@ export default function Projects({ projects }) {
 					.map(({ images, name, city, id }, idx) => (
 						<div className={styles.img} key={idx}>
 							<Image
-								className={styles.project_image}
-								src={images[0].path}
-								alt={name}
+								src={images[0].imageProps.src}
+								alt={images[0].imageProps.alt}
 								layout="fill"
+								placeholder="blur"
+								blurDataURL={images[0].imageProps.blurDataURL}
 								objectFit="cover"
-								objectPosition="center 35%"
-								quality={15}
+								objectPosition={`center ${images[0].horizontal}`}
+								quality={25}
 								priority={true}
 							/>
 							<div className={styles.overlay}>
