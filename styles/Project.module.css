@@ -28,6 +28,10 @@
 .text {
 	grid-column: 2/3;
 	text-align: justify;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 25px;
+	color: var(--main-dark-grey);
 }
 
 .main_content {

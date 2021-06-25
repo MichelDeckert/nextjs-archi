@@ -7,8 +7,6 @@ import Projects from "../components/index/Projects";
 import Form from "../components/index/Form";
 
 export default function Home({ projects }) {
-	console.log(projects);
-
 	return (
 		<>
 			<Head>
