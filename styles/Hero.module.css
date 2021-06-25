@@ -9,15 +9,8 @@
 	display: grid;
 	grid-template-rows: 1fr auto 1fr;
 	grid-column: 1/5;
-}
-
-.content.hidden {
 	transform: translateX(-25vw);
-}
-
-.content.shown {
-	transform: translateX(0);
-	transition: calc(var(--animation-duration) * 1.5) ease-in-out;
+	transition: all calc(var(--animation-duration) * 1.2) ease-in-out;
 }
 
 .title_container {
@@ -68,6 +61,8 @@
 .slider {
 	position: relative;
 	grid-column: 5/13;
+	transform: translateX(50vw);
+	transition: all calc(var(--animation-duration) * 1.2) ease-in-out;
 }
 
 .slide {

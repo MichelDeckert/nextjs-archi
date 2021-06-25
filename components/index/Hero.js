@@ -1,5 +1,6 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import { addScrollEvent } from "../../utils/addScrollEvent";
 import Image from "next/image";
 import GoTo from "../../modules/GoTo";
 import Control from "../../modules/Control";
@@ -11,6 +12,7 @@ export default function Hero({ projects }) {
 	const [slideToShow, setSlideToShow] = useState(0);
 	const router = useRouter();
 	const slider = useRef();
+	const content = useRef();
 
 	function handleGoToClick(slug) {
 		router.push(`/project/${slug}`);
@@ -26,9 +28,14 @@ export default function Hero({ projects }) {
 		}
 	}
 
+	useEffect(() => {
+		addScrollEvent(content.current);
+		addScrollEvent(slider.current);
+	}, []);
+
 	return (
 		<section className={`${styles.hero} section`}>
-			<div className={styles.content}>
+			<div className={styles.content} ref={content}>
 				<div className={styles.title_container}>
 					{projects.map(({ id, name, city }, idx) => (
 						<h2
