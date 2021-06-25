@@ -3,6 +3,7 @@ import ProjectCard from "../../modules/ProjectCard";
 import Control from "../../modules/Control";
 import Counter from "../../modules/Counter";
 import styles from "../../styles/Projects.module.css";
+import getBluredPlaceholder from "../../utils/getBluredPlaceholder";
 
 export default function Projects({ projects, currentPage, totalPages }) {
 	const router = useRouter();
@@ -56,21 +57,21 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-	const { projects } = await import("../api/db.json");
+	const { projects: p } = await import("../api/db.json");
 	const { page } = params;
 
-	const totalPages = Math.ceil(projects.length / 3);
+	const totalPages = Math.ceil(p.length / 3);
 
-	let pageProjects = projects.slice((Number(page) - 1) * 3);
-	if (pageProjects.length > 3) pageProjects = pageProjects.slice(0, 3);
+	let projects = p.slice((Number(page) - 1) * 3);
+	if (projects.length > 3) projects = projects.slice(0, 3);
 
-	pageProjects = pageProjects.map(
-		({ name, city, description, images, id }) => ({
-			name,
-			city,
-			description,
-			id,
-			imagePath: images[0].path,
+	const pageProjects = await Promise.all(
+		projects.map(async project => {
+			const images = await getBluredPlaceholder(project);
+			return {
+				...project,
+				images,
+			};
 		})
 	);
 

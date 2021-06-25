@@ -4,9 +4,9 @@ import cropSentence from "../utils/cropSentence";
 import Image from "next/image";
 import styles from "../styles/ProjectCardSmall.module.css";
 
-export default function ProjectCardSmall({ project, imagesId, currentPage }) {
+export default function ProjectCardSmall({ project }) {
 	const router = useRouter();
-	const { path, id, projectId, name, city, imageDescription } = project;
+	const { image, projectId, name, city } = project;
 
 	function handleClick(slug) {
 		router.push(`/project/${slug}`);
@@ -17,18 +17,20 @@ export default function ProjectCardSmall({ project, imagesId, currentPage }) {
 			className={styles.gallery_image}
 			onClick={handleClick.bind(null, slugify(projectId, name, city))}>
 			<Image
-				src={path}
-				alt={`${name} - ${id}`}
+				src={image.imageProps.src}
+				alt={image.alt}
+				placeholder="blur"
+				blurDataURL={image.imageProps.blurDataURL}
 				layout="fill"
 				objectFit="cover"
 				objectPosition="center center"
-				priority={currentPage - 1 === imagesId}
+				priority={true}
 				quality={10}
 			/>
 			<div className={styles.overlay}>
 				<h2 className={styles.overlay_title}>{`${name} - ${city}`}</h2>
 				<h2 className={styles.overlay_description}>
-					{cropSentence(imageDescription, 50)}
+					{cropSentence(image.description, 50)}
 				</h2>
 			</div>
 		</div>
