@@ -6,7 +6,8 @@
 	--main-light-grey: #f2f2f2;
 	--nav-height: 102px;
 	--max-width: 1170px;
-	--grid-temp-col: repeat(12, 70px);
+	--grid-col-length: 70px;
+	--grid-temp-col: repeat(12, var(--grid-col-length));
 	--grid-gap: 30px;
 	--margin-section: 120px;
 	--animation-duration: 0.8s;
@@ -104,4 +105,16 @@ a {
 	font-size: 64px;
 	font-weight: 300;
 	text-transform: uppercase;
+}
+
+@media (max-width: 1200px) {
+	:root {
+		--grid-col-length: calc(90vw - (25 * 11) / 12);
+		--grid-gap: 25px;
+		--max-width: 90vw;
+	}
+
+	.secondary-title {
+		font-size: 58px;
+	}
 }

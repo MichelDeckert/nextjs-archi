@@ -38,3 +38,24 @@
 	line-height: 36px;
 	color: var(--main-dark-grey);
 }
+
+@media (max-width: 1200px) {
+	.section {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.info1,
+	.info2 {
+		max-width: 100%;
+		margin: 24px 0;
+	}
+
+	.num {
+		font-size: 165px;
+	}
+
+	.text {
+		text-align: justify;
+	}
+}

@@ -40,7 +40,11 @@ export default function About() {
 					odio. Phasellus ac ex vel velit dapibus suscipit. In hac habitasse
 					platea dictumst.Aenean elementum, est neciaculis egestas.
 				</p>
-				<GoTo style={{ marginBottom: "30px" }} text="lire" />
+				<GoTo
+					subclass={styles.goto}
+					style={{ marginBottom: "30px" }}
+					text="lire"
+				/>
 			</div>
 		</section>
 	);

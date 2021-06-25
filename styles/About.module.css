@@ -9,7 +9,7 @@
 .images {
 	display: grid;
 	grid-template-rows: auto auto;
-	grid-template-columns: repeat(7, 70px);
+	grid-template-columns: repeat(7, var(--grid-col-length));
 	gap: 0 var(--grid-gap);
 	grid-column: 1/8;
 }
@@ -46,4 +46,28 @@
 	font-size: 16px;
 	font-weight: 300;
 	line-height: 25px;
+}
+
+@media (max-width: 1200px) {
+	.section {
+		display: flex;
+		flex-direction: column-reverse;
+		gap: 8px;
+	}
+
+	.info {
+		text-align: justify;
+		padding: 0 40px;
+	}
+
+	.info > h2 {
+		margin: 12px 0;
+	}
+
+	.goto {
+		position: relative;
+		width: max-content;
+		margin: 0 !important;
+		margin-top: 20px !important;
+	}
 }

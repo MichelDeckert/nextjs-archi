@@ -64,3 +64,10 @@
 	color: #fff;
 	background-color: var(--main-dark-grey);
 }
+
+.image {
+	grid-column: 2/3;
+}
+
+@media (max-width: 1200px) {
+}
