@@ -66,8 +66,13 @@
 }
 
 .image {
+	position: relative;
 	grid-column: 2/3;
 }
 
 @media (max-width: 1200px) {
+	.section {
+		grid-template-columns: 5fr 2fr;
+		grid-template-rows: auto 369px;
+	}
 }

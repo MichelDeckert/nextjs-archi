@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { addScrollEvent } from "../../utils/addScrollEvent";
+import formImg from "../../public/images/form-img.jpg";
 import Image from "next/image";
 import styles from "../../styles/Form.module.css";
 import GoTo from "../../modules/GoTo";
@@ -49,11 +50,13 @@ export default function Form() {
 			</form>
 			<div className={styles.image}>
 				<Image
-					src="/images/form-img.svg"
+					src={formImg}
 					alt="form"
+					placeholder="blur"
 					layout="fill"
 					objectFit="cover"
-					objectPosition="center center"
+					quality={30}
+					priority={true}
 				/>
 			</div>
 			<div className={styles.condition}>

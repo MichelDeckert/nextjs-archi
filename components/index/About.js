@@ -14,17 +14,17 @@ export default function About() {
 		<section className={`${styles.section} section`} ref={section}>
 			<div className={styles.images}>
 				<img
-					src="./images/section1-img1.svg"
+					src="/images/section1-img1.svg"
 					alt="building"
 					className={styles.img1}
 				/>
 				<img
-					src="./images/section1-img2.svg"
+					src="/images/section1-img2.svg"
 					alt="building"
 					className={styles.img2}
 				/>
 				<img
-					src="./images/section1-img3.svg"
+					src="/images/section1-img3.svg"
 					alt="building"
 					className={styles.img3}
 				/>

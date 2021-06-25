@@ -11,3 +11,16 @@
 .hidden {
 	position: absolute;
 }
+
+@media (max-width: 1200px) {
+	.gallery_container {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(3, 130px);
+		gap: var(--grid-gap);
+	}
+
+	.gallery_container > *:first-child,
+	.gallery_container > *:last-child {
+		grid-column: span 2;
+	}
+}

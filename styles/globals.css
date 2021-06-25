@@ -109,7 +109,7 @@ a {
 
 @media (max-width: 1200px) {
 	:root {
-		--grid-col-length: calc(90vw - (25 * 11) / 12);
+		--grid-col-length: calc((90vw - (25px * 11)) / 12);
 		--grid-gap: 25px;
 		--max-width: 90vw;
 	}
