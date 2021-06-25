@@ -114,7 +114,21 @@ a {
 		--max-width: 90vw;
 	}
 
+	.content {
+		padding-bottom: 60px;
+	}
+
 	.secondary-title {
 		font-size: 58px;
+	}
+}
+
+@media (max-width: 650px) {
+	.secondary-title {
+		font-size: 50px;
+	}
+
+	.section {
+		margin-top: 60px;
 	}
 }

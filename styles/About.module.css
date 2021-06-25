@@ -85,3 +85,9 @@
 		margin-bottom: 20px !important;
 	}
 }
+
+@media (max-width: 1200px) {
+	.img3 {
+		display: none;
+	}
+}

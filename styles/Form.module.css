@@ -76,3 +76,14 @@
 		grid-template-rows: auto 369px;
 	}
 }
+
+@media (max-width: 650px) {
+	.section {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.image {
+		display: none;
+	}
+}

@@ -78,3 +78,23 @@
 		text-align: justify;
 	}
 }
+
+@media (max-width: 650px) {
+	.project_card {
+		display: flex;
+		flex-direction: column;
+		height: auto;
+	}
+
+	.info_container {
+		padding: 20px;
+	}
+
+	.description {
+		margin: 0;
+	}
+
+	.image_container {
+		height: 250px;
+	}
+}

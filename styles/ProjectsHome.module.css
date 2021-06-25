@@ -122,3 +122,22 @@
 	opacity: 0;
 	transform: translateX(-50px);
 }
+
+@media (max-width: 650px) {
+	.images {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.img {
+		display: none;
+	}
+
+	.img:nth-child(1),
+	.img:nth-child(2),
+	.img:nth-child(3) {
+		display: block;
+		width: 100%;
+		min-height: 200px;
+	}
+}
