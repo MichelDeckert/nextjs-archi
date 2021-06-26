@@ -39,6 +39,14 @@
 	color: var(--main-dark-grey);
 }
 
+@media (max-width: 700px) {
+	.section {
+		transform: translateX(0);
+		opacity: 1;
+		transition: none;
+	}
+}
+
 @media (max-width: 1200px) {
 	.section {
 		display: flex;

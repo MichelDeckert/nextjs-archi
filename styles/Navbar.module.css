@@ -77,15 +77,20 @@
 	.navbar {
 		display: flex;
 		justify-content: space-between;
-		width: 100%;
-		margin: auto;
-		padding: 14px;
+		width: var(--max-width);
+		padding: calc((100vw - var(--max-width)) / 2);
 	}
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
 	.navbar {
+		position: fixed;
 		flex-direction: row-reverse;
+		top: 0;
+		min-width: 100vw;
+		z-index: 9999;
+		background-color: white;
+		border-bottom: solid 1px var(--main-light-grey);
 	}
 
 	.menu_svg {
@@ -102,7 +107,6 @@
 		width: 100vw;
 		height: calc(100vh - var(--nav-height));
 		background-color: white;
-		border-top: solid 1px var(--main-light-grey);
 	}
 
 	.menu_list li {
@@ -110,6 +114,12 @@
 	}
 
 	.menu.open .menu_list {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		top: var(--nav-height);
+		height: calc(100vh - var(--nav-height));
 		display: flex;
 		flex-direction: column;
 		gap: 24px;

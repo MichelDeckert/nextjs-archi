@@ -123,7 +123,13 @@
 	transform: translateX(-50px);
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
+	.section {
+		transform: translateX(0);
+		opacity: 1;
+		transition: none;
+	}
+
 	.images {
 		display: flex;
 		flex-direction: column;

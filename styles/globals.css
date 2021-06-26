@@ -25,6 +25,10 @@ a {
 	text-decoration: none;
 }
 
+.noscroll {
+	overflow: hidden;
+}
+
 .app {
 	display: grid;
 	grid-template-rows: auto 1fr auto;
@@ -128,8 +132,16 @@ a {
 	}
 }
 
-@media (max-width: 650px) {
+@media (max-width: 700px) {
+	:root {
+		--nav-height: 82px;
+	}
+
 	.secondary-title {
 		font-size: 50px;
+	}
+
+	.content {
+		margin-top: var(--nav-height);
 	}
 }

@@ -1,11 +1,13 @@
 import { useRouter } from "next/dist/client/router";
 import styles from "../styles/Navbar.module.css";
 import Link from "next/link";
-import { useState } from "react";
 
-export default function Navbar() {
-	const [isMenuOpen, setIsMenuOpen] = useState(false);
+export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
 	const router = useRouter();
+
+	const handleLinkClick = () => {
+		if (isMenuOpen) setIsMenuOpen(false);
+	};
 
 	const handleMenuClick = () => {
 		setIsMenuOpen(!isMenuOpen);
@@ -24,19 +26,19 @@ export default function Navbar() {
 					onClick={handleMenuClick}
 				/>
 				<ul className={styles.menu_list}>
-					<li onClick={handleMenuClick}>
+					<li onClick={handleLinkClick}>
 						<Link href="/">ACCUEIL</Link>
 					</li>
-					<li onClick={handleMenuClick}>
+					<li onClick={handleLinkClick}>
 						<Link href="/gallery">GALERIE</Link>
 					</li>
-					<li onClick={handleMenuClick}>
+					<li onClick={handleLinkClick}>
 						<Link href="/projects/1">PROJETS</Link>
 					</li>
-					<li onClick={handleMenuClick}>
+					<li onClick={handleLinkClick}>
 						<Link href="/certificats">CERTIFICATS</Link>
 					</li>
-					<li onClick={handleMenuClick}>
+					<li onClick={handleLinkClick}>
 						<Link href="/contacts">CONTACTS</Link>
 					</li>
 				</ul>
