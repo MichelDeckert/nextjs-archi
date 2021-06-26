@@ -114,6 +114,10 @@ a {
 		--max-width: 90vw;
 	}
 
+	.section {
+		margin-top: 60px;
+	}
+
 	.content {
 		padding-bottom: 60px;
 	}
@@ -126,9 +130,5 @@ a {
 @media (max-width: 650px) {
 	.secondary-title {
 		font-size: 50px;
-	}
-
-	.section {
-		margin-top: 60px;
 	}
 }
