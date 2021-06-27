@@ -32,8 +32,9 @@ export default function Gallery({ images, totalPages }) {
 				))}
 			</div>
 			<div className={styles.controllers}>
-				<Counter current={currentPage} total={totalPages} />
-				<Control handleClick={handleArrowClick} />
+				<Control handleClick={handleArrowClick}>
+					<Counter current={currentPage} total={totalPages} />
+				</Control>
 			</div>
 		</section>
 	);

@@ -56,15 +56,11 @@
 	.info1,
 	.info2 {
 		max-width: 100%;
-		margin: 24px 0;
+		margin: 20px 0;
 	}
 
 	.num {
-		font-size: 165px;
-	}
-
-	.text {
-		text-align: justify;
+		font-size: 134px;
 	}
 }
 
@@ -74,7 +70,12 @@
 	}
 
 	.info1 {
-		margin-top: 40px;
+		margin-top: 20px;
+		margin-bottom: 0;
+	}
+
+	.info2 {
+		margin-top: 10px;
 	}
 
 	.text {
