@@ -2,35 +2,34 @@
 	display: grid;
 	grid-template-columns: var(--grid-temp-col);
 	gap: var(--grid-gap);
-	width: 100%;
 	max-width: var(--max-width);
 	height: var(--nav-height);
 	margin: auto;
 }
 
-.navbar .logo {
+.logo {
 	grid-column: 1/5;
 	display: flex;
 	align-items: center;
 }
 
-.navbar .logo img:hover {
+.logo img:hover {
 	cursor: pointer;
 }
 
-.navbar .menu {
+.menu {
 	grid-column: 5/13;
 	display: flex;
 	align-items: center;
 }
 
-.navbar ul {
+.menu_list {
 	display: flex;
 	flex-direction: row;
 	list-style: none;
 }
 
-.navbar li {
+.menu li {
 	position: relative;
 	margin-right: 60px;
 	font-size: 12px;
@@ -38,12 +37,12 @@
 	cursor: pointer;
 }
 
-.navbar li:last-child {
+.menu li:last-child {
 	margin: 0;
 }
 
-.navbar li::before,
-.navbar li::after {
+.menu li::before,
+.menu li::after {
 	content: "";
 	position: absolute;
 	width: 0;
@@ -51,21 +50,85 @@
 	transition: all 0.15s ease-out;
 }
 
-.navbar li::before {
+.menu li::before {
 	top: -4px;
 }
 
-.navbar li::after {
+.menu li::after {
 	bottom: -4px;
 	left: 0;
 }
 
-.navbar li:hover::before,
-.navbar li:hover::after,
-.navbar li:active::before,
-.navbar li:active::after,
-.navbar li:focus::before,
-.navbar li:focus::after {
+.menu li:hover::before,
+.menu li:hover::after,
+.menu li:active::before,
+.menu li:active::after,
+.menu li:focus::before,
+.menu li:focus::after {
 	width: 100%;
 	transition: width 0.25s ease-in;
+}
+
+.menu_svg {
+	display: none;
+}
+
+@media (max-width: 1200px) {
+	.navbar {
+		display: flex;
+		justify-content: space-between;
+		width: var(--max-width);
+		padding: calc((100vw - var(--max-width)) / 2);
+	}
+}
+
+@media (max-width: 700px) {
+	.navbar {
+		position: fixed;
+		flex-direction: row-reverse;
+		top: 0;
+		min-width: 100vw;
+		z-index: 9999;
+		background-color: white;
+		border-bottom: solid 1px var(--main-light-grey);
+	}
+
+	.menu_svg {
+		display: inline;
+		height: 36px;
+		width: 36px;
+	}
+
+	.menu.open .menu_list {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 100;
+		width: 100vw;
+		height: calc(100vh - var(--nav-height));
+		background-color: white;
+	}
+
+	.menu_list li {
+		display: none;
+	}
+
+	.menu.open .menu_list {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		top: var(--nav-height);
+		height: calc(100vh - var(--nav-height));
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		padding: 32px;
+	}
+
+	.menu.open .menu_list li {
+		display: inline;
+		font-size: 24px;
+		line-height: 28px;
+	}
 }

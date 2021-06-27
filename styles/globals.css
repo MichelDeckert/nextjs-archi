@@ -6,7 +6,8 @@
 	--main-light-grey: #f2f2f2;
 	--nav-height: 102px;
 	--max-width: 1170px;
-	--grid-temp-col: repeat(12, 70px);
+	--grid-col-length: 70px;
+	--grid-temp-col: repeat(12, var(--grid-col-length));
 	--grid-gap: 30px;
 	--margin-section: 120px;
 	--animation-duration: 0.8s;
@@ -24,22 +25,21 @@ a {
 	text-decoration: none;
 }
 
+.noscroll {
+	overflow: hidden;
+}
+
 .app {
 	display: grid;
 	grid-template-rows: auto 1fr auto;
 	min-height: 100vh;
+	overflow: hidden;
 }
 
 .content {
 	position: relative;
 	padding-bottom: 120px;
 	box-sizing: border-box;
-}
-
-@keyframes rotate {
-	to {
-		transform: rotate(360deg);
-	}
 }
 
 .section {
@@ -104,4 +104,38 @@ a {
 	font-size: 64px;
 	font-weight: 300;
 	text-transform: uppercase;
+}
+
+@media (max-width: 1200px) {
+	:root {
+		--grid-col-length: calc((90vw - (25px * 11)) / 12);
+		--grid-gap: 25px;
+		--max-width: 90vw;
+	}
+
+	.section {
+		margin-top: 60px;
+	}
+
+	.content {
+		padding-bottom: 60px;
+	}
+
+	.secondary-title {
+		font-size: 58px;
+	}
+}
+
+@media (max-width: 700px) {
+	:root {
+		--nav-height: 82px;
+	}
+
+	.secondary-title {
+		font-size: 50px;
+	}
+
+	.content {
+		margin-top: var(--nav-height);
+	}
 }

@@ -63,15 +63,18 @@
 	user-select: none;
 }
 
-.overlay h3,
-.overlay h4 {
+.city,
+.name {
 	max-width: 100%;
 	color: #fff;
-	font-weight: bold;
-	font-size: 64px;
 }
 
-.overlay h4 {
+.name {
+	font-weight: bold;
+	font-size: 58px;
+}
+
+.city {
 	font-size: 16px;
 	font-weight: 300;
 	padding-left: 6px;
@@ -121,4 +124,35 @@
 	transition: all var(--animation-duration) 0.1s ease-in-out;
 	opacity: 0;
 	transform: translateX(-50px);
+}
+
+@media (max-width: 1200px) {
+	.name {
+		font-size: 36px;
+	}
+}
+
+@media (max-width: 700px) {
+	.section {
+		transform: translateX(0);
+		opacity: 1;
+		transition: none;
+	}
+
+	.images {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.img {
+		display: none;
+	}
+
+	.img:nth-child(1),
+	.img:nth-child(2),
+	.img:nth-child(3) {
+		display: block;
+		width: 100%;
+		min-height: 200px;
+	}
 }

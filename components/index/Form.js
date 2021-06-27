@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
 import { addScrollEvent } from "../../utils/addScrollEvent";
+import formImg from "../../public/images/form-img.jpg";
+import Image from "next/image";
 import styles from "../../styles/Form.module.css";
 import GoTo from "../../modules/GoTo";
 
@@ -46,7 +48,17 @@ export default function Form() {
 					placeholder="Votre message"
 					required></textarea>
 			</form>
-			<img src="./images/form-img.svg" alt="form" />
+			<div className={styles.image}>
+				<Image
+					src={formImg}
+					alt="form"
+					placeholder="blur"
+					layout="fill"
+					objectFit="cover"
+					quality={30}
+					priority={true}
+				/>
+			</div>
 			<div className={styles.condition}>
 				<input type="checkbox" name="agree" className="agree" />
 				<p>

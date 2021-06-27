@@ -22,7 +22,11 @@
 
 .arrow_previous {
 	transform: rotate(-180deg);
-	margin-right: 23px;
+	margin-right: 12px;
+}
+
+.arrow_next {
+	margin-left: 12px;
 }
 
 .slider_arrow > img {

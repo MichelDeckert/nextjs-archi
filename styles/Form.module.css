@@ -64,3 +64,29 @@
 	color: #fff;
 	background-color: var(--main-dark-grey);
 }
+
+.image {
+	position: relative;
+	grid-column: 2/3;
+}
+
+@media (max-width: 1200px) {
+	.section {
+		grid-template-columns: 5fr 2fr;
+		grid-template-rows: auto 369px;
+	}
+}
+
+@media (max-width: 700px) {
+	.section {
+		display: flex;
+		flex-direction: column;
+		transform: translateX(0);
+		opacity: 1;
+		transition: none;
+	}
+
+	.image {
+		display: none;
+	}
+}

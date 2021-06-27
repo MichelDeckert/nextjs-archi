@@ -42,3 +42,13 @@
 	font-weight: 600;
 	margin-bottom: 6px;
 }
+
+@media (max-width: 1200px) {
+	.gallery_image:hover .overlay {
+		top: 0;
+	}
+
+	.overlay_description {
+		display: none;
+	}
+}

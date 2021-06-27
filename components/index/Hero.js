@@ -44,7 +44,6 @@ export default function Hero({ projects }) {
 								idx === slideToShow ? styles.shown : styles.hidden
 							}`}>
 							<span className={styles.project_name}>{name}</span>
-							<br />
 							<span className={styles.project_city}>{city}</span>
 						</h2>
 					))}

@@ -23,7 +23,7 @@ export default function ProjectCard({ project, last }) {
 					placeholder="blur"
 					blurDataURL={images[0].imageProps.blurDataURL}
 					objectFit="cover"
-					objectPosition="center center"
+					objectPosition={`center ${images[0].horizontal}`}
 					quality={25}
 					priority={true}
 				/>
