@@ -42,12 +42,6 @@ a {
 	box-sizing: border-box;
 }
 
-@keyframes rotate {
-	to {
-		transform: rotate(360deg);
-	}
-}
-
 .section {
 	display: grid;
 	grid-template-columns: var(--grid-temp-col);

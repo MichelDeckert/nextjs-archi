@@ -5,10 +5,10 @@ export default function Footer() {
 	return (
 		<footer className={styles.footer}>
 			<div className={styles.content}>
-				<img src="/logo-white.svg" alt="logo" />
+				<img className={styles.logo} src="/logo-white.svg" alt="logo" />
 				<div className={styles.informations}>
 					<h4 className={styles.title}>Informations</h4>
-					<ul>
+					<ul className={styles.footer_list}>
 						<li>
 							<Link href="/">Accueil</Link>
 						</li>
@@ -28,7 +28,7 @@ export default function Footer() {
 				</div>
 				<div className={styles.contact}>
 					<h4 className={styles.title}>Contacts</h4>
-					<ul>
+					<ul className={styles.footer_list}>
 						<li>
 							<img src="/icons/localisation.svg" alt="" />
 							<span>
@@ -47,7 +47,7 @@ export default function Footer() {
 				</div>
 				<div className={styles.social}>
 					<h4 className={styles.title}>Réseaux sociaux</h4>
-					<ul>
+					<ul className={styles.footer_list}>
 						<li>
 							<img src="/icons/facebook.svg" alt="facebook" />
 						</li>
@@ -62,6 +62,9 @@ export default function Footer() {
 						</li>
 					</ul>
 				</div>
+			</div>
+			<div className={styles.copyright}>
+				<p>&copy; 2019 Digital Project. Tous droits réservés</p>
 			</div>
 		</footer>
 	);
