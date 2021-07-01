@@ -38,14 +38,14 @@ export default function Hero({ projects }) {
 			<div className={styles.content} ref={content}>
 				<div className={styles.title_container}>
 					{projects.map(({ id, name, city }, idx) => (
-						<h2
+						<div
 							key={id}
 							className={`${styles.title} ${
 								idx === slideToShow ? styles.shown : styles.hidden
 							}`}>
 							<span className={styles.project_name}>{name}</span>
 							<span className={styles.project_city}>{city}</span>
-						</h2>
+						</div>
 					))}
 				</div>
 				<div className={styles.slider_info}>

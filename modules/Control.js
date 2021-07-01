@@ -1,7 +1,6 @@
 import styles from "../styles/Control.module.css";
 
 export default function Control({ children, handleClick }) {
-	console.log(children);
 	return (
 		<div className={styles.slider_controls}>
 			<div
