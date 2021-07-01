@@ -1,0 +1,12 @@
+.certificats {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: var(--max-width);
+	height: 100%;
+	margin: auto;
+}
+
+.title {
+	margin-top: 60px;
+}

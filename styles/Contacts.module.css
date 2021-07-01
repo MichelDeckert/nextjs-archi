@@ -1,0 +1,48 @@
+.contacts {
+	width: 100%;
+	max-width: var(--max-width);
+	height: 100%;
+	margin: auto;
+}
+
+.title {
+	margin-top: 60px;
+}
+
+.info {
+	grid-column: 1/6;
+}
+
+.info > * {
+	margin-top: 50px;
+}
+
+.address p:first-of-type,
+.info > p {
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 21px;
+	color: var(--main-dark-grey);
+}
+
+.address p:last-of-type,
+.info > a:first-of-type {
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 23px;
+	color: var(--main-dark-grey);
+}
+
+.info > a {
+	display: block;
+}
+
+.map_container {
+	grid-column: 6/13;
+}
+
+.goto {
+	position: relative;
+	width: fit-content;
+	margin-left: 0;
+}
