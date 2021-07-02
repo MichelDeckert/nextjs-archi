@@ -3,9 +3,26 @@ import { useEffect, useRef, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
+const STATIC_PAGES = {
+	Home: "Accueil",
+	Projects: "Projets",
+	Gallery: "Galerie",
+	Certificats: "Certificats",
+	Contacts: "Contacts",
+};
+
 export default function Layout({ children }) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const [pageTitle, setPageTitle] = useState("");
 	const content = useRef();
+
+	useEffect(() => {
+		if (Object.keys(STATIC_PAGES).includes(children.type.name)) {
+			setPageTitle(STATIC_PAGES[children.type.name]);
+		} else if (children.type.name === "Project") {
+			setPageTitle(children.props.project.name);
+		}
+	}, [children.type.name]);
 
 	useEffect(() => {
 		if (isMenuOpen) {
@@ -18,7 +35,7 @@ export default function Layout({ children }) {
 	return (
 		<>
 			<Head>
-				<title>Digital Project</title>
+				<title>{`Digital Project | ${pageTitle}`}</title>
 			</Head>
 			<div className="app">
 				<Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
