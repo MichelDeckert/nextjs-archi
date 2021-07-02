@@ -20,29 +20,24 @@ export default function Layout({ children }) {
 	const router = useRouter();
 	const content = useRef();
 
-	const changePageTitle = path => {
-		if (Object.values(STATIC_PAGES).includes(path)) {
-			const title = Object.keys(STATIC_PAGES).find(
-				key => STATIC_PAGES[key] === path
-			);
-			setPageTitle(title);
-		} else {
-			setPageTitle(
-				router.query.slug
-					.split("-")
-					.slice(1)
-					.map(word => {
-						let newWord = word.split("");
-						newWord[0] = newWord[0].toUpperCase();
-						return newWord.join("");
-					})
-					.join(" ")
+	const getPageTitle = pathname => {
+		const pageName = `/${pathname.split("/")[1]}`;
+
+		if (Object.values(STATIC_PAGES).includes(pageName)) {
+			return Object.keys(STATIC_PAGES).find(
+				key => STATIC_PAGES[key] === pageName
 			);
 		}
+
+		return router.query.slug
+			.split("-")
+			.slice(1)
+			.map(word => word.replace(/^\w/, letter => letter.toUpperCase()))
+			.join(" ");
 	};
 
 	useEffect(() => {
-		changePageTitle(router.pathname);
+		setPageTitle(getPageTitle(router.pathname));
 	}, [router.pathname]);
 
 	useEffect(() => {
@@ -53,12 +48,8 @@ export default function Layout({ children }) {
 		}
 	}, [isMenuOpen]);
 
-	useEffect(() => {
-		console.log(systemTheme);
-	}, [systemTheme]);
-
 	return (
-		<html lang="fr">
+		<>
 			<Head>
 				<title>{`Digital Project | ${pageTitle}`}</title>
 				<meta
@@ -78,6 +69,6 @@ export default function Layout({ children }) {
 				</div>
 				<Footer />
 			</div>
-		</html>
+		</>
 	);
 }
