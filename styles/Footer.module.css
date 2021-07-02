@@ -58,6 +58,12 @@
 	margin-bottom: 15px;
 }
 
+.title {
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 19px;
+}
+
 .contact li:last-child,
 .informations li:last-child {
 	margin-bottom: 0;

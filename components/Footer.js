@@ -7,7 +7,7 @@ export default function Footer() {
 			<div className={styles.content}>
 				<img className={styles.logo} src="/logo-white.svg" alt="logo" />
 				<div className={styles.informations}>
-					<h4 className={styles.title}>Informations</h4>
+					<p className={styles.title}>Informations</p>
 					<ul className={styles.footer_list}>
 						<li>
 							<Link href="/">Accueil</Link>
@@ -27,7 +27,7 @@ export default function Footer() {
 					</ul>
 				</div>
 				<div className={styles.contact}>
-					<h4 className={styles.title}>Contacts</h4>
+					<p className={styles.title}>Contacts</p>
 					<ul className={styles.footer_list}>
 						<li>
 							<img src="/icons/localisation.svg" alt="" />
@@ -46,7 +46,7 @@ export default function Footer() {
 					</ul>
 				</div>
 				<div className={styles.social}>
-					<h4 className={styles.title}>Réseaux sociaux</h4>
+					<p className={styles.title}>Réseaux sociaux</p>
 					<ul className={styles.footer_list}>
 						<li>
 							<img src="/icons/facebook.svg" alt="facebook" />

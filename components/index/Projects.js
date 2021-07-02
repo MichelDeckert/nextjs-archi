@@ -29,7 +29,7 @@ export default function Projects({ projects }) {
 						<div className={styles.img} key={idx}>
 							<Image
 								src={images[0].imageProps.src}
-								alt={images[0].imageProps.alt}
+								alt={images[0].alt}
 								layout="fill"
 								placeholder="blur"
 								blurDataURL={images[0].imageProps.blurDataURL}
