@@ -1,16 +1,10 @@
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/dist/client/router";
+import { useTheme } from "next-themes";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-/* const STATIC_PAGES = {
-	HOME: { name: "Accueil", pathname: "/" },
-	PROJECTS:{ name: "Projets", pathname: "/projects"},
-	GALLERY: {name: "Galerie", pathname: "/gallery"},
-	CERTIFICATS:{name: "Certificats", pathname: "/certificats"},
-	CONTACTS: {name: "Contacts", pathname: "/contacts"},
-}; */
 const STATIC_PAGES = {
 	Accueil: "/",
 	Projets: "/projects",
@@ -22,6 +16,7 @@ const STATIC_PAGES = {
 export default function Layout({ children }) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [pageTitle, setPageTitle] = useState("");
+	const { systemTheme } = useTheme();
 	const router = useRouter();
 	const content = useRef();
 
@@ -58,10 +53,23 @@ export default function Layout({ children }) {
 		}
 	}, [isMenuOpen]);
 
+	useEffect(() => {
+		console.log(systemTheme);
+	}, [systemTheme]);
+
 	return (
 		<>
 			<Head>
 				<title>{`Digital Project | ${pageTitle}`}</title>
+				<meta
+					name="description"
+					content="Fake architecture agency website project build with Next.js"
+				/>
+				<link
+					rel="shortcut icon"
+					type="image/xml+svg"
+					href={systemTheme === "light" ? "/favicon.svg" : "/favicon-dark.svg"}
+				/>
 			</Head>
 			<div className="app">
 				<Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
