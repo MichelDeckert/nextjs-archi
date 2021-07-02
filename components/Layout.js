@@ -17,12 +17,13 @@ export default function Layout({ children }) {
 	const content = useRef();
 
 	useEffect(() => {
+		console.log(children);
 		if (Object.keys(STATIC_PAGES).includes(children.type.name)) {
 			setPageTitle(STATIC_PAGES[children.type.name]);
 		} else if (children.type.name === "Project") {
 			setPageTitle(children.props.project.name);
 		}
-	}, [children.type.name]);
+	}, [children]);
 
 	useEffect(() => {
 		if (isMenuOpen) {
@@ -40,7 +41,6 @@ export default function Layout({ children }) {
 			<div className="app">
 				<Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 				<div ref={content} className="content">
-					{pageTitle}
 					{children}
 				</div>
 				<Footer />
