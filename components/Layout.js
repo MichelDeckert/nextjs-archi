@@ -58,7 +58,7 @@ export default function Layout({ children }) {
 	}, [systemTheme]);
 
 	return (
-		<>
+		<html lang="fr">
 			<Head>
 				<title>{`Digital Project | ${pageTitle}`}</title>
 				<meta
@@ -78,6 +78,6 @@ export default function Layout({ children }) {
 				</div>
 				<Footer />
 			</div>
-		</>
+		</html>
 	);
 }
