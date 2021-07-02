@@ -26,19 +26,31 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
 					onClick={handleMenuClick}
 				/>
 				<ul className={styles.menu_list}>
-					<li onClick={handleLinkClick}>
+					<li
+						onClick={handleLinkClick}
+						className={router.pathname === "/" ? styles.active : ""}>
 						<Link href="/">ACCUEIL</Link>
 					</li>
-					<li onClick={handleLinkClick}>
+					<li
+						onClick={handleLinkClick}
+						className={router.pathname === "/gallery" ? styles.active : ""}>
 						<Link href="/gallery">GALERIE</Link>
 					</li>
-					<li onClick={handleLinkClick}>
+					<li
+						onClick={handleLinkClick}
+						className={
+							router.pathname.match(/^\/projects*/) ? styles.active : ""
+						}>
 						<Link href="/projects/1">PROJETS</Link>
 					</li>
-					<li onClick={handleLinkClick}>
+					<li
+						onClick={handleLinkClick}
+						className={router.pathname === "/certificats" ? styles.active : ""}>
 						<Link href="/certificats">CERTIFICATS</Link>
 					</li>
-					<li onClick={handleLinkClick}>
+					<li
+						onClick={handleLinkClick}
+						className={router.pathname === "/contacts" ? styles.active : ""}>
 						<Link href="/contacts">CONTACTS</Link>
 					</li>
 				</ul>

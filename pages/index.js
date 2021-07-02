@@ -1,4 +1,3 @@
-import Head from "next/head";
 import getBluredPlaceholder from "../utils/getBluredPlaceholder";
 import Hero from "../components/index/Hero";
 import About from "../components/index/About";
@@ -9,9 +8,6 @@ import Form from "../components/index/Form";
 export default function Home({ projects }) {
 	return (
 		<>
-			<Head>
-				<title>Digital Project</title>
-			</Head>
 			<Hero
 				projects={projects.filter(project => project.showcased === "HERO")}
 			/>

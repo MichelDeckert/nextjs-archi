@@ -69,6 +69,15 @@
 	transition: width 0.25s ease-in;
 }
 
+.active::after,
+.active::before {
+	content: "";
+	position: absolute;
+	width: 100% !important;
+	border-top: 1px solid var(--main-dark-grey);
+	transition: all 0.15s ease-out;
+}
+
 .menu_svg {
 	display: none;
 }
