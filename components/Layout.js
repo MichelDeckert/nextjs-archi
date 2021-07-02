@@ -40,6 +40,7 @@ export default function Layout({ children }) {
 			<div className="app">
 				<Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 				<div ref={content} className="content">
+					{pageTitle}
 					{children}
 				</div>
 				<Footer />
