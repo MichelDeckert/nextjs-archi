@@ -1,15 +1,10 @@
 import Image from "next/image";
-import { useEffect } from "react";
 import styles from "../../styles/Project.module.css";
 import getBluredPlaceholder from "../../utils/getBluredPlaceholder";
 import slugify from "../../utils/slugify";
 
 export default function Project({ project }) {
 	const { name, city, images, description } = project;
-
-	useEffect(() => {
-		console.log(images[0].path);
-	}, [images]);
 
 	return (
 		<div className={styles.project}>

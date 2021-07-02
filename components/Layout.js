@@ -1,29 +1,54 @@
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/dist/client/router";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
+/* const STATIC_PAGES = {
+	HOME: { name: "Accueil", pathname: "/" },
+	PROJECTS:{ name: "Projets", pathname: "/projects"},
+	GALLERY: {name: "Galerie", pathname: "/gallery"},
+	CERTIFICATS:{name: "Certificats", pathname: "/certificats"},
+	CONTACTS: {name: "Contacts", pathname: "/contacts"},
+}; */
 const STATIC_PAGES = {
-	Home: "Accueil",
-	Projects: "Projets",
-	Gallery: "Galerie",
-	Certificats: "Certificats",
-	Contacts: "Contacts",
+	Accueil: "/",
+	Projets: "/projects",
+	Galerie: "/gallery",
+	Certificats: "/certificats",
+	Contacts: "/contacts",
 };
 
 export default function Layout({ children }) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [pageTitle, setPageTitle] = useState("");
+	const router = useRouter();
 	const content = useRef();
 
-	useEffect(() => {
-		console.log(children);
-		if (Object.keys(STATIC_PAGES).includes(children.type.name)) {
-			setPageTitle(STATIC_PAGES[children.type.name]);
-		} else if (children.type.name === "Project") {
-			setPageTitle(children.props.project.name);
+	const changePageTitle = path => {
+		if (Object.values(STATIC_PAGES).includes(path)) {
+			const title = Object.keys(STATIC_PAGES).find(
+				key => STATIC_PAGES[key] === path
+			);
+			setPageTitle(title);
+		} else {
+			setPageTitle(
+				router.query.slug
+					.split("-")
+					.slice(1)
+					.map(word => {
+						let newWord = word.split("");
+						newWord[0] = newWord[0].toUpperCase();
+						return newWord.join("");
+					})
+					.join(" ")
+			);
 		}
-	}, [children]);
+	};
+
+	useEffect(() => {
+		changePageTitle(router.pathname);
+	}, [router.pathname]);
 
 	useEffect(() => {
 		if (isMenuOpen) {
