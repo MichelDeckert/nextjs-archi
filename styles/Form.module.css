@@ -105,6 +105,27 @@
 	background-color: var(--main-dark-grey);
 }
 
+.modal_img {
+	margin-top: 20px;
+}
+
+.modal_thank,
+.modal_text {
+	margin: 25px 0;
+}
+
+.modal_thank {
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 26px;
+}
+
+.modal_text {
+	font-weight: 900;
+	font-size: 14px;
+	line-height: 26px;
+}
+
 @media (max-width: 1200px) {
 	.section {
 		grid-template-columns: 5fr 2fr;

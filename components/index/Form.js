@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { addScrollEvent } from "../../utils/addScrollEvent";
-import formImg from "../../public/images/form-img.jpg";
 import Image from "next/image";
+import formImg from "../../public/images/form-img.jpg";
 import styles from "../../styles/Form.module.css";
 import GoTo from "../../modules/GoTo";
+import Modal from "../Modal";
 
 const TEXT_MAX_LENGTH = 300;
 
@@ -14,6 +15,7 @@ export default function Form() {
 	const [service, setService] = useState("");
 	const [message, setMessage] = useState("");
 	const [agree, setAgree] = useState(false);
+	const [showModal, setShowModal] = useState(false);
 	const section = useRef();
 	const submitButton = useRef();
 	const agreeLabel = useRef();
@@ -23,8 +25,21 @@ export default function Form() {
 		if (!agree) agreeLabel.current.classList.add(styles.notChecked);
 		else {
 			agreeLabel.current.classList.remove(styles.notChecked);
+			setShowModal(true);
 		}
 	};
+
+	const onModalClose = () => {
+		setShowModal(false);
+	};
+
+	useEffect(() => {
+		if (showModal) {
+			document.querySelector("body").classList.add("noscroll");
+		} else {
+			document.querySelector("body").classList.remove("noscroll");
+		}
+	}, [showModal]);
 
 	useEffect(() => {
 		addScrollEvent(section.current);
@@ -139,6 +154,13 @@ export default function Form() {
 					handleClick={() => submitButton.current.click()}
 				/>
 			</div>
+			<Modal show={showModal} onClose={onModalClose} buttonText="fermer">
+				<img className={styles.modal_img} src="/success.svg" alt="success" />
+				<p className={styles.modal_thank}>Merci !</p>
+				<p className={styles.modal_text}>
+					Votre message a été envoyé, nous vous contacterons sous peu.{" "}
+				</p>
+			</Modal>
 		</section>
 	);
 }
