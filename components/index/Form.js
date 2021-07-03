@@ -5,6 +5,8 @@ import Image from "next/image";
 import styles from "../../styles/Form.module.css";
 import GoTo from "../../modules/GoTo";
 
+const TEXT_MAX_LENGTH = 300;
+
 export default function Form() {
 	const [name, setName] = useState("");
 	const [phone, setPhone] = useState("");
@@ -14,9 +16,14 @@ export default function Form() {
 	const [agree, setAgree] = useState(false);
 	const section = useRef();
 	const submitButton = useRef();
+	const agreeLabel = useRef();
 
 	const handleSubmit = e => {
 		e.preventDefault();
+		if (!agree) agreeLabel.current.classList.add(styles.notChecked);
+		else {
+			agreeLabel.current.classList.remove(styles.notChecked);
+		}
 	};
 
 	useEffect(() => {
@@ -38,6 +45,7 @@ export default function Form() {
 						value={name}
 						onChange={e => setName(e.target.value)}
 						placeholder="Nom Prénom"
+						pattern="\w{2,}\s\w{2,}"
 					/>
 					<label htmlFor="phone" hidden>
 						Téléphone
@@ -46,10 +54,11 @@ export default function Form() {
 						type="tel"
 						name="phone"
 						className={styles.phone}
-						placeholder="Téléphone"
+						placeholder="Téléphone (ex: 0123456789)"
 						value={phone}
 						onChange={e => setPhone(e.target.value)}
-						required={true}
+						required
+						pattern="\d{10}"
 					/>
 					<label htmlFor="email" hidden>
 						E-mail
@@ -62,6 +71,7 @@ export default function Form() {
 						value={email}
 						onChange={e => setEmail(e.target.value)}
 						required
+						pattern="^[\w\d]+@\w+\.\w+$"
 					/>
 					<label htmlFor="subject" hidden>
 						Service
@@ -74,16 +84,24 @@ export default function Form() {
 						value={service}
 						onChange={e => setService(e.target.value)}
 					/>
-					<label htmlFor="message" hidden>
-						Votre message
-					</label>
-					<textarea
-						name="message"
-						className={styles.message}
-						placeholder="Votre message"
-						required
-						value={message}
-						onChange={e => setMessage(e.target.value)}></textarea>
+					<div className={styles.text_area_container}>
+						<label htmlFor="message" hidden>
+							Votre message
+						</label>
+						<textarea
+							name="message"
+							className={styles.message}
+							placeholder="Votre message"
+							required
+							value={message}
+							onChange={e => setMessage(e.target.value)}
+							maxLength={TEXT_MAX_LENGTH}></textarea>
+						<p className={styles.message_length}>
+							{`${TEXT_MAX_LENGTH - message.length} character${
+								TEXT_MAX_LENGTH - message.length > 0 ? "s" : ""
+							} left.`}
+						</p>
+					</div>
 				</div>
 				<div className={styles.form_condition}>
 					<input
@@ -93,7 +111,7 @@ export default function Form() {
 						checked={agree}
 						onChange={e => setAgree(e.target.checked)}
 					/>
-					<label htmlFor="agree">
+					<label htmlFor="agree" ref={agreeLabel}>
 						En envoyant ce message, vous acceptez la politique de
 						confidentialité
 					</label>
