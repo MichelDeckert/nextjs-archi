@@ -12,21 +12,24 @@ export default function Form() {
 	const [name, setName] = useState("");
 	const [phone, setPhone] = useState("");
 	const [email, setEmail] = useState("");
-	const [service, setService] = useState("");
+	const [subject, setSubject] = useState("");
 	const [message, setMessage] = useState("");
 	const [agree, setAgree] = useState(false);
 	const [showModal, setShowModal] = useState(false);
 	const section = useRef();
 	const submitButton = useRef();
 	const agreeLabel = useRef();
+	const form = useRef();
 
 	const handleSubmit = e => {
 		e.preventDefault();
-		if (!agree) agreeLabel.current.classList.add(styles.notChecked);
-		else {
-			agreeLabel.current.classList.remove(styles.notChecked);
-			setShowModal(true);
-		}
+		setName("");
+		setPhone("");
+		setEmail("");
+		setSubject("");
+		setMessage("");
+		setAgree(false);
+		setShowModal(true);
 	};
 
 	const onModalClose = () => {
@@ -48,7 +51,11 @@ export default function Form() {
 	return (
 		<section className={`${styles.section} section`} ref={section}>
 			<h2 className={`${styles.title} secondary-title`}>Nous contacter</h2>
-			<form action="" className={styles.contact_form} onSubmit={handleSubmit}>
+			<form
+				action=""
+				ref={form}
+				className={styles.contact_form}
+				onSubmit={handleSubmit}>
 				<div className={styles.form_inputs}>
 					<label htmlFor="name" hidden>
 						Nom Prénom
@@ -89,15 +96,15 @@ export default function Form() {
 						pattern="^[\w\d]+@\w+\.\w+$"
 					/>
 					<label htmlFor="subject" hidden>
-						Service
+						Subject
 					</label>
 					<input
-						type="subject"
+						type="text"
 						name="subject"
 						className={styles.subject}
-						placeholder="Service"
-						value={service}
-						onChange={e => setService(e.target.value)}
+						placeholder="Sujet"
+						value={subject}
+						onChange={e => setSubject(e.target.value)}
 					/>
 					<div className={styles.text_area_container}>
 						<label htmlFor="message" hidden>
@@ -124,11 +131,12 @@ export default function Form() {
 						name="agree"
 						className="agree"
 						checked={agree}
+						required
 						onChange={e => setAgree(e.target.checked)}
 					/>
 					<label htmlFor="agree" ref={agreeLabel}>
-						En envoyant ce message, vous acceptez la politique de
-						confidentialité
+						En envoyant ce message, vous acceptez notre politique de
+						confidentialité.
 					</label>
 				</div>
 				<input type="submit" value="Submit" hidden ref={submitButton} />
