@@ -5,10 +5,14 @@
 	bottom: 0;
 	right: 0;
 	background-color: rgba(0, 0, 0, 0.3);
+	opacity: 1;
+	transition: opacity 0.2s ease-in-out;
+	z-index: 99999;
 }
 
 .modal_container.hidden {
-	display: none;
+	opacity: 0;
+	visibility: hidden;
 }
 
 .modal {
@@ -25,13 +29,11 @@
 	max-height: 90vh;
 	padding: 25px 40px 25px;
 	background-color: white;
+	transition: all 0.2s ease-in-out;
 }
 
-.goto_modal {
-	position: relative;
-	margin: auto;
-	width: 90%;
-	height: 42px;
+.modal_container.hidden .modal {
+	transform: translateX(-100vw);
 }
 
 .close_modal {
