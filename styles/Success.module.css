@@ -1,0 +1,33 @@
+.success {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.img {
+	margin-top: 20px;
+}
+
+.thank,
+.text {
+	margin: 25px 0;
+}
+
+.thank {
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 26px;
+}
+
+.text {
+	font-weight: 900;
+	font-size: 14px;
+	line-height: 26px;
+}
+
+.goto {
+	position: relative;
+	margin: auto;
+	width: 90%;
+	height: 42px;
+}

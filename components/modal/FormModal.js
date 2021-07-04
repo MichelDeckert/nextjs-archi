@@ -1,26 +1,19 @@
-import { useEffect, useRef, useState } from "react";
-import { addScrollEvent } from "../../utils/addScrollEvent";
-import Image from "next/image";
-import formImg from "../../public/images/form-img.jpg";
-import styles from "../../styles/Form.module.css";
+import { useRef, useState } from "react";
 import GoTo from "../../modules/GoTo";
-import Modal from "../modal/Modal";
-import Success from "../modal/Success";
+import styles from "../../styles/FormModal.module.css";
 
 const TEXT_MAX_LENGTH = 300;
 
-export default function Form() {
+export default function FormModal({ onValidate }) {
 	const [name, setName] = useState("");
 	const [phone, setPhone] = useState("");
 	const [email, setEmail] = useState("");
 	const [subject, setSubject] = useState("");
 	const [message, setMessage] = useState("");
 	const [agree, setAgree] = useState(false);
-	const [showModal, setShowModal] = useState(false);
-	const section = useRef();
 	const submitButton = useRef();
-	const agreeLabel = useRef();
 	const form = useRef();
+	const agreeLabel = useRef();
 
 	const handleSubmit = e => {
 		e.preventDefault();
@@ -30,28 +23,12 @@ export default function Form() {
 		setSubject("");
 		setMessage("");
 		setAgree(false);
-		setShowModal(true);
+		onValidate();
 	};
-
-	const onModalClose = () => {
-		setShowModal(false);
-	};
-
-	useEffect(() => {
-		if (showModal) {
-			document.querySelector("body").classList.add("noscroll");
-		} else {
-			document.querySelector("body").classList.remove("noscroll");
-		}
-	}, [showModal]);
-
-	useEffect(() => {
-		addScrollEvent(section.current);
-	}, []);
 
 	return (
-		<section className={`${styles.section} section`} ref={section}>
-			<h2 className={`${styles.title} secondary-title`}>Nous contacter</h2>
+		<div>
+			<h2 className={styles.title}>Posez-nous votre question</h2>
 			<form
 				action=""
 				ref={form}
@@ -142,19 +119,6 @@ export default function Form() {
 				</div>
 				<input type="submit" value="Submit" hidden ref={submitButton} />
 			</form>
-			<div className={styles.image_container}>
-				<div className={styles.image}>
-					<Image
-						src={formImg}
-						alt="form"
-						placeholder="blur"
-						layout="fill"
-						objectFit="cover"
-						quality={30}
-						priority={true}
-					/>
-				</div>
-			</div>
 			<div className={styles.button}>
 				<GoTo
 					subclass={styles.goto}
@@ -163,9 +127,6 @@ export default function Form() {
 					handleClick={() => submitButton.current.click()}
 				/>
 			</div>
-			<Modal show={showModal} onClose={onModalClose} buttonText="fermer">
-				<Success onClose={onModalClose} />
-			</Modal>
-		</section>
+		</div>
 	);
 }

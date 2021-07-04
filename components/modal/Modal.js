@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import GoTo from "../modules/GoTo";
-import styles from "../styles/Modal.module.css";
+import GoTo from "../../modules/GoTo";
+import styles from "../../styles/Modal.module.css";
 
 export default function Modal({ children, show, onClose, buttonText }) {
 	const [isBrowser, setIsBrowser] = useState(false);
@@ -22,12 +22,6 @@ export default function Modal({ children, show, onClose, buttonText }) {
 						onClick={onClose}
 					/>
 					{children}
-					<GoTo
-						handleClick={onClose}
-						text={buttonText}
-						theme="dark"
-						subclass={styles.goto_modal}
-					/>
 				</div>
 			</div>,
 			document.getElementById("modal-root")
