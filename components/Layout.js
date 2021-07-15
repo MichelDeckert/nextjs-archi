@@ -57,7 +57,7 @@ export default function Layout({ children }) {
 					content="Faux site d'une agence d'architecture fait avec Next.js"
 				/>
 				<meta charSet="utf-8" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				{/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
 				<link
 					rel="shortcut icon"
 					type="image/xml+svg"
