@@ -54,12 +54,20 @@ export default function Layout({ children }) {
 				<title>{`Digital Project | ${pageTitle}`}</title>
 				<meta
 					name="description"
-					content="Fake architecture agency website project build with Next.js"
+					content="Faux site d'une agence d'architecture fait avec Next.js"
 				/>
+				<meta charSet="utf-8" />
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link
 					rel="shortcut icon"
 					type="image/xml+svg"
 					href={systemTheme === "light" ? "/favicon.svg" : "/favicon-dark.svg"}
+				/>
+				<meta property="og:title" content="Digital Project" key="ogtitle" />
+				<meta
+					property="og:description"
+					content="Faux site d'une agence d'architecture fait avec Next.js"
+					key="ogdesc"
 				/>
 			</Head>
 			<div className="app">
