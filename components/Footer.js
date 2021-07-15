@@ -19,9 +19,6 @@ export default function Footer() {
 							<Link href="/projects/1">Projets</Link>
 						</li>
 						<li>
-							<Link href="/certificats">Certificats</Link>
-						</li>
-						<li>
 							<Link href="/contacts">Contacts</Link>
 						</li>
 					</ul>

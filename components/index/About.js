@@ -1,10 +1,16 @@
 import { useEffect, useRef } from "react";
+import { useHistory } from "next";
 import styles from "../../styles/About.module.css";
 import { addScrollEvent } from "../../utils/addScrollEvent";
 import GoTo from "../../modules/GoTo";
 
 export default function About() {
+	const history = useHistory();
 	const section = useRef();
+
+	const handleClick = () => {
+		history.push("/contacts");
+	};
 
 	useEffect(() => {
 		addScrollEvent(section.current);
@@ -42,8 +48,9 @@ export default function About() {
 				</p>
 				<GoTo
 					subclass={styles.goto}
+					handleClick={handleClick}
 					style={{ marginBottom: "30px" }}
-					text="lire"
+					text="Nous contacter"
 				/>
 			</div>
 		</section>

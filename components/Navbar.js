@@ -45,11 +45,6 @@ export default function Navbar({ isMenuOpen, setIsMenuOpen }) {
 					</li>
 					<li
 						onClick={handleLinkClick}
-						className={router.pathname === "/certificats" ? styles.active : ""}>
-						<Link href="/certificats">CERTIFICATS</Link>
-					</li>
-					<li
-						onClick={handleLinkClick}
 						className={router.pathname === "/contacts" ? styles.active : ""}>
 						<Link href="/contacts">CONTACTS</Link>
 					</li>

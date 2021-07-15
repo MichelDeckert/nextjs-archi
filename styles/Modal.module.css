@@ -27,9 +27,9 @@
 	max-width: 90vw;
 	min-height: min(90vw, 410px);
 	max-height: 90vh;
-	padding: 25px 40px 25px;
+	padding: 25px 40px;
 	background-color: white;
-	transition: all 0.2s ease-in-out;
+	transition: transform 0.3s ease-in-out;
 }
 
 .modal_container.hidden .modal {
