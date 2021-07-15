@@ -69,6 +69,8 @@ export default function Layout({ children }) {
 					content="Faux site d'une agence d'architecture fait avec Next.js"
 					key="ogdesc"
 				/>
+				<meta property="og:image" content="/logo.svg" />
+				<meta property="og:type" content="website" />
 			</Head>
 			<div className="app">
 				<Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />

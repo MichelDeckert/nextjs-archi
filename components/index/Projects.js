@@ -39,8 +39,8 @@ export default function Projects({ projects }) {
 								priority={true}
 							/>
 							<div className={styles.overlay}>
-								<h3 className={styles.city}>{city}</h3>
-								<h3 className={styles.name}>{name}</h3>
+								<p className={styles.city}>{city}</p>
+								<p className={styles.name}>{name}</p>
 								<div
 									className={styles.link}
 									onClick={handleClick.bind(null, [
