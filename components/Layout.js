@@ -52,6 +52,7 @@ export default function Layout({ children }) {
 		<>
 			<Head>
 				<title>{`Digital Project | ${pageTitle}`}</title>
+
 				<meta
 					name="description"
 					content="Faux site d'une agence d'architecture fait avec Next.js"
@@ -63,14 +64,28 @@ export default function Layout({ children }) {
 					type="image/xml+svg"
 					href={systemTheme === "light" ? "/favicon.svg" : "/favicon-dark.svg"}
 				/>
-				<meta property="og:title" content="Digital Project" key="ogtitle" />
+
+				<meta property="og:url" content="https://digital-project.vercel.app/" />
+				<meta property="og:type" content="website" />
+				<meta property="og:title" content="Digital Project" />
 				<meta
 					property="og:description"
 					content="Faux site d'une agence d'architecture fait avec Next.js"
-					key="ogdesc"
 				/>
 				<meta property="og:image" content="/og_image.png" />
-				<meta property="og:type" content="website" />
+
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta property="twitter:domain" content="digital-project.vercel.app" />
+				<meta
+					property="twitter:url"
+					content="https://digital-project.vercel.app/"
+				/>
+				<meta name="twitter:title" content="Digital Project" />
+				<meta
+					name="twitter:description"
+					content="Faux site d'une agence d'architecture fait avec Next.js"
+				/>
+				<meta name="twitter:image" content="/og_image.png" />
 			</Head>
 			<div className="app">
 				<Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
