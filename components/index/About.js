@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { useRouter } from "next";
+import { useRouter } from "next/router";
 import styles from "../../styles/About.module.css";
 import { addScrollEvent } from "../../utils/addScrollEvent";
 import GoTo from "../../modules/GoTo";
