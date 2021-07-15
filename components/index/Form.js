@@ -120,9 +120,9 @@ export default function Form() {
 							onChange={e => setMessage(e.target.value)}
 							maxLength={TEXT_MAX_LENGTH}></textarea>
 						<p className={styles.message_length}>
-							{`${TEXT_MAX_LENGTH - message.length} character${
+							{`${TEXT_MAX_LENGTH - message.length} caractère${
 								TEXT_MAX_LENGTH - message.length > 0 ? "s" : ""
-							} left.`}
+							} restant${TEXT_MAX_LENGTH - message.length > 0 ? "s" : ""}.`}
 						</p>
 					</div>
 				</div>
