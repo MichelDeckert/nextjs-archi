@@ -5,7 +5,7 @@ export default function Footer() {
 	return (
 		<footer className={styles.footer}>
 			<div className={styles.content}>
-				<img className={styles.logo} src="/logo-white.svg" alt="logo" />
+				<img className={styles.logo} src="/logo-white.png" alt="logo" />
 				<div className={styles.informations}>
 					<p className={styles.title}>Informations</p>
 					<ul className={styles.footer_list}>
