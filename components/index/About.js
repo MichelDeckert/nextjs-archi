@@ -1,15 +1,15 @@
 import { useEffect, useRef } from "react";
-import { useHistory } from "next";
+import { useRouter } from "next";
 import styles from "../../styles/About.module.css";
 import { addScrollEvent } from "../../utils/addScrollEvent";
 import GoTo from "../../modules/GoTo";
 
 export default function About() {
-	const history = useHistory();
+	const router = useRouter();
 	const section = useRef();
 
 	const handleClick = () => {
-		history.push("/contacts");
+		router.push("/contacts");
 	};
 
 	useEffect(() => {
