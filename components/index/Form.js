@@ -64,8 +64,10 @@ export default function Form() {
 					<input
 						type="text"
 						name="name"
+						id="name"
 						className={styles.name}
 						value={name}
+						required
 						onChange={e => setName(e.target.value)}
 						placeholder="Nom Prénom"
 						pattern="\w{2,}\s\w{2,}"
@@ -76,6 +78,7 @@ export default function Form() {
 					<input
 						type="tel"
 						name="phone"
+						id="phone"
 						className={styles.phone}
 						placeholder="Téléphone (ex: 0123456789)"
 						value={phone}
@@ -89,6 +92,7 @@ export default function Form() {
 					<input
 						type="email"
 						name="email"
+						id="email"
 						className={styles.email}
 						placeholder="E-mail"
 						value={email}
@@ -102,8 +106,10 @@ export default function Form() {
 					<input
 						type="text"
 						name="subject"
+						id="subject"
 						className={styles.subject}
 						placeholder="Sujet"
+						required
 						value={subject}
 						onChange={e => setSubject(e.target.value)}
 					/>
@@ -113,6 +119,7 @@ export default function Form() {
 						</label>
 						<textarea
 							name="message"
+							id="message"
 							className={styles.message}
 							placeholder="Votre message"
 							required
@@ -127,18 +134,18 @@ export default function Form() {
 					</div>
 				</div>
 				<div className={styles.form_condition}>
-					<input
-						type="checkbox"
-						name="agree"
-						className="agree"
-						checked={agree}
-						required
-						onChange={e => setAgree(e.target.checked)}
-					/>
 					<label htmlFor="agree" ref={agreeLabel}>
 						En envoyant ce message, vous acceptez notre politique de
 						confidentialité.
 					</label>
+					<input
+						type="checkbox"
+						name="agree"
+						id="agree"
+						checked={agree}
+						required
+						onChange={e => setAgree(e.target.checked)}
+					/>
 				</div>
 				<input type="submit" value="Submit" hidden ref={submitButton} />
 			</form>
