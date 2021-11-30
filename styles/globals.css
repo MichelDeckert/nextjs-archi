@@ -20,6 +20,10 @@
 	box-sizing: border-box;
 }
 
+body {
+	background-color: var(--main-light-grey);
+}
+
 a {
 	color: var(--main-dark-grey);
 	text-decoration: none;
