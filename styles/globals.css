@@ -18,7 +18,9 @@
 	margin: 0;
 	font-family: "Roboto", sans-serif;
 	box-sizing: border-box;
-	background-color: var(--main-light-grey);
+}
+body {
+	background-color: white;
 }
 
 a {
