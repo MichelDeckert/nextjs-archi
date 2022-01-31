@@ -16,6 +16,5 @@ Basé sur une maquette Figma mise à disposition gratuitement par [Martin Jozwia
 ## Lancer en local
 
 ```bash
-npm i
-npm run dev
+npm i && npm run dev
 ```
