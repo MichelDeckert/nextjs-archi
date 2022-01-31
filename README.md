@@ -1,6 +1,6 @@
 # Digital Project
 
-Basé sur une maquette Figma mise à disposition gratuitement par [Martin Jozwiak](http://marcinjozwiak.pl/), _Digital Project_ est le site internet d'une agence d'architecte fictive.
+Basé sur une maquette Figma mise à disposition gratuitement par [Martin Jozwiak](http://marcinjozwiak.pl/), _Digital Project_ est le site internet d'une agence d'architectes fictive.
 
 ### Stack
 
